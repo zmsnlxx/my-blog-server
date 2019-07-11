@@ -1,0 +1,2025 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/Users/liuxiang/.nvm/versions/node/v8.9.2/bin/node',
+1 verbose cli   '/Users/liuxiang/node_modules/.bin/npm',
+1 verbose cli   'install',
+1 verbose cli   '--loglevel',
+1 verbose cli   'error' ]
+2 info using npm@3.10.10
+3 info using node@v8.9.2
+4 silly loadCurrentTree Starting
+5 silly install loadCurrentTree
+6 silly install readLocalPackageData
+7 silly install normalizeTree
+8 silly loadCurrentTree Finishing
+9 silly loadIdealTree Starting
+10 silly install loadIdealTree
+11 silly cloneCurrentTree Starting
+12 silly install cloneCurrentTreeToIdealTree
+13 silly cloneCurrentTree Finishing
+14 silly loadShrinkwrap Starting
+15 silly install loadShrinkwrap
+16 silly loadShrinkwrap Finishing
+17 silly loadAllDepsIntoIdealTree Starting
+18 silly install loadAllDepsIntoIdealTree
+19 silly fetchNamedPackageData vue
+20 silly mapToRegistry name vue
+21 silly mapToRegistry using default registry
+22 silly mapToRegistry registry http://r.cnpmjs.org/
+23 silly mapToRegistry data Result {
+23 silly mapToRegistry   raw: 'vue',
+23 silly mapToRegistry   scope: null,
+23 silly mapToRegistry   escapedName: 'vue',
+23 silly mapToRegistry   name: 'vue',
+23 silly mapToRegistry   rawSpec: '',
+23 silly mapToRegistry   spec: 'latest',
+23 silly mapToRegistry   type: 'tag' }
+24 silly mapToRegistry uri http://r.cnpmjs.org/vue
+25 silly fetchNamedPackageData vue-class-component
+26 silly mapToRegistry name vue-class-component
+27 silly mapToRegistry using default registry
+28 silly mapToRegistry registry http://r.cnpmjs.org/
+29 silly mapToRegistry data Result {
+29 silly mapToRegistry   raw: 'vue-class-component',
+29 silly mapToRegistry   scope: null,
+29 silly mapToRegistry   escapedName: 'vue-class-component',
+29 silly mapToRegistry   name: 'vue-class-component',
+29 silly mapToRegistry   rawSpec: '',
+29 silly mapToRegistry   spec: 'latest',
+29 silly mapToRegistry   type: 'tag' }
+30 silly mapToRegistry uri http://r.cnpmjs.org/vue-class-component
+31 silly fetchNamedPackageData vue-property-decorator
+32 silly mapToRegistry name vue-property-decorator
+33 silly mapToRegistry using default registry
+34 silly mapToRegistry registry http://r.cnpmjs.org/
+35 silly mapToRegistry data Result {
+35 silly mapToRegistry   raw: 'vue-property-decorator',
+35 silly mapToRegistry   scope: null,
+35 silly mapToRegistry   escapedName: 'vue-property-decorator',
+35 silly mapToRegistry   name: 'vue-property-decorator',
+35 silly mapToRegistry   rawSpec: '',
+35 silly mapToRegistry   spec: 'latest',
+35 silly mapToRegistry   type: 'tag' }
+36 silly mapToRegistry uri http://r.cnpmjs.org/vue-property-decorator
+37 silly fetchNamedPackageData vue-router
+38 silly mapToRegistry name vue-router
+39 silly mapToRegistry using default registry
+40 silly mapToRegistry registry http://r.cnpmjs.org/
+41 silly mapToRegistry data Result {
+41 silly mapToRegistry   raw: 'vue-router',
+41 silly mapToRegistry   scope: null,
+41 silly mapToRegistry   escapedName: 'vue-router',
+41 silly mapToRegistry   name: 'vue-router',
+41 silly mapToRegistry   rawSpec: '',
+41 silly mapToRegistry   spec: 'latest',
+41 silly mapToRegistry   type: 'tag' }
+42 silly mapToRegistry uri http://r.cnpmjs.org/vue-router
+43 silly fetchNamedPackageData vuex
+44 silly mapToRegistry name vuex
+45 silly mapToRegistry using default registry
+46 silly mapToRegistry registry http://r.cnpmjs.org/
+47 silly mapToRegistry data Result {
+47 silly mapToRegistry   raw: 'vuex',
+47 silly mapToRegistry   scope: null,
+47 silly mapToRegistry   escapedName: 'vuex',
+47 silly mapToRegistry   name: 'vuex',
+47 silly mapToRegistry   rawSpec: '',
+47 silly mapToRegistry   spec: 'latest',
+47 silly mapToRegistry   type: 'tag' }
+48 silly mapToRegistry uri http://r.cnpmjs.org/vuex
+49 verbose request uri http://r.cnpmjs.org/vue-class-component
+50 verbose request no auth needed
+51 info attempt registry request try #1 at 15:22:59
+52 verbose request id 6140785733582b83
+53 http request GET http://r.cnpmjs.org/vue-class-component
+54 verbose request uri http://r.cnpmjs.org/vue-property-decorator
+55 verbose request no auth needed
+56 info attempt registry request try #1 at 15:22:59
+57 http request GET http://r.cnpmjs.org/vue-property-decorator
+58 verbose request uri http://r.cnpmjs.org/vue-router
+59 verbose request no auth needed
+60 info attempt registry request try #1 at 15:22:59
+61 http request GET http://r.cnpmjs.org/vue-router
+62 verbose request uri http://r.cnpmjs.org/vuex
+63 verbose request no auth needed
+64 info attempt registry request try #1 at 15:22:59
+65 http request GET http://r.cnpmjs.org/vuex
+66 verbose request uri http://r.cnpmjs.org/vue
+67 verbose request no auth needed
+68 info attempt registry request try #1 at 15:22:59
+69 verbose etag W/"b4c11f27469e870bcfcb0b8988be2e2d"
+70 http request GET http://r.cnpmjs.org/vue
+71 http 200 http://r.cnpmjs.org/vuex
+72 verbose headers { server: 'nginx/1.15.6',
+72 verbose headers   date: 'Fri, 05 Jul 2019 07:23:00 GMT',
+72 verbose headers   'content-type': 'application/json; charset=utf-8',
+72 verbose headers   'transfer-encoding': 'chunked',
+72 verbose headers   connection: 'keep-alive',
+72 verbose headers   'x-current-requests': '1',
+72 verbose headers   vary: 'Origin',
+72 verbose headers   etag: 'W/"af5ab8df40afe1973ee2f488c75d3842"',
+72 verbose headers   'x-readtime': '15',
+72 verbose headers   'content-encoding': 'gzip' }
+73 silly get cb [ 200,
+73 silly get   { server: 'nginx/1.15.6',
+73 silly get     date: 'Fri, 05 Jul 2019 07:23:00 GMT',
+73 silly get     'content-type': 'application/json; charset=utf-8',
+73 silly get     'transfer-encoding': 'chunked',
+73 silly get     connection: 'keep-alive',
+73 silly get     'x-current-requests': '1',
+73 silly get     vary: 'Origin',
+73 silly get     etag: 'W/"af5ab8df40afe1973ee2f488c75d3842"',
+73 silly get     'x-readtime': '15',
+73 silly get     'content-encoding': 'gzip' } ]
+74 verbose get saving vuex to /Users/liuxiang/.npm/r.cnpmjs.org/vuex/.cache.json
+75 verbose correctMkdir /Users/liuxiang/.npm correctMkdir not in flight; initializing
+76 silly resolveWithNewModule vuex@3.1.1 checking installable status
+77 silly cache add args [ 'vuex@^3.0.1', null ]
+78 verbose cache add spec vuex@^3.0.1
+79 silly cache add parsed spec Result {
+79 silly cache add   raw: 'vuex@^3.0.1',
+79 silly cache add   scope: null,
+79 silly cache add   escapedName: 'vuex',
+79 silly cache add   name: 'vuex',
+79 silly cache add   rawSpec: '^3.0.1',
+79 silly cache add   spec: '>=3.0.1 <4.0.0',
+79 silly cache add   type: 'range' }
+80 silly addNamed vuex@>=3.0.1 <4.0.0
+81 verbose addNamed ">=3.0.1 <4.0.0" is a valid semver range for vuex
+82 silly addNameRange { name: 'vuex', range: '>=3.0.1 <4.0.0', hasData: false }
+83 silly mapToRegistry name vuex
+84 silly mapToRegistry using default registry
+85 silly mapToRegistry registry http://r.cnpmjs.org/
+86 silly mapToRegistry data Result {
+86 silly mapToRegistry   raw: 'vuex',
+86 silly mapToRegistry   scope: null,
+86 silly mapToRegistry   escapedName: 'vuex',
+86 silly mapToRegistry   name: 'vuex',
+86 silly mapToRegistry   rawSpec: '',
+86 silly mapToRegistry   spec: 'latest',
+86 silly mapToRegistry   type: 'tag' }
+87 silly mapToRegistry uri http://r.cnpmjs.org/vuex
+88 verbose addNameRange registry:http://r.cnpmjs.org/vuex not in flight; fetching
+89 verbose get http://r.cnpmjs.org/vuex not expired, no request
+90 silly addNameRange number 2 { name: 'vuex', range: '>=3.0.1 <4.0.0', hasData: true }
+91 silly addNameRange versions [ 'vuex',
+91 silly addNameRange   [ '3.1.1',
+91 silly addNameRange     '3.1.0',
+91 silly addNameRange     '3.0.1',
+91 silly addNameRange     '3.0.0',
+91 silly addNameRange     '2.5.0',
+91 silly addNameRange     '2.4.1',
+91 silly addNameRange     '2.4.0',
+91 silly addNameRange     '2.3.1',
+91 silly addNameRange     '2.3.0',
+91 silly addNameRange     '2.2.1',
+91 silly addNameRange     '2.2.0',
+91 silly addNameRange     '2.1.3',
+91 silly addNameRange     '2.1.2',
+91 silly addNameRange     '1.0.1',
+91 silly addNameRange     '2.1.1',
+91 silly addNameRange     '2.1.0',
+91 silly addNameRange     '1.0.0',
+91 silly addNameRange     '2.0.0',
+91 silly addNameRange     '2.0.0-rc.6',
+91 silly addNameRange     '2.0.0-rc.5',
+91 silly addNameRange     '2.0.0-rc.4',
+91 silly addNameRange     '2.0.0-rc.3',
+91 silly addNameRange     '2.0.0-rc.1',
+91 silly addNameRange     '1.0.0-rc.2',
+91 silly addNameRange     '1.0.0-rc',
+91 silly addNameRange     '0.8.2',
+91 silly addNameRange     '0.8.1',
+91 silly addNameRange     '0.8.0',
+91 silly addNameRange     '0.7.1',
+91 silly addNameRange     '0.7.0',
+91 silly addNameRange     '0.6.3',
+91 silly addNameRange     '0.6.2',
+91 silly addNameRange     '0.6.1',
+91 silly addNameRange     '0.5.1',
+91 silly addNameRange     '0.5.0',
+91 silly addNameRange     '0.4.2',
+91 silly addNameRange     '0.4.1',
+91 silly addNameRange     '0.4.0',
+91 silly addNameRange     '0.3.0',
+91 silly addNameRange     '0.2.0',
+91 silly addNameRange     '0.1.0' ] ]
+92 silly addNamed vuex@3.1.1
+93 verbose addNamed "3.1.1" is a plain semver version for vuex
+94 silly mapToRegistry name vuex
+95 silly mapToRegistry using default registry
+96 silly mapToRegistry registry http://r.cnpmjs.org/
+97 silly mapToRegistry data Result {
+97 silly mapToRegistry   raw: 'vuex',
+97 silly mapToRegistry   scope: null,
+97 silly mapToRegistry   escapedName: 'vuex',
+97 silly mapToRegistry   name: 'vuex',
+97 silly mapToRegistry   rawSpec: '',
+97 silly mapToRegistry   spec: 'latest',
+97 silly mapToRegistry   type: 'tag' }
+98 silly mapToRegistry uri http://r.cnpmjs.org/vuex
+99 verbose addRemoteTarball http://r.cnpmjs.org/vuex/download/vuex-3.1.1.tgz not in flight; adding
+100 verbose addRemoteTarball [ 'http://r.cnpmjs.org/vuex/download/vuex-3.1.1.tgz',
+100 verbose addRemoteTarball   '0c264bfe30cdbccf96ab9db3177d211828a5910e' ]
+101 info retry fetch attempt 1 at 15:23:00
+102 info attempt registry request try #1 at 15:23:00
+103 http fetch GET http://r.cnpmjs.org/vuex/download/vuex-3.1.1.tgz
+104 http 304 http://r.cnpmjs.org/vue
+105 verbose headers { server: 'nginx/1.15.6',
+105 verbose headers   date: 'Fri, 05 Jul 2019 07:23:00 GMT',
+105 verbose headers   connection: 'keep-alive',
+105 verbose headers   'x-current-requests': '1',
+105 verbose headers   vary: 'Origin',
+105 verbose headers   etag: 'W/"b4c11f27469e870bcfcb0b8988be2e2d"',
+105 verbose headers   'x-readtime': '49' }
+106 silly get cb [ 304,
+106 silly get   { server: 'nginx/1.15.6',
+106 silly get     date: 'Fri, 05 Jul 2019 07:23:00 GMT',
+106 silly get     connection: 'keep-alive',
+106 silly get     'x-current-requests': '1',
+106 silly get     vary: 'Origin',
+106 silly get     etag: 'W/"b4c11f27469e870bcfcb0b8988be2e2d"',
+106 silly get     'x-readtime': '49' } ]
+107 verbose etag http://r.cnpmjs.org/vue from cache
+108 verbose get saving vue to /Users/liuxiang/.npm/r.cnpmjs.org/vue/.cache.json
+109 verbose correctMkdir /Users/liuxiang/.npm correctMkdir not in flight; initializing
+110 silly resolveWithNewModule vue@2.6.10 checking installable status
+111 silly cache add args [ 'vue@^2.6.10', null ]
+112 verbose cache add spec vue@^2.6.10
+113 silly cache add parsed spec Result {
+113 silly cache add   raw: 'vue@^2.6.10',
+113 silly cache add   scope: null,
+113 silly cache add   escapedName: 'vue',
+113 silly cache add   name: 'vue',
+113 silly cache add   rawSpec: '^2.6.10',
+113 silly cache add   spec: '>=2.6.10 <3.0.0',
+113 silly cache add   type: 'range' }
+114 silly addNamed vue@>=2.6.10 <3.0.0
+115 verbose addNamed ">=2.6.10 <3.0.0" is a valid semver range for vue
+116 silly addNameRange { name: 'vue', range: '>=2.6.10 <3.0.0', hasData: false }
+117 silly mapToRegistry name vue
+118 silly mapToRegistry using default registry
+119 silly mapToRegistry registry http://r.cnpmjs.org/
+120 silly mapToRegistry data Result {
+120 silly mapToRegistry   raw: 'vue',
+120 silly mapToRegistry   scope: null,
+120 silly mapToRegistry   escapedName: 'vue',
+120 silly mapToRegistry   name: 'vue',
+120 silly mapToRegistry   rawSpec: '',
+120 silly mapToRegistry   spec: 'latest',
+120 silly mapToRegistry   type: 'tag' }
+121 silly mapToRegistry uri http://r.cnpmjs.org/vue
+122 verbose addNameRange registry:http://r.cnpmjs.org/vue not in flight; fetching
+123 verbose get http://r.cnpmjs.org/vue not expired, no request
+124 silly addNameRange number 2 { name: 'vue', range: '>=2.6.10 <3.0.0', hasData: true }
+125 silly addNameRange versions [ 'vue',
+125 silly addNameRange   [ '2.6.10',
+125 silly addNameRange     '2.6.9',
+125 silly addNameRange     '2.6.8',
+125 silly addNameRange     '2.6.7',
+125 silly addNameRange     '2.6.6',
+125 silly addNameRange     '2.6.5',
+125 silly addNameRange     '2.6.4',
+125 silly addNameRange     '2.6.3',
+125 silly addNameRange     '2.6.2',
+125 silly addNameRange     '2.6.1',
+125 silly addNameRange     '2.6.0',
+125 silly addNameRange     '2.6.0-beta.3',
+125 silly addNameRange     '2.6.0-beta.2',
+125 silly addNameRange     '2.6.0-beta.1',
+125 silly addNameRange     '2.5.22',
+125 silly addNameRange     '2.5.21',
+125 silly addNameRange     '2.5.20',
+125 silly addNameRange     '2.5.19',
+125 silly addNameRange     '2.5.18',
+125 silly addNameRange     '2.5.18-beta.0',
+125 silly addNameRange     '2.5.17',
+125 silly addNameRange     '2.5.17-beta.0',
+125 silly addNameRange     '2.5.16',
+125 silly addNameRange     '2.5.15',
+125 silly addNameRange     '2.5.14',
+125 silly addNameRange     '2.5.13',
+125 silly addNameRange     '2.5.12',
+125 silly addNameRange     '2.5.11',
+125 silly addNameRange     '2.5.10',
+125 silly addNameRange     '2.5.9',
+125 silly addNameRange     '2.5.8',
+125 silly addNameRange     '2.5.7',
+125 silly addNameRange     '2.5.6',
+125 silly addNameRange     '2.5.5',
+125 silly addNameRange     '2.5.4',
+125 silly addNameRange     '2.5.3',
+125 silly addNameRange     '2.5.2',
+125 silly addNameRange     '2.5.1',
+125 silly addNameRange     '2.5.0',
+125 silly addNameRange     '2.4.4',
+125 silly addNameRange     '2.4.3',
+125 silly addNameRange     '2.4.2',
+125 silly addNameRange     '2.4.1',
+125 silly addNameRange     '2.4.0',
+125 silly addNameRange     '2.3.4',
+125 silly addNameRange     '2.3.3',
+125 silly addNameRange     '2.3.2',
+125 silly addNameRange     '2.3.1',
+125 silly addNameRange     '2.3.0',
+125 silly addNameRange     '2.3.0-beta.1',
+125 silly addNameRange     '2.2.6',
+125 silly addNameRange     '2.2.5',
+125 silly addNameRange     '2.2.4',
+125 silly addNameRange     '2.2.3',
+125 silly addNameRange     '2.2.2',
+125 silly addNameRange     '2.2.1',
+125 silly addNameRange     '2.2.0',
+125 silly addNameRange     '2.2.0-beta.2',
+125 silly addNameRange     '2.2.0-beta.1',
+125 silly addNameRange     '2.1.10',
+125 silly addNameRange     '2.1.9',
+125 silly addNameRange     '2.1.8',
+125 silly addNameRange     '2.1.7',
+125 silly addNameRange     '2.1.6',
+125 silly addNameRange     '2.1.5',
+125 silly addNameRange     '2.1.4',
+125 silly addNameRange     '2.1.3',
+125 silly addNameRange     '2.1.2',
+125 silly addNameRange     '2.1.1',
+125 silly addNameRange     '2.1.0',
+125 silly addNameRange     '2.0.8',
+125 silly addNameRange     '2.0.7',
+125 silly addNameRange     '2.0.6',
+125 silly addNameRange     '2.0.5',
+125 silly addNameRange     '2.0.4',
+125 silly addNameRange     '2.0.3',
+125 silly addNameRange     '2.0.2',
+125 silly addNameRange     '2.0.1',
+125 silly addNameRange     '2.0.0',
+125 silly addNameRange     '2.0.0-rc.8',
+125 silly addNameRange     '1.0.28-csp',
+125 silly addNameRange     '1.0.28',
+125 silly addNameRange     '2.0.0-rc.7',
+125 silly addNameRange     '1.0.27-csp',
+125 silly addNameRange     '1.0.27',
+125 silly addNameRange     '2.0.0-rc.6',
+125 silly addNameRange     '2.0.0-rc.5',
+125 silly addNameRange     '2.0.0-rc.4',
+125 silly addNameRange     '2.0.0-rc.3',
+125 silly addNameRange     '2.0.0-rc.2',
+125 silly addNameRange     '2.0.0-rc.1',
+125 silly addNameRange     '2.0.0-beta.8',
+125 silly addNameRange     '2.0.0-beta.7',
+125 silly addNameRange     '2.0.0-beta.6',
+125 silly addNameRange     '2.0.0-beta.5',
+125 silly addNameRange     '2.0.0-beta.4',
+125 silly addNameRange     '2.0.0-beta.3',
+125 silly addNameRange     '2.0.0-beta.2',
+125 silly addNameRange     '2.0.0-beta.1',
+125 silly addNameRange     '1.0.26-csp',
+125 silly addNameRange     ... 150 more items ] ]
+126 silly addNamed vue@2.6.10
+127 verbose addNamed "2.6.10" is a plain semver version for vue
+128 silly cache afterAdd vue@2.6.10
+129 verbose afterAdd /Users/liuxiang/.npm/vue/2.6.10/package/package.json not in flight; writing
+130 verbose correctMkdir /Users/liuxiang/.npm correctMkdir not in flight; initializing
+131 verbose afterAdd /Users/liuxiang/.npm/vue/2.6.10/package/package.json written
+132 http 200 http://r.cnpmjs.org/vue-property-decorator
+133 verbose headers { server: 'nginx/1.15.6',
+133 verbose headers   date: 'Fri, 05 Jul 2019 07:23:00 GMT',
+133 verbose headers   'content-type': 'application/json; charset=utf-8',
+133 verbose headers   'transfer-encoding': 'chunked',
+133 verbose headers   connection: 'keep-alive',
+133 verbose headers   'x-current-requests': '1',
+133 verbose headers   vary: 'Origin',
+133 verbose headers   etag: 'W/"d28559dc2680940223ee74e9275ded83"',
+133 verbose headers   'x-readtime': '168',
+133 verbose headers   'content-encoding': 'gzip' }
+134 silly get cb [ 200,
+134 silly get   { server: 'nginx/1.15.6',
+134 silly get     date: 'Fri, 05 Jul 2019 07:23:00 GMT',
+134 silly get     'content-type': 'application/json; charset=utf-8',
+134 silly get     'transfer-encoding': 'chunked',
+134 silly get     connection: 'keep-alive',
+134 silly get     'x-current-requests': '1',
+134 silly get     vary: 'Origin',
+134 silly get     etag: 'W/"d28559dc2680940223ee74e9275ded83"',
+134 silly get     'x-readtime': '168',
+134 silly get     'content-encoding': 'gzip' } ]
+135 verbose get saving vue-property-decorator to /Users/liuxiang/.npm/r.cnpmjs.org/vue-property-decorator/.cache.json
+136 verbose correctMkdir /Users/liuxiang/.npm correctMkdir not in flight; initializing
+137 http 200 http://r.cnpmjs.org/vue-class-component
+138 verbose headers { server: 'nginx/1.15.6',
+138 verbose headers   date: 'Fri, 05 Jul 2019 07:23:00 GMT',
+138 verbose headers   'content-type': 'application/json; charset=utf-8',
+138 verbose headers   'transfer-encoding': 'chunked',
+138 verbose headers   connection: 'keep-alive',
+138 verbose headers   'x-current-requests': '1',
+138 verbose headers   vary: 'Origin',
+138 verbose headers   etag: 'W/"9f66883e16136044383da1394dc343fd"',
+138 verbose headers   'x-readtime': '172',
+138 verbose headers   'content-encoding': 'gzip' }
+139 silly get cb [ 200,
+139 silly get   { server: 'nginx/1.15.6',
+139 silly get     date: 'Fri, 05 Jul 2019 07:23:00 GMT',
+139 silly get     'content-type': 'application/json; charset=utf-8',
+139 silly get     'transfer-encoding': 'chunked',
+139 silly get     connection: 'keep-alive',
+139 silly get     'x-current-requests': '1',
+139 silly get     vary: 'Origin',
+139 silly get     etag: 'W/"9f66883e16136044383da1394dc343fd"',
+139 silly get     'x-readtime': '172',
+139 silly get     'content-encoding': 'gzip' } ]
+140 verbose get saving vue-class-component to /Users/liuxiang/.npm/r.cnpmjs.org/vue-class-component/.cache.json
+141 verbose correctMkdir /Users/liuxiang/.npm correctMkdir not in flight; initializing
+142 silly resolveWithNewModule vue-property-decorator@8.2.1 checking installable status
+143 silly cache add args [ 'vue-property-decorator@^8.1.0', null ]
+144 verbose cache add spec vue-property-decorator@^8.1.0
+145 silly cache add parsed spec Result {
+145 silly cache add   raw: 'vue-property-decorator@^8.1.0',
+145 silly cache add   scope: null,
+145 silly cache add   escapedName: 'vue-property-decorator',
+145 silly cache add   name: 'vue-property-decorator',
+145 silly cache add   rawSpec: '^8.1.0',
+145 silly cache add   spec: '>=8.1.0 <9.0.0',
+145 silly cache add   type: 'range' }
+146 silly addNamed vue-property-decorator@>=8.1.0 <9.0.0
+147 verbose addNamed ">=8.1.0 <9.0.0" is a valid semver range for vue-property-decorator
+148 silly addNameRange { name: 'vue-property-decorator',
+148 silly addNameRange   range: '>=8.1.0 <9.0.0',
+148 silly addNameRange   hasData: false }
+149 silly mapToRegistry name vue-property-decorator
+150 silly mapToRegistry using default registry
+151 silly mapToRegistry registry http://r.cnpmjs.org/
+152 silly mapToRegistry data Result {
+152 silly mapToRegistry   raw: 'vue-property-decorator',
+152 silly mapToRegistry   scope: null,
+152 silly mapToRegistry   escapedName: 'vue-property-decorator',
+152 silly mapToRegistry   name: 'vue-property-decorator',
+152 silly mapToRegistry   rawSpec: '',
+152 silly mapToRegistry   spec: 'latest',
+152 silly mapToRegistry   type: 'tag' }
+153 silly mapToRegistry uri http://r.cnpmjs.org/vue-property-decorator
+154 verbose addNameRange registry:http://r.cnpmjs.org/vue-property-decorator not in flight; fetching
+155 silly resolveWithNewModule vue-class-component@7.1.0 checking installable status
+156 silly cache add args [ 'vue-class-component@^7.0.2', null ]
+157 verbose cache add spec vue-class-component@^7.0.2
+158 silly cache add parsed spec Result {
+158 silly cache add   raw: 'vue-class-component@^7.0.2',
+158 silly cache add   scope: null,
+158 silly cache add   escapedName: 'vue-class-component',
+158 silly cache add   name: 'vue-class-component',
+158 silly cache add   rawSpec: '^7.0.2',
+158 silly cache add   spec: '>=7.0.2 <8.0.0',
+158 silly cache add   type: 'range' }
+159 silly addNamed vue-class-component@>=7.0.2 <8.0.0
+160 verbose addNamed ">=7.0.2 <8.0.0" is a valid semver range for vue-class-component
+161 silly addNameRange { name: 'vue-class-component',
+161 silly addNameRange   range: '>=7.0.2 <8.0.0',
+161 silly addNameRange   hasData: false }
+162 silly mapToRegistry name vue-class-component
+163 silly mapToRegistry using default registry
+164 silly mapToRegistry registry http://r.cnpmjs.org/
+165 silly mapToRegistry data Result {
+165 silly mapToRegistry   raw: 'vue-class-component',
+165 silly mapToRegistry   scope: null,
+165 silly mapToRegistry   escapedName: 'vue-class-component',
+165 silly mapToRegistry   name: 'vue-class-component',
+165 silly mapToRegistry   rawSpec: '',
+165 silly mapToRegistry   spec: 'latest',
+165 silly mapToRegistry   type: 'tag' }
+166 silly mapToRegistry uri http://r.cnpmjs.org/vue-class-component
+167 verbose addNameRange registry:http://r.cnpmjs.org/vue-class-component not in flight; fetching
+168 verbose get http://r.cnpmjs.org/vue-class-component not expired, no request
+169 silly addNameRange number 2 { name: 'vue-class-component',
+169 silly addNameRange   range: '>=7.0.2 <8.0.0',
+169 silly addNameRange   hasData: true }
+170 silly addNameRange versions [ 'vue-class-component',
+170 silly addNameRange   [ '7.1.0',
+170 silly addNameRange     '7.0.2',
+170 silly addNameRange     '7.0.1',
+170 silly addNameRange     '7.0.0',
+170 silly addNameRange     '6.3.2',
+170 silly addNameRange     '6.3.1',
+170 silly addNameRange     '6.3.0',
+170 silly addNameRange     '6.2.0',
+170 silly addNameRange     '6.1.2',
+170 silly addNameRange     '6.1.1',
+170 silly addNameRange     '6.1.0',
+170 silly addNameRange     '6.0.0',
+170 silly addNameRange     '5.0.2',
+170 silly addNameRange     '5.0.1',
+170 silly addNameRange     '5.0.0',
+170 silly addNameRange     '4.4.0',
+170 silly addNameRange     '4.3.1',
+170 silly addNameRange     '4.3.0',
+170 silly addNameRange     '4.2.0',
+170 silly addNameRange     '4.1.0',
+170 silly addNameRange     '4.0.1',
+170 silly addNameRange     '4.0.0',
+170 silly addNameRange     '3.2.0',
+170 silly addNameRange     '3.1.2',
+170 silly addNameRange     '3.1.1',
+170 silly addNameRange     '3.1.0',
+170 silly addNameRange     '3.0.0',
+170 silly addNameRange     '2.0.1',
+170 silly addNameRange     '2.0.0',
+170 silly addNameRange     '1.0.0' ] ]
+171 silly addNamed vue-class-component@7.1.0
+172 verbose addNamed "7.1.0" is a plain semver version for vue-class-component
+173 verbose get http://r.cnpmjs.org/vue-property-decorator not expired, no request
+174 silly addNameRange number 2 { name: 'vue-property-decorator',
+174 silly addNameRange   range: '>=8.1.0 <9.0.0',
+174 silly addNameRange   hasData: true }
+175 silly addNameRange versions [ 'vue-property-decorator',
+175 silly addNameRange   [ '8.2.1',
+175 silly addNameRange     '8.2.0',
+175 silly addNameRange     '8.1.1',
+175 silly addNameRange     '8.1.0',
+175 silly addNameRange     '8.0.0',
+175 silly addNameRange     '7.3.0',
+175 silly addNameRange     '7.2.0',
+175 silly addNameRange     '7.1.1',
+175 silly addNameRange     '7.1.0',
+175 silly addNameRange     '7.0.0',
+175 silly addNameRange     '6.1.0',
+175 silly addNameRange     '6.0.0',
+175 silly addNameRange     '5.3.0',
+175 silly addNameRange     '5.2.1',
+175 silly addNameRange     '5.2.0',
+175 silly addNameRange     '5.1.1',
+175 silly addNameRange     '5.1.0',
+175 silly addNameRange     '5.0.1',
+175 silly addNameRange     '5.0.0',
+175 silly addNameRange     '4.0.0',
+175 silly addNameRange     '3.4.0',
+175 silly addNameRange     '3.3.0',
+175 silly addNameRange     '3.2.1',
+175 silly addNameRange     '3.2.0',
+175 silly addNameRange     '3.1.0',
+175 silly addNameRange     '3.0.0',
+175 silly addNameRange     '2.1.0',
+175 silly addNameRange     '2.0.2',
+175 silly addNameRange     '2.0.1',
+175 silly addNameRange     '2.0.0' ] ]
+176 silly addNamed vue-property-decorator@8.2.1
+177 verbose addNamed "8.2.1" is a plain semver version for vue-property-decorator
+178 silly mapToRegistry name vue-class-component
+179 silly mapToRegistry using default registry
+180 silly mapToRegistry registry http://r.cnpmjs.org/
+181 silly mapToRegistry data Result {
+181 silly mapToRegistry   raw: 'vue-class-component',
+181 silly mapToRegistry   scope: null,
+181 silly mapToRegistry   escapedName: 'vue-class-component',
+181 silly mapToRegistry   name: 'vue-class-component',
+181 silly mapToRegistry   rawSpec: '',
+181 silly mapToRegistry   spec: 'latest',
+181 silly mapToRegistry   type: 'tag' }
+182 silly mapToRegistry uri http://r.cnpmjs.org/vue-class-component
+183 verbose addRemoteTarball http://r.cnpmjs.org/vue-class-component/download/vue-class-component-7.1.0.tgz not in flight; adding
+184 verbose addRemoteTarball [ 'http://r.cnpmjs.org/vue-class-component/download/vue-class-component-7.1.0.tgz',
+184 verbose addRemoteTarball   'b33efcb10e17236d684f70b1e96f1946ec793e87' ]
+185 info retry fetch attempt 1 at 15:23:00
+186 info attempt registry request try #1 at 15:23:00
+187 http fetch GET http://r.cnpmjs.org/vue-class-component/download/vue-class-component-7.1.0.tgz
+188 silly mapToRegistry name vue-property-decorator
+189 silly mapToRegistry using default registry
+190 silly mapToRegistry registry http://r.cnpmjs.org/
+191 silly mapToRegistry data Result {
+191 silly mapToRegistry   raw: 'vue-property-decorator',
+191 silly mapToRegistry   scope: null,
+191 silly mapToRegistry   escapedName: 'vue-property-decorator',
+191 silly mapToRegistry   name: 'vue-property-decorator',
+191 silly mapToRegistry   rawSpec: '',
+191 silly mapToRegistry   spec: 'latest',
+191 silly mapToRegistry   type: 'tag' }
+192 silly mapToRegistry uri http://r.cnpmjs.org/vue-property-decorator
+193 verbose addRemoteTarball http://r.cnpmjs.org/vue-property-decorator/download/vue-property-decorator-8.2.1.tgz not in flight; adding
+194 verbose addRemoteTarball [ 'http://r.cnpmjs.org/vue-property-decorator/download/vue-property-decorator-8.2.1.tgz',
+194 verbose addRemoteTarball   '3791662033b20d20d098cb20e86fd23842982508' ]
+195 info retry fetch attempt 1 at 15:23:00
+196 info attempt registry request try #1 at 15:23:00
+197 http fetch GET http://r.cnpmjs.org/vue-property-decorator/download/vue-property-decorator-8.2.1.tgz
+198 http 200 http://r.cnpmjs.org/vue-router
+199 verbose headers { server: 'nginx/1.15.6',
+199 verbose headers   date: 'Fri, 05 Jul 2019 07:23:00 GMT',
+199 verbose headers   'content-type': 'application/json; charset=utf-8',
+199 verbose headers   'transfer-encoding': 'chunked',
+199 verbose headers   connection: 'keep-alive',
+199 verbose headers   'x-current-requests': '1',
+199 verbose headers   vary: 'Origin',
+199 verbose headers   etag: 'W/"f32bfbab877af89d73373e99d25b2ee8"',
+199 verbose headers   'x-readtime': '69',
+199 verbose headers   'content-encoding': 'gzip' }
+200 silly get cb [ 200,
+200 silly get   { server: 'nginx/1.15.6',
+200 silly get     date: 'Fri, 05 Jul 2019 07:23:00 GMT',
+200 silly get     'content-type': 'application/json; charset=utf-8',
+200 silly get     'transfer-encoding': 'chunked',
+200 silly get     connection: 'keep-alive',
+200 silly get     'x-current-requests': '1',
+200 silly get     vary: 'Origin',
+200 silly get     etag: 'W/"f32bfbab877af89d73373e99d25b2ee8"',
+200 silly get     'x-readtime': '69',
+200 silly get     'content-encoding': 'gzip' } ]
+201 verbose get saving vue-router to /Users/liuxiang/.npm/r.cnpmjs.org/vue-router/.cache.json
+202 verbose correctMkdir /Users/liuxiang/.npm correctMkdir not in flight; initializing
+203 silly resolveWithNewModule vue-router@3.0.7 checking installable status
+204 silly cache add args [ 'vue-router@^3.0.3', null ]
+205 verbose cache add spec vue-router@^3.0.3
+206 silly cache add parsed spec Result {
+206 silly cache add   raw: 'vue-router@^3.0.3',
+206 silly cache add   scope: null,
+206 silly cache add   escapedName: 'vue-router',
+206 silly cache add   name: 'vue-router',
+206 silly cache add   rawSpec: '^3.0.3',
+206 silly cache add   spec: '>=3.0.3 <4.0.0',
+206 silly cache add   type: 'range' }
+207 silly addNamed vue-router@>=3.0.3 <4.0.0
+208 verbose addNamed ">=3.0.3 <4.0.0" is a valid semver range for vue-router
+209 silly addNameRange { name: 'vue-router', range: '>=3.0.3 <4.0.0', hasData: false }
+210 silly mapToRegistry name vue-router
+211 silly mapToRegistry using default registry
+212 silly mapToRegistry registry http://r.cnpmjs.org/
+213 silly mapToRegistry data Result {
+213 silly mapToRegistry   raw: 'vue-router',
+213 silly mapToRegistry   scope: null,
+213 silly mapToRegistry   escapedName: 'vue-router',
+213 silly mapToRegistry   name: 'vue-router',
+213 silly mapToRegistry   rawSpec: '',
+213 silly mapToRegistry   spec: 'latest',
+213 silly mapToRegistry   type: 'tag' }
+214 silly mapToRegistry uri http://r.cnpmjs.org/vue-router
+215 verbose addNameRange registry:http://r.cnpmjs.org/vue-router not in flight; fetching
+216 verbose get http://r.cnpmjs.org/vue-router not expired, no request
+217 silly addNameRange number 2 { name: 'vue-router', range: '>=3.0.3 <4.0.0', hasData: true }
+218 silly addNameRange versions [ 'vue-router',
+218 silly addNameRange   [ '3.0.7',
+218 silly addNameRange     '3.0.6',
+218 silly addNameRange     '3.0.5',
+218 silly addNameRange     '3.0.4',
+218 silly addNameRange     '3.0.3',
+218 silly addNameRange     '3.0.2',
+218 silly addNameRange     '3.0.1',
+218 silly addNameRange     '2.8.1',
+218 silly addNameRange     '3.0.0',
+218 silly addNameRange     '2.8.0',
+218 silly addNameRange     '2.7.0',
+218 silly addNameRange     '2.6.0',
+218 silly addNameRange     '2.5.3',
+218 silly addNameRange     '2.5.2',
+218 silly addNameRange     '2.5.1',
+218 silly addNameRange     '2.5.0',
+218 silly addNameRange     '2.4.0',
+218 silly addNameRange     '2.3.1',
+218 silly addNameRange     '2.3.0',
+218 silly addNameRange     '2.2.1',
+218 silly addNameRange     '2.2.0',
+218 silly addNameRange     '2.1.3',
+218 silly addNameRange     '2.1.2',
+218 silly addNameRange     '2.1.1',
+218 silly addNameRange     '2.1.0',
+218 silly addNameRange     '2.0.3',
+218 silly addNameRange     '2.0.2',
+218 silly addNameRange     '2.0.1',
+218 silly addNameRange     '2.0.0',
+218 silly addNameRange     '2.0.0-rc.7',
+218 silly addNameRange     '2.0.0-rc.6',
+218 silly addNameRange     '2.0.0-rc.5',
+218 silly addNameRange     '2.0.0-rc.4',
+218 silly addNameRange     '2.0.0-rc.3',
+218 silly addNameRange     '2.0.0-rc.2',
+218 silly addNameRange     '2.0.0-rc.1',
+218 silly addNameRange     '2.0.0-beta.4',
+218 silly addNameRange     '2.0.0-beta.3',
+218 silly addNameRange     '2.0.0-beta.2',
+218 silly addNameRange     '2.0.0-beta.1',
+218 silly addNameRange     '0.7.13',
+218 silly addNameRange     '0.7.12',
+218 silly addNameRange     '0.7.11',
+218 silly addNameRange     '0.7.10',
+218 silly addNameRange     '0.7.9',
+218 silly addNameRange     '0.7.8',
+218 silly addNameRange     '0.7.7',
+218 silly addNameRange     '0.7.6',
+218 silly addNameRange     '0.7.5',
+218 silly addNameRange     '0.7.4',
+218 silly addNameRange     '0.7.3',
+218 silly addNameRange     '0.7.2',
+218 silly addNameRange     '0.7.1',
+218 silly addNameRange     '0.7.0',
+218 silly addNameRange     '0.6.2',
+218 silly addNameRange     '0.6.1',
+218 silly addNameRange     '0.6.0',
+218 silly addNameRange     '0.5.2',
+218 silly addNameRange     '0.5.1',
+218 silly addNameRange     '0.5.0',
+218 silly addNameRange     '0.4.0' ] ]
+219 silly addNamed vue-router@3.0.7
+220 verbose addNamed "3.0.7" is a plain semver version for vue-router
+221 silly mapToRegistry name vue-router
+222 silly mapToRegistry using default registry
+223 silly mapToRegistry registry http://r.cnpmjs.org/
+224 silly mapToRegistry data Result {
+224 silly mapToRegistry   raw: 'vue-router',
+224 silly mapToRegistry   scope: null,
+224 silly mapToRegistry   escapedName: 'vue-router',
+224 silly mapToRegistry   name: 'vue-router',
+224 silly mapToRegistry   rawSpec: '',
+224 silly mapToRegistry   spec: 'latest',
+224 silly mapToRegistry   type: 'tag' }
+225 silly mapToRegistry uri http://r.cnpmjs.org/vue-router
+226 verbose addRemoteTarball http://r.cnpmjs.org/vue-router/download/vue-router-3.0.7.tgz not in flight; adding
+227 verbose addRemoteTarball [ 'http://r.cnpmjs.org/vue-router/download/vue-router-3.0.7.tgz',
+227 verbose addRemoteTarball   'b36ca107b4acb8ff5bc4ff824584059c23fcb87b' ]
+228 info retry fetch attempt 1 at 15:23:00
+229 info attempt registry request try #1 at 15:23:00
+230 http fetch GET http://r.cnpmjs.org/vue-router/download/vue-router-3.0.7.tgz
+231 http fetch 200 http://r.cnpmjs.org/vuex/download/vuex-3.1.1.tgz
+232 http fetch 200 http://r.cnpmjs.org/vue-class-component/download/vue-class-component-7.1.0.tgz
+233 silly fetchAndShaCheck shasum b33efcb10e17236d684f70b1e96f1946ec793e87
+234 verbose addTmpTarball /var/folders/k7/64lm_p812r3gzwb5pbl_gvvr0000gn/T/npm-97122-4299c2c5/r.cnpmjs.org/vue-class-component/download/vue-class-component-7.1.0.tgz not in flight; adding
+235 verbose addTmpTarball already have metadata; skipping unpack for vue-class-component@7.1.0
+236 verbose correctMkdir /Users/liuxiang/.npm correctMkdir not in flight; initializing
+237 silly cache afterAdd vue-class-component@7.1.0
+238 verbose afterAdd /Users/liuxiang/.npm/vue-class-component/7.1.0/package/package.json not in flight; writing
+239 verbose correctMkdir /Users/liuxiang/.npm correctMkdir not in flight; initializing
+240 verbose afterAdd /Users/liuxiang/.npm/vue-class-component/7.1.0/package/package.json written
+241 silly fetchAndShaCheck shasum 0c264bfe30cdbccf96ab9db3177d211828a5910e
+242 verbose addTmpTarball /var/folders/k7/64lm_p812r3gzwb5pbl_gvvr0000gn/T/npm-97122-4299c2c5/r.cnpmjs.org/vuex/download/vuex-3.1.1.tgz not in flight; adding
+243 verbose addTmpTarball already have metadata; skipping unpack for vuex@3.1.1
+244 verbose correctMkdir /Users/liuxiang/.npm correctMkdir not in flight; initializing
+245 silly cache afterAdd vuex@3.1.1
+246 verbose afterAdd /Users/liuxiang/.npm/vuex/3.1.1/package/package.json not in flight; writing
+247 verbose correctMkdir /Users/liuxiang/.npm correctMkdir not in flight; initializing
+248 verbose afterAdd /Users/liuxiang/.npm/vuex/3.1.1/package/package.json written
+249 http fetch 200 http://r.cnpmjs.org/vue-router/download/vue-router-3.0.7.tgz
+250 http fetch 200 http://r.cnpmjs.org/vue-property-decorator/download/vue-property-decorator-8.2.1.tgz
+251 silly fetchAndShaCheck shasum 3791662033b20d20d098cb20e86fd23842982508
+252 verbose addTmpTarball /var/folders/k7/64lm_p812r3gzwb5pbl_gvvr0000gn/T/npm-97122-4299c2c5/r.cnpmjs.org/vue-property-decorator/download/vue-property-decorator-8.2.1.tgz not in flight; adding
+253 verbose addTmpTarball already have metadata; skipping unpack for vue-property-decorator@8.2.1
+254 verbose correctMkdir /Users/liuxiang/.npm correctMkdir not in flight; initializing
+255 silly cache afterAdd vue-property-decorator@8.2.1
+256 verbose afterAdd /Users/liuxiang/.npm/vue-property-decorator/8.2.1/package/package.json not in flight; writing
+257 verbose correctMkdir /Users/liuxiang/.npm correctMkdir not in flight; initializing
+258 verbose afterAdd /Users/liuxiang/.npm/vue-property-decorator/8.2.1/package/package.json written
+259 silly fetchAndShaCheck shasum b36ca107b4acb8ff5bc4ff824584059c23fcb87b
+260 verbose addTmpTarball /var/folders/k7/64lm_p812r3gzwb5pbl_gvvr0000gn/T/npm-97122-4299c2c5/r.cnpmjs.org/vue-router/download/vue-router-3.0.7.tgz not in flight; adding
+261 verbose addTmpTarball already have metadata; skipping unpack for vue-router@3.0.7
+262 verbose correctMkdir /Users/liuxiang/.npm correctMkdir not in flight; initializing
+263 silly cache afterAdd vue-router@3.0.7
+264 verbose afterAdd /Users/liuxiang/.npm/vue-router/3.0.7/package/package.json not in flight; writing
+265 verbose correctMkdir /Users/liuxiang/.npm correctMkdir not in flight; initializing
+266 verbose afterAdd /Users/liuxiang/.npm/vue-router/3.0.7/package/package.json written
+267 silly fetchNamedPackageData @types/chai
+268 silly mapToRegistry name @types/chai
+269 silly mapToRegistry scope (from package name) @types
+270 verbose mapToRegistry no registry URL found in name for scope @types
+271 silly mapToRegistry using default registry
+272 silly mapToRegistry registry http://r.cnpmjs.org/
+273 silly mapToRegistry data Result {
+273 silly mapToRegistry   raw: '@types/chai',
+273 silly mapToRegistry   scope: '@types',
+273 silly mapToRegistry   escapedName: '@types%2fchai',
+273 silly mapToRegistry   name: '@types/chai',
+273 silly mapToRegistry   rawSpec: '',
+273 silly mapToRegistry   spec: 'latest',
+273 silly mapToRegistry   type: 'tag' }
+274 silly mapToRegistry uri http://r.cnpmjs.org/@types%2fchai
+275 silly fetchNamedPackageData @types/mocha
+276 silly mapToRegistry name @types/mocha
+277 silly mapToRegistry scope (from package name) @types
+278 verbose mapToRegistry no registry URL found in name for scope @types
+279 silly mapToRegistry using default registry
+280 silly mapToRegistry registry http://r.cnpmjs.org/
+281 silly mapToRegistry data Result {
+281 silly mapToRegistry   raw: '@types/mocha',
+281 silly mapToRegistry   scope: '@types',
+281 silly mapToRegistry   escapedName: '@types%2fmocha',
+281 silly mapToRegistry   name: '@types/mocha',
+281 silly mapToRegistry   rawSpec: '',
+281 silly mapToRegistry   spec: 'latest',
+281 silly mapToRegistry   type: 'tag' }
+282 silly mapToRegistry uri http://r.cnpmjs.org/@types%2fmocha
+283 silly fetchNamedPackageData @vue/test-utils
+284 silly mapToRegistry name @vue/test-utils
+285 silly mapToRegistry scope (from package name) @vue
+286 verbose mapToRegistry no registry URL found in name for scope @vue
+287 silly mapToRegistry using default registry
+288 silly mapToRegistry registry http://r.cnpmjs.org/
+289 silly mapToRegistry data Result {
+289 silly mapToRegistry   raw: '@vue/test-utils',
+289 silly mapToRegistry   scope: '@vue',
+289 silly mapToRegistry   escapedName: '@vue%2ftest-utils',
+289 silly mapToRegistry   name: '@vue/test-utils',
+289 silly mapToRegistry   rawSpec: '',
+289 silly mapToRegistry   spec: 'latest',
+289 silly mapToRegistry   type: 'tag' }
+290 silly mapToRegistry uri http://r.cnpmjs.org/@vue%2ftest-utils
+291 silly fetchNamedPackageData chai
+292 silly mapToRegistry name chai
+293 silly mapToRegistry using default registry
+294 silly mapToRegistry registry http://r.cnpmjs.org/
+295 silly mapToRegistry data Result {
+295 silly mapToRegistry   raw: 'chai',
+295 silly mapToRegistry   scope: null,
+295 silly mapToRegistry   escapedName: 'chai',
+295 silly mapToRegistry   name: 'chai',
+295 silly mapToRegistry   rawSpec: '',
+295 silly mapToRegistry   spec: 'latest',
+295 silly mapToRegistry   type: 'tag' }
+296 silly mapToRegistry uri http://r.cnpmjs.org/chai
+297 silly fetchNamedPackageData less
+298 silly mapToRegistry name less
+299 silly mapToRegistry using default registry
+300 silly mapToRegistry registry http://r.cnpmjs.org/
+301 silly mapToRegistry data Result {
+301 silly mapToRegistry   raw: 'less',
+301 silly mapToRegistry   scope: null,
+301 silly mapToRegistry   escapedName: 'less',
+301 silly mapToRegistry   name: 'less',
+301 silly mapToRegistry   rawSpec: '',
+301 silly mapToRegistry   spec: 'latest',
+301 silly mapToRegistry   type: 'tag' }
+302 silly mapToRegistry uri http://r.cnpmjs.org/less
+303 silly fetchNamedPackageData less-loader
+304 silly mapToRegistry name less-loader
+305 silly mapToRegistry using default registry
+306 silly mapToRegistry registry http://r.cnpmjs.org/
+307 silly mapToRegistry data Result {
+307 silly mapToRegistry   raw: 'less-loader',
+307 silly mapToRegistry   scope: null,
+307 silly mapToRegistry   escapedName: 'less-loader',
+307 silly mapToRegistry   name: 'less-loader',
+307 silly mapToRegistry   rawSpec: '',
+307 silly mapToRegistry   spec: 'latest',
+307 silly mapToRegistry   type: 'tag' }
+308 silly mapToRegistry uri http://r.cnpmjs.org/less-loader
+309 silly fetchNamedPackageData typescript
+310 silly mapToRegistry name typescript
+311 silly mapToRegistry using default registry
+312 silly mapToRegistry registry http://r.cnpmjs.org/
+313 silly mapToRegistry data Result {
+313 silly mapToRegistry   raw: 'typescript',
+313 silly mapToRegistry   scope: null,
+313 silly mapToRegistry   escapedName: 'typescript',
+313 silly mapToRegistry   name: 'typescript',
+313 silly mapToRegistry   rawSpec: '',
+313 silly mapToRegistry   spec: 'latest',
+313 silly mapToRegistry   type: 'tag' }
+314 silly mapToRegistry uri http://r.cnpmjs.org/typescript
+315 silly fetchNamedPackageData vue-template-compiler
+316 silly mapToRegistry name vue-template-compiler
+317 silly mapToRegistry using default registry
+318 silly mapToRegistry registry http://r.cnpmjs.org/
+319 silly mapToRegistry data Result {
+319 silly mapToRegistry   raw: 'vue-template-compiler',
+319 silly mapToRegistry   scope: null,
+319 silly mapToRegistry   escapedName: 'vue-template-compiler',
+319 silly mapToRegistry   name: 'vue-template-compiler',
+319 silly mapToRegistry   rawSpec: '',
+319 silly mapToRegistry   spec: 'latest',
+319 silly mapToRegistry   type: 'tag' }
+320 silly mapToRegistry uri http://r.cnpmjs.org/vue-template-compiler
+321 verbose request uri http://r.cnpmjs.org/@types%2fchai
+322 verbose request no auth needed
+323 info attempt registry request try #1 at 15:23:01
+324 http request GET http://r.cnpmjs.org/@types%2fchai
+325 verbose request uri http://r.cnpmjs.org/@types%2fmocha
+326 verbose request no auth needed
+327 info attempt registry request try #1 at 15:23:01
+328 http request GET http://r.cnpmjs.org/@types%2fmocha
+329 verbose request uri http://r.cnpmjs.org/@vue%2ftest-utils
+330 verbose request no auth needed
+331 info attempt registry request try #1 at 15:23:01
+332 http request GET http://r.cnpmjs.org/@vue%2ftest-utils
+333 verbose request uri http://r.cnpmjs.org/chai
+334 verbose request no auth needed
+335 info attempt registry request try #1 at 15:23:01
+336 http request GET http://r.cnpmjs.org/chai
+337 verbose request uri http://r.cnpmjs.org/less
+338 verbose request no auth needed
+339 info attempt registry request try #1 at 15:23:01
+340 http request GET http://r.cnpmjs.org/less
+341 verbose request uri http://r.cnpmjs.org/less-loader
+342 verbose request no auth needed
+343 info attempt registry request try #1 at 15:23:01
+344 http request GET http://r.cnpmjs.org/less-loader
+345 verbose request uri http://r.cnpmjs.org/typescript
+346 verbose request no auth needed
+347 info attempt registry request try #1 at 15:23:01
+348 http request GET http://r.cnpmjs.org/typescript
+349 verbose request uri http://r.cnpmjs.org/vue-template-compiler
+350 verbose request no auth needed
+351 info attempt registry request try #1 at 15:23:01
+352 verbose etag W/"9bbf242d5b227dc5d479921885f9e778"
+353 http request GET http://r.cnpmjs.org/vue-template-compiler
+354 http 200 http://r.cnpmjs.org/less-loader
+355 verbose headers { server: 'nginx/1.15.6',
+355 verbose headers   date: 'Fri, 05 Jul 2019 07:23:01 GMT',
+355 verbose headers   'content-type': 'application/json; charset=utf-8',
+355 verbose headers   'transfer-encoding': 'chunked',
+355 verbose headers   connection: 'keep-alive',
+355 verbose headers   'x-current-requests': '1',
+355 verbose headers   vary: 'Origin',
+355 verbose headers   etag: 'W/"57b05bc74da16046e022d04e805945c4"',
+355 verbose headers   'x-readtime': '74',
+355 verbose headers   'content-encoding': 'gzip' }
+356 silly get cb [ 200,
+356 silly get   { server: 'nginx/1.15.6',
+356 silly get     date: 'Fri, 05 Jul 2019 07:23:01 GMT',
+356 silly get     'content-type': 'application/json; charset=utf-8',
+356 silly get     'transfer-encoding': 'chunked',
+356 silly get     connection: 'keep-alive',
+356 silly get     'x-current-requests': '1',
+356 silly get     vary: 'Origin',
+356 silly get     etag: 'W/"57b05bc74da16046e022d04e805945c4"',
+356 silly get     'x-readtime': '74',
+356 silly get     'content-encoding': 'gzip' } ]
+357 verbose get saving less-loader to /Users/liuxiang/.npm/r.cnpmjs.org/less-loader/.cache.json
+358 verbose correctMkdir /Users/liuxiang/.npm correctMkdir not in flight; initializing
+359 silly resolveWithNewModule less-loader@4.1.0 checking installable status
+360 silly cache add args [ 'less-loader@^4.1.0', null ]
+361 verbose cache add spec less-loader@^4.1.0
+362 silly cache add parsed spec Result {
+362 silly cache add   raw: 'less-loader@^4.1.0',
+362 silly cache add   scope: null,
+362 silly cache add   escapedName: 'less-loader',
+362 silly cache add   name: 'less-loader',
+362 silly cache add   rawSpec: '^4.1.0',
+362 silly cache add   spec: '>=4.1.0 <5.0.0',
+362 silly cache add   type: 'range' }
+363 silly addNamed less-loader@>=4.1.0 <5.0.0
+364 verbose addNamed ">=4.1.0 <5.0.0" is a valid semver range for less-loader
+365 silly addNameRange { name: 'less-loader', range: '>=4.1.0 <5.0.0', hasData: false }
+366 silly mapToRegistry name less-loader
+367 silly mapToRegistry using default registry
+368 silly mapToRegistry registry http://r.cnpmjs.org/
+369 silly mapToRegistry data Result {
+369 silly mapToRegistry   raw: 'less-loader',
+369 silly mapToRegistry   scope: null,
+369 silly mapToRegistry   escapedName: 'less-loader',
+369 silly mapToRegistry   name: 'less-loader',
+369 silly mapToRegistry   rawSpec: '',
+369 silly mapToRegistry   spec: 'latest',
+369 silly mapToRegistry   type: 'tag' }
+370 silly mapToRegistry uri http://r.cnpmjs.org/less-loader
+371 verbose addNameRange registry:http://r.cnpmjs.org/less-loader not in flight; fetching
+372 verbose get http://r.cnpmjs.org/less-loader not expired, no request
+373 silly addNameRange number 2 { name: 'less-loader', range: '>=4.1.0 <5.0.0', hasData: true }
+374 silly addNameRange versions [ 'less-loader',
+374 silly addNameRange   [ '5.0.0',
+374 silly addNameRange     '4.1.0',
+374 silly addNameRange     '4.0.6',
+374 silly addNameRange     '4.0.5',
+374 silly addNameRange     '4.0.4',
+374 silly addNameRange     '4.0.3',
+374 silly addNameRange     '4.0.2',
+374 silly addNameRange     '4.0.1',
+374 silly addNameRange     '4.0.0',
+374 silly addNameRange     '3.0.0',
+374 silly addNameRange     '2.2.3',
+374 silly addNameRange     '2.2.2',
+374 silly addNameRange     '2.2.1',
+374 silly addNameRange     '2.2.0',
+374 silly addNameRange     '2.1.0',
+374 silly addNameRange     '2.0.0',
+374 silly addNameRange     '0.7.8',
+374 silly addNameRange     '0.7.7',
+374 silly addNameRange     '0.7.6',
+374 silly addNameRange     '0.7.5',
+374 silly addNameRange     '0.7.4',
+374 silly addNameRange     '0.7.3',
+374 silly addNameRange     '0.7.2',
+374 silly addNameRange     '0.7.1',
+374 silly addNameRange     '0.7.0',
+374 silly addNameRange     '0.6.2',
+374 silly addNameRange     '0.6.1',
+374 silly addNameRange     '0.6.0',
+374 silly addNameRange     '0.5.1',
+374 silly addNameRange     '0.5.0',
+374 silly addNameRange     '0.2.2',
+374 silly addNameRange     '0.2.1',
+374 silly addNameRange     '0.2.0',
+374 silly addNameRange     '0.1.3',
+374 silly addNameRange     '0.1.2',
+374 silly addNameRange     '0.1.1',
+374 silly addNameRange     '0.1.0' ] ]
+375 silly addNamed less-loader@4.1.0
+376 verbose addNamed "4.1.0" is a plain semver version for less-loader
+377 silly cache afterAdd less-loader@4.1.0
+378 verbose afterAdd /Users/liuxiang/.npm/less-loader/4.1.0/package/package.json not in flight; writing
+379 verbose correctMkdir /Users/liuxiang/.npm correctMkdir not in flight; initializing
+380 verbose afterAdd /Users/liuxiang/.npm/less-loader/4.1.0/package/package.json written
+381 http 304 http://r.cnpmjs.org/vue-template-compiler
+382 verbose headers { server: 'nginx/1.15.6',
+382 verbose headers   date: 'Fri, 05 Jul 2019 07:23:01 GMT',
+382 verbose headers   connection: 'keep-alive',
+382 verbose headers   'x-current-requests': '1',
+382 verbose headers   vary: 'Origin',
+382 verbose headers   etag: 'W/"9bbf242d5b227dc5d479921885f9e778"',
+382 verbose headers   'x-readtime': '158' }
+383 silly get cb [ 304,
+383 silly get   { server: 'nginx/1.15.6',
+383 silly get     date: 'Fri, 05 Jul 2019 07:23:01 GMT',
+383 silly get     connection: 'keep-alive',
+383 silly get     'x-current-requests': '1',
+383 silly get     vary: 'Origin',
+383 silly get     etag: 'W/"9bbf242d5b227dc5d479921885f9e778"',
+383 silly get     'x-readtime': '158' } ]
+384 verbose etag http://r.cnpmjs.org/vue-template-compiler from cache
+385 verbose get saving vue-template-compiler to /Users/liuxiang/.npm/r.cnpmjs.org/vue-template-compiler/.cache.json
+386 verbose correctMkdir /Users/liuxiang/.npm correctMkdir not in flight; initializing
+387 silly resolveWithNewModule vue-template-compiler@2.6.10 checking installable status
+388 silly cache add args [ 'vue-template-compiler@^2.6.10', null ]
+389 verbose cache add spec vue-template-compiler@^2.6.10
+390 silly cache add parsed spec Result {
+390 silly cache add   raw: 'vue-template-compiler@^2.6.10',
+390 silly cache add   scope: null,
+390 silly cache add   escapedName: 'vue-template-compiler',
+390 silly cache add   name: 'vue-template-compiler',
+390 silly cache add   rawSpec: '^2.6.10',
+390 silly cache add   spec: '>=2.6.10 <3.0.0',
+390 silly cache add   type: 'range' }
+391 silly addNamed vue-template-compiler@>=2.6.10 <3.0.0
+392 verbose addNamed ">=2.6.10 <3.0.0" is a valid semver range for vue-template-compiler
+393 silly addNameRange { name: 'vue-template-compiler',
+393 silly addNameRange   range: '>=2.6.10 <3.0.0',
+393 silly addNameRange   hasData: false }
+394 silly mapToRegistry name vue-template-compiler
+395 silly mapToRegistry using default registry
+396 silly mapToRegistry registry http://r.cnpmjs.org/
+397 silly mapToRegistry data Result {
+397 silly mapToRegistry   raw: 'vue-template-compiler',
+397 silly mapToRegistry   scope: null,
+397 silly mapToRegistry   escapedName: 'vue-template-compiler',
+397 silly mapToRegistry   name: 'vue-template-compiler',
+397 silly mapToRegistry   rawSpec: '',
+397 silly mapToRegistry   spec: 'latest',
+397 silly mapToRegistry   type: 'tag' }
+398 silly mapToRegistry uri http://r.cnpmjs.org/vue-template-compiler
+399 verbose addNameRange registry:http://r.cnpmjs.org/vue-template-compiler not in flight; fetching
+400 verbose get http://r.cnpmjs.org/vue-template-compiler not expired, no request
+401 silly addNameRange number 2 { name: 'vue-template-compiler',
+401 silly addNameRange   range: '>=2.6.10 <3.0.0',
+401 silly addNameRange   hasData: true }
+402 silly addNameRange versions [ 'vue-template-compiler',
+402 silly addNameRange   [ '2.6.10',
+402 silly addNameRange     '2.6.9',
+402 silly addNameRange     '2.6.8',
+402 silly addNameRange     '2.6.7',
+402 silly addNameRange     '2.6.6',
+402 silly addNameRange     '2.6.5',
+402 silly addNameRange     '2.6.4',
+402 silly addNameRange     '2.6.3',
+402 silly addNameRange     '2.6.2',
+402 silly addNameRange     '2.6.1',
+402 silly addNameRange     '2.6.0',
+402 silly addNameRange     '2.6.0-beta.3',
+402 silly addNameRange     '2.6.0-beta.2',
+402 silly addNameRange     '2.6.0-beta.1',
+402 silly addNameRange     '2.5.22',
+402 silly addNameRange     '2.5.21',
+402 silly addNameRange     '2.5.20',
+402 silly addNameRange     '2.5.19',
+402 silly addNameRange     '2.5.18',
+402 silly addNameRange     '2.5.18-beta.0',
+402 silly addNameRange     '2.5.17',
+402 silly addNameRange     '2.5.17-beta.0',
+402 silly addNameRange     '2.5.16',
+402 silly addNameRange     '2.5.15',
+402 silly addNameRange     '2.5.14',
+402 silly addNameRange     '2.5.13',
+402 silly addNameRange     '2.5.12',
+402 silly addNameRange     '2.5.11',
+402 silly addNameRange     '2.5.10',
+402 silly addNameRange     '2.5.9',
+402 silly addNameRange     '2.5.8',
+402 silly addNameRange     '2.5.7',
+402 silly addNameRange     '2.5.6',
+402 silly addNameRange     '2.5.5',
+402 silly addNameRange     '2.5.4',
+402 silly addNameRange     '2.5.3',
+402 silly addNameRange     '2.5.2',
+402 silly addNameRange     '2.5.1',
+402 silly addNameRange     '2.5.0',
+402 silly addNameRange     '2.4.4',
+402 silly addNameRange     '2.4.3',
+402 silly addNameRange     '2.4.2',
+402 silly addNameRange     '2.4.1',
+402 silly addNameRange     '2.4.0',
+402 silly addNameRange     '2.3.4',
+402 silly addNameRange     '2.3.3',
+402 silly addNameRange     '2.3.2',
+402 silly addNameRange     '2.3.1',
+402 silly addNameRange     '2.3.0',
+402 silly addNameRange     '2.3.0-beta.1',
+402 silly addNameRange     '2.2.6',
+402 silly addNameRange     '2.2.5',
+402 silly addNameRange     '2.2.4',
+402 silly addNameRange     '2.2.3',
+402 silly addNameRange     '2.2.2',
+402 silly addNameRange     '2.2.1',
+402 silly addNameRange     '2.2.0',
+402 silly addNameRange     '2.2.0-beta.2',
+402 silly addNameRange     '2.2.0-beta.1',
+402 silly addNameRange     '2.1.10',
+402 silly addNameRange     '2.1.9',
+402 silly addNameRange     '2.1.8',
+402 silly addNameRange     '2.1.7',
+402 silly addNameRange     '2.1.6',
+402 silly addNameRange     '2.1.5',
+402 silly addNameRange     '2.1.4',
+402 silly addNameRange     '2.1.3',
+402 silly addNameRange     '2.1.2',
+402 silly addNameRange     '2.1.1',
+402 silly addNameRange     '2.1.0',
+402 silly addNameRange     '2.0.8',
+402 silly addNameRange     '2.0.7',
+402 silly addNameRange     '2.0.6',
+402 silly addNameRange     '2.0.5',
+402 silly addNameRange     '2.0.4',
+402 silly addNameRange     '2.0.3',
+402 silly addNameRange     '2.0.2',
+402 silly addNameRange     '2.0.1',
+402 silly addNameRange     '2.0.0',
+402 silly addNameRange     '2.0.0-rc.8',
+402 silly addNameRange     '2.0.0-rc.7',
+402 silly addNameRange     '2.0.0-rc.6',
+402 silly addNameRange     '2.0.0-rc.5',
+402 silly addNameRange     '2.0.0-rc.4',
+402 silly addNameRange     '2.0.0-rc.3',
+402 silly addNameRange     '2.0.0-rc.2',
+402 silly addNameRange     '2.0.0-rc.1',
+402 silly addNameRange     '2.0.0-beta.8',
+402 silly addNameRange     '2.0.0-beta.7',
+402 silly addNameRange     '2.0.0-beta.6',
+402 silly addNameRange     '2.0.0-beta.5',
+402 silly addNameRange     '2.0.0-beta.4',
+402 silly addNameRange     '2.0.0-beta.3',
+402 silly addNameRange     '2.0.0-beta.2',
+402 silly addNameRange     '2.0.0-beta.1',
+402 silly addNameRange     '2.0.0-alpha.8',
+402 silly addNameRange     '2.0.0-alpha.7',
+402 silly addNameRange     '2.0.0-alpha.6',
+402 silly addNameRange     '2.0.0-alpha.5',
+402 silly addNameRange     '2.0.0-alpha.4',
+402 silly addNameRange     ... 4 more items ] ]
+403 silly addNamed vue-template-compiler@2.6.10
+404 verbose addNamed "2.6.10" is a plain semver version for vue-template-compiler
+405 silly cache afterAdd vue-template-compiler@2.6.10
+406 verbose afterAdd /Users/liuxiang/.npm/vue-template-compiler/2.6.10/package/package.json not in flight; writing
+407 verbose correctMkdir /Users/liuxiang/.npm correctMkdir not in flight; initializing
+408 verbose afterAdd /Users/liuxiang/.npm/vue-template-compiler/2.6.10/package/package.json written
+409 http 200 http://r.cnpmjs.org/less
+410 verbose headers { server: 'nginx/1.15.6',
+410 verbose headers   date: 'Fri, 05 Jul 2019 07:23:01 GMT',
+410 verbose headers   'content-type': 'application/json; charset=utf-8',
+410 verbose headers   'transfer-encoding': 'chunked',
+410 verbose headers   connection: 'keep-alive',
+410 verbose headers   'x-current-requests': '1',
+410 verbose headers   vary: 'Origin',
+410 verbose headers   etag: 'W/"b31c3af64c13a5cc91dfab9ca1e13033"',
+410 verbose headers   'x-readtime': '282',
+410 verbose headers   'content-encoding': 'gzip' }
+411 silly get cb [ 200,
+411 silly get   { server: 'nginx/1.15.6',
+411 silly get     date: 'Fri, 05 Jul 2019 07:23:01 GMT',
+411 silly get     'content-type': 'application/json; charset=utf-8',
+411 silly get     'transfer-encoding': 'chunked',
+411 silly get     connection: 'keep-alive',
+411 silly get     'x-current-requests': '1',
+411 silly get     vary: 'Origin',
+411 silly get     etag: 'W/"b31c3af64c13a5cc91dfab9ca1e13033"',
+411 silly get     'x-readtime': '282',
+411 silly get     'content-encoding': 'gzip' } ]
+412 verbose get saving less to /Users/liuxiang/.npm/r.cnpmjs.org/less/.cache.json
+413 verbose correctMkdir /Users/liuxiang/.npm correctMkdir not in flight; initializing
+414 http 200 http://r.cnpmjs.org/@types%2fchai
+415 verbose headers { server: 'nginx/1.15.6',
+415 verbose headers   date: 'Fri, 05 Jul 2019 07:23:01 GMT',
+415 verbose headers   'content-type': 'application/json; charset=utf-8',
+415 verbose headers   'transfer-encoding': 'chunked',
+415 verbose headers   connection: 'keep-alive',
+415 verbose headers   'x-current-requests': '1',
+415 verbose headers   vary: 'Origin',
+415 verbose headers   etag: 'W/"73676c9a0273742dda7cfe2e7a52ac74"',
+415 verbose headers   'x-readtime': '387',
+415 verbose headers   'content-encoding': 'gzip' }
+416 silly get cb [ 200,
+416 silly get   { server: 'nginx/1.15.6',
+416 silly get     date: 'Fri, 05 Jul 2019 07:23:01 GMT',
+416 silly get     'content-type': 'application/json; charset=utf-8',
+416 silly get     'transfer-encoding': 'chunked',
+416 silly get     connection: 'keep-alive',
+416 silly get     'x-current-requests': '1',
+416 silly get     vary: 'Origin',
+416 silly get     etag: 'W/"73676c9a0273742dda7cfe2e7a52ac74"',
+416 silly get     'x-readtime': '387',
+416 silly get     'content-encoding': 'gzip' } ]
+417 verbose get saving @types/chai to /Users/liuxiang/.npm/r.cnpmjs.org/_40types_252fchai/.cache.json
+418 verbose correctMkdir /Users/liuxiang/.npm correctMkdir not in flight; initializing
+419 silly resolveWithNewModule less@3.9.0 checking installable status
+420 silly cache add args [ 'less@^3.0.4', null ]
+421 verbose cache add spec less@^3.0.4
+422 silly cache add parsed spec Result {
+422 silly cache add   raw: 'less@^3.0.4',
+422 silly cache add   scope: null,
+422 silly cache add   escapedName: 'less',
+422 silly cache add   name: 'less',
+422 silly cache add   rawSpec: '^3.0.4',
+422 silly cache add   spec: '>=3.0.4 <4.0.0',
+422 silly cache add   type: 'range' }
+423 silly addNamed less@>=3.0.4 <4.0.0
+424 verbose addNamed ">=3.0.4 <4.0.0" is a valid semver range for less
+425 silly addNameRange { name: 'less', range: '>=3.0.4 <4.0.0', hasData: false }
+426 silly mapToRegistry name less
+427 silly mapToRegistry using default registry
+428 silly mapToRegistry registry http://r.cnpmjs.org/
+429 silly mapToRegistry data Result {
+429 silly mapToRegistry   raw: 'less',
+429 silly mapToRegistry   scope: null,
+429 silly mapToRegistry   escapedName: 'less',
+429 silly mapToRegistry   name: 'less',
+429 silly mapToRegistry   rawSpec: '',
+429 silly mapToRegistry   spec: 'latest',
+429 silly mapToRegistry   type: 'tag' }
+430 silly mapToRegistry uri http://r.cnpmjs.org/less
+431 verbose addNameRange registry:http://r.cnpmjs.org/less not in flight; fetching
+432 verbose get http://r.cnpmjs.org/less not expired, no request
+433 silly addNameRange number 2 { name: 'less', range: '>=3.0.4 <4.0.0', hasData: true }
+434 silly addNameRange versions [ 'less',
+434 silly addNameRange   [ '3.9.0',
+434 silly addNameRange     '3.8.1',
+434 silly addNameRange     '3.8.0',
+434 silly addNameRange     '3.7.1',
+434 silly addNameRange     '3.7.0',
+434 silly addNameRange     '3.6.0',
+434 silly addNameRange     '3.5.3',
+434 silly addNameRange     '3.5.2',
+434 silly addNameRange     '3.5.1',
+434 silly addNameRange     '3.5.0',
+434 silly addNameRange     '3.5.0-beta.7',
+434 silly addNameRange     '3.5.0-beta.6',
+434 silly addNameRange     '3.5.0-beta.5',
+434 silly addNameRange     '3.5.0-beta.4',
+434 silly addNameRange     '3.5.0-beta.3',
+434 silly addNameRange     '3.5.0-beta.2',
+434 silly addNameRange     '3.5.0-beta',
+434 silly addNameRange     '3.0.4',
+434 silly addNameRange     '3.0.2',
+434 silly addNameRange     '3.0.1',
+434 silly addNameRange     '3.0.0',
+434 silly addNameRange     '3.0.0-RC.2',
+434 silly addNameRange     '3.0.0-RC.1',
+434 silly addNameRange     '3.0.0-alpha.4',
+434 silly addNameRange     '2.7.3',
+434 silly addNameRange     '3.0.0-alpha.3',
+434 silly addNameRange     '3.0.0-alpha.2',
+434 silly addNameRange     '2.7.2',
+434 silly addNameRange     '3.0.0-alpha.1',
+434 silly addNameRange     '3.0.0-pre.4',
+434 silly addNameRange     '3.0.0-pre.3',
+434 silly addNameRange     '3.0.0-pre.2',
+434 silly addNameRange     '3.0.0-pre.1',
+434 silly addNameRange     '2.7.1',
+434 silly addNameRange     '2.7.0',
+434 silly addNameRange     '2.6.1',
+434 silly addNameRange     '2.6.0',
+434 silly addNameRange     '2.5.3',
+434 silly addNameRange     '2.5.2',
+434 silly addNameRange     '2.5.1',
+434 silly addNameRange     '2.5.0',
+434 silly addNameRange     '2.4.0',
+434 silly addNameRange     '2.3.1',
+434 silly addNameRange     '2.3.0',
+434 silly addNameRange     '2.2.0',
+434 silly addNameRange     '2.1.2',
+434 silly addNameRange     '2.1.1',
+434 silly addNameRange     '2.1.0',
+434 silly addNameRange     '2.0.0',
+434 silly addNameRange     '2.0.0-b3',
+434 silly addNameRange     '2.0.0-b2',
+434 silly addNameRange     '2.0.0-b1',
+434 silly addNameRange     '1.7.5',
+434 silly addNameRange     '1.7.4',
+434 silly addNameRange     '1.7.3',
+434 silly addNameRange     '1.7.1',
+434 silly addNameRange     '1.7.0',
+434 silly addNameRange     '1.6.3',
+434 silly addNameRange     '1.6.2',
+434 silly addNameRange     '1.6.1',
+434 silly addNameRange     '1.6.0',
+434 silly addNameRange     '1.5.1',
+434 silly addNameRange     '1.5.0',
+434 silly addNameRange     '1.5.0-b4',
+434 silly addNameRange     '1.5.0-b3',
+434 silly addNameRange     '1.5.0-b2',
+434 silly addNameRange     '1.5.0-b1',
+434 silly addNameRange     '1.4.2',
+434 silly addNameRange     '1.4.1',
+434 silly addNameRange     '1.4.0',
+434 silly addNameRange     '1.4.0-b4',
+434 silly addNameRange     '1.4.0-b3',
+434 silly addNameRange     '1.4.0-b2',
+434 silly addNameRange     '1.4.0-b1',
+434 silly addNameRange     '1.3.3',
+434 silly addNameRange     '1.3.2',
+434 silly addNameRange     '1.3.1',
+434 silly addNameRange     '1.3.0',
+434 silly addNameRange     '1.2.2',
+434 silly addNameRange     '1.2.1',
+434 silly addNameRange     '1.2.0',
+434 silly addNameRange     '1.1.6',
+434 silly addNameRange     '1.1.5',
+434 silly addNameRange     '1.1.4',
+434 silly addNameRange     '1.1.2',
+434 silly addNameRange     '1.1.1',
+434 silly addNameRange     '1.1.0',
+434 silly addNameRange     '1.0.44',
+434 silly addNameRange     '1.0.5',
+434 silly addNameRange     '1.0.41',
+434 silly addNameRange     '1.0.40',
+434 silly addNameRange     '1.0.14',
+434 silly addNameRange     '1.0.36',
+434 silly addNameRange     '1.0.32',
+434 silly addNameRange     '1.0.21',
+434 silly addNameRange     '1.0.19',
+434 silly addNameRange     '1.0.18',
+434 silly addNameRange     '1.0.11',
+434 silly addNameRange     '1.0.10' ] ]
+435 silly addNamed less@3.9.0
+436 verbose addNamed "3.9.0" is a plain semver version for less
+437 silly resolveWithNewModule @types/chai@4.1.7 checking installable status
+438 silly cache add args [ '@types/chai@^4.1.0', null ]
+439 verbose cache add spec @types/chai@^4.1.0
+440 silly cache add parsed spec Result {
+440 silly cache add   raw: '@types/chai@^4.1.0',
+440 silly cache add   scope: '@types',
+440 silly cache add   escapedName: '@types%2fchai',
+440 silly cache add   name: '@types/chai',
+440 silly cache add   rawSpec: '^4.1.0',
+440 silly cache add   spec: '>=4.1.0 <5.0.0',
+440 silly cache add   type: 'range' }
+441 silly addNamed @types/chai@>=4.1.0 <5.0.0
+442 verbose addNamed ">=4.1.0 <5.0.0" is a valid semver range for @types/chai
+443 silly addNameRange { name: '@types/chai', range: '>=4.1.0 <5.0.0', hasData: false }
+444 silly mapToRegistry name @types/chai
+445 silly mapToRegistry scope (from package name) @types
+446 verbose mapToRegistry no registry URL found in name for scope @types
+447 silly mapToRegistry using default registry
+448 silly mapToRegistry registry http://r.cnpmjs.org/
+449 silly mapToRegistry data Result {
+449 silly mapToRegistry   raw: '@types/chai',
+449 silly mapToRegistry   scope: '@types',
+449 silly mapToRegistry   escapedName: '@types%2fchai',
+449 silly mapToRegistry   name: '@types/chai',
+449 silly mapToRegistry   rawSpec: '',
+449 silly mapToRegistry   spec: 'latest',
+449 silly mapToRegistry   type: 'tag' }
+450 silly mapToRegistry uri http://r.cnpmjs.org/@types%2fchai
+451 verbose addNameRange registry:http://r.cnpmjs.org/@types%2fchai not in flight; fetching
+452 verbose get http://r.cnpmjs.org/@types%2fchai not expired, no request
+453 silly addNameRange number 2 { name: '@types/chai', range: '>=4.1.0 <5.0.0', hasData: true }
+454 silly addNameRange versions [ '@types/chai',
+454 silly addNameRange   [ '4.1.7',
+454 silly addNameRange     '4.1.6',
+454 silly addNameRange     '4.1.5',
+454 silly addNameRange     '4.1.4',
+454 silly addNameRange     '4.1.3',
+454 silly addNameRange     '4.1.2',
+454 silly addNameRange     '4.1.1',
+454 silly addNameRange     '4.1.0',
+454 silly addNameRange     '4.0.10',
+454 silly addNameRange     '4.0.9',
+454 silly addNameRange     '4.0.8',
+454 silly addNameRange     '4.0.7',
+454 silly addNameRange     '4.0.6',
+454 silly addNameRange     '4.0.5',
+454 silly addNameRange     '4.0.4',
+454 silly addNameRange     '4.0.3',
+454 silly addNameRange     '4.0.2',
+454 silly addNameRange     '4.0.1',
+454 silly addNameRange     '4.0.0',
+454 silly addNameRange     '3.5.2',
+454 silly addNameRange     '3.5.1',
+454 silly addNameRange     '3.5.0',
+454 silly addNameRange     '2.0.1',
+454 silly addNameRange     '3.4.35',
+454 silly addNameRange     '2.0.0',
+454 silly addNameRange     '3.4.34',
+454 silly addNameRange     '3.4.33',
+454 silly addNameRange     '3.4.32',
+454 silly addNameRange     '3.4.31',
+454 silly addNameRange     '3.4.30',
+454 silly addNameRange     '3.4.29',
+454 silly addNameRange     '3.4.28',
+454 silly addNameRange     '3.4.27-alpha',
+454 silly addNameRange     '3.4.26-alpha',
+454 silly addNameRange     '3.4.25-alpha',
+454 silly addNameRange     '3.4.24-alpha',
+454 silly addNameRange     '3.4.23-alpha',
+454 silly addNameRange     '3.4.22-alpha',
+454 silly addNameRange     '3.4.21-alpha',
+454 silly addNameRange     '3.4.16-alpha',
+454 silly addNameRange     '3.4.15-alpha' ] ]
+455 silly addNamed @types/chai@4.1.7
+456 verbose addNamed "4.1.7" is a plain semver version for @types/chai
+457 silly mapToRegistry name @types/chai
+458 silly mapToRegistry scope (from package name) @types
+459 verbose mapToRegistry no registry URL found in name for scope @types
+460 silly mapToRegistry using default registry
+461 silly mapToRegistry registry http://r.cnpmjs.org/
+462 silly mapToRegistry data Result {
+462 silly mapToRegistry   raw: '@types/chai',
+462 silly mapToRegistry   scope: '@types',
+462 silly mapToRegistry   escapedName: '@types%2fchai',
+462 silly mapToRegistry   name: '@types/chai',
+462 silly mapToRegistry   rawSpec: '',
+462 silly mapToRegistry   spec: 'latest',
+462 silly mapToRegistry   type: 'tag' }
+463 silly mapToRegistry uri http://r.cnpmjs.org/@types%2fchai
+464 verbose addRemoteTarball http://r.cnpmjs.org/@types/chai/download/@types/chai-4.1.7.tgz not in flight; adding
+465 verbose addRemoteTarball [ 'http://r.cnpmjs.org/@types/chai/download/@types/chai-4.1.7.tgz',
+465 verbose addRemoteTarball   '1b8e33b61a8c09cbe1f85133071baa0dbf9fa71a' ]
+466 silly cache afterAdd less@3.9.0
+467 verbose afterAdd /Users/liuxiang/.npm/less/3.9.0/package/package.json not in flight; writing
+468 verbose correctMkdir /Users/liuxiang/.npm correctMkdir not in flight; initializing
+469 info retry fetch attempt 1 at 15:23:01
+470 info attempt registry request try #1 at 15:23:01
+471 http fetch GET http://r.cnpmjs.org/@types/chai/download/@types/chai-4.1.7.tgz
+472 verbose afterAdd /Users/liuxiang/.npm/less/3.9.0/package/package.json written
+473 http 200 http://r.cnpmjs.org/chai
+474 verbose headers { server: 'nginx/1.15.6',
+474 verbose headers   date: 'Fri, 05 Jul 2019 07:23:01 GMT',
+474 verbose headers   'content-type': 'application/json; charset=utf-8',
+474 verbose headers   'transfer-encoding': 'chunked',
+474 verbose headers   connection: 'keep-alive',
+474 verbose headers   'x-current-requests': '1',
+474 verbose headers   vary: 'Origin',
+474 verbose headers   etag: 'W/"a2b6049d38815e7194c2566ec405b6a3"',
+474 verbose headers   'x-readtime': '386',
+474 verbose headers   'content-encoding': 'gzip' }
+475 silly get cb [ 200,
+475 silly get   { server: 'nginx/1.15.6',
+475 silly get     date: 'Fri, 05 Jul 2019 07:23:01 GMT',
+475 silly get     'content-type': 'application/json; charset=utf-8',
+475 silly get     'transfer-encoding': 'chunked',
+475 silly get     connection: 'keep-alive',
+475 silly get     'x-current-requests': '1',
+475 silly get     vary: 'Origin',
+475 silly get     etag: 'W/"a2b6049d38815e7194c2566ec405b6a3"',
+475 silly get     'x-readtime': '386',
+475 silly get     'content-encoding': 'gzip' } ]
+476 verbose get saving chai to /Users/liuxiang/.npm/r.cnpmjs.org/chai/.cache.json
+477 verbose correctMkdir /Users/liuxiang/.npm correctMkdir not in flight; initializing
+478 http 200 http://r.cnpmjs.org/@vue%2ftest-utils
+479 verbose headers { server: 'nginx/1.15.6',
+479 verbose headers   date: 'Fri, 05 Jul 2019 07:23:01 GMT',
+479 verbose headers   'content-type': 'application/json; charset=utf-8',
+479 verbose headers   'transfer-encoding': 'chunked',
+479 verbose headers   connection: 'keep-alive',
+479 verbose headers   'x-current-requests': '1',
+479 verbose headers   vary: 'Origin',
+479 verbose headers   etag: 'W/"87da515a1f94b073b2fd4ce70e48bb73"',
+479 verbose headers   'x-readtime': '499',
+479 verbose headers   'content-encoding': 'gzip' }
+480 silly get cb [ 200,
+480 silly get   { server: 'nginx/1.15.6',
+480 silly get     date: 'Fri, 05 Jul 2019 07:23:01 GMT',
+480 silly get     'content-type': 'application/json; charset=utf-8',
+480 silly get     'transfer-encoding': 'chunked',
+480 silly get     connection: 'keep-alive',
+480 silly get     'x-current-requests': '1',
+480 silly get     vary: 'Origin',
+480 silly get     etag: 'W/"87da515a1f94b073b2fd4ce70e48bb73"',
+480 silly get     'x-readtime': '499',
+480 silly get     'content-encoding': 'gzip' } ]
+481 verbose get saving @vue/test-utils to /Users/liuxiang/.npm/r.cnpmjs.org/_40vue_252ftest-utils/.cache.json
+482 verbose correctMkdir /Users/liuxiang/.npm correctMkdir not in flight; initializing
+483 silly resolveWithNewModule chai@4.2.0 checking installable status
+484 silly cache add args [ 'chai@^4.1.2', null ]
+485 verbose cache add spec chai@^4.1.2
+486 silly cache add parsed spec Result {
+486 silly cache add   raw: 'chai@^4.1.2',
+486 silly cache add   scope: null,
+486 silly cache add   escapedName: 'chai',
+486 silly cache add   name: 'chai',
+486 silly cache add   rawSpec: '^4.1.2',
+486 silly cache add   spec: '>=4.1.2 <5.0.0',
+486 silly cache add   type: 'range' }
+487 silly addNamed chai@>=4.1.2 <5.0.0
+488 verbose addNamed ">=4.1.2 <5.0.0" is a valid semver range for chai
+489 silly addNameRange { name: 'chai', range: '>=4.1.2 <5.0.0', hasData: false }
+490 silly mapToRegistry name chai
+491 silly mapToRegistry using default registry
+492 silly mapToRegistry registry http://r.cnpmjs.org/
+493 silly mapToRegistry data Result {
+493 silly mapToRegistry   raw: 'chai',
+493 silly mapToRegistry   scope: null,
+493 silly mapToRegistry   escapedName: 'chai',
+493 silly mapToRegistry   name: 'chai',
+493 silly mapToRegistry   rawSpec: '',
+493 silly mapToRegistry   spec: 'latest',
+493 silly mapToRegistry   type: 'tag' }
+494 silly mapToRegistry uri http://r.cnpmjs.org/chai
+495 verbose addNameRange registry:http://r.cnpmjs.org/chai not in flight; fetching
+496 silly resolveWithNewModule @vue/test-utils@1.0.0-beta.29 checking installable status
+497 silly cache add args [ '@vue/test-utils@1.0.0-beta.29', null ]
+498 verbose cache add spec @vue/test-utils@1.0.0-beta.29
+499 silly cache add parsed spec Result {
+499 silly cache add   raw: '@vue/test-utils@1.0.0-beta.29',
+499 silly cache add   scope: '@vue',
+499 silly cache add   escapedName: '@vue%2ftest-utils',
+499 silly cache add   name: '@vue/test-utils',
+499 silly cache add   rawSpec: '1.0.0-beta.29',
+499 silly cache add   spec: '1.0.0-beta.29',
+499 silly cache add   type: 'version' }
+500 silly addNamed @vue/test-utils@1.0.0-beta.29
+501 verbose addNamed "1.0.0-beta.29" is a plain semver version for @vue/test-utils
+502 silly mapToRegistry name @vue/test-utils
+503 silly mapToRegistry scope (from package name) @vue
+504 verbose mapToRegistry no registry URL found in name for scope @vue
+505 silly mapToRegistry using default registry
+506 silly mapToRegistry registry http://r.cnpmjs.org/
+507 silly mapToRegistry data Result {
+507 silly mapToRegistry   raw: '@vue/test-utils',
+507 silly mapToRegistry   scope: '@vue',
+507 silly mapToRegistry   escapedName: '@vue%2ftest-utils',
+507 silly mapToRegistry   name: '@vue/test-utils',
+507 silly mapToRegistry   rawSpec: '',
+507 silly mapToRegistry   spec: 'latest',
+507 silly mapToRegistry   type: 'tag' }
+508 silly mapToRegistry uri http://r.cnpmjs.org/@vue%2ftest-utils
+509 verbose addNameVersion registry:http://r.cnpmjs.org/@vue%2ftest-utils not in flight; fetching
+510 verbose get http://r.cnpmjs.org/@vue%2ftest-utils not expired, no request
+511 verbose get http://r.cnpmjs.org/chai not expired, no request
+512 silly addNameRange number 2 { name: 'chai', range: '>=4.1.2 <5.0.0', hasData: true }
+513 silly addNameRange versions [ 'chai',
+513 silly addNameRange   [ '4.2.0',
+513 silly addNameRange     '4.1.2',
+513 silly addNameRange     '4.1.1',
+513 silly addNameRange     '4.1.0',
+513 silly addNameRange     '4.0.2',
+513 silly addNameRange     '4.0.1',
+513 silly addNameRange     '4.0.0',
+513 silly addNameRange     '4.0.0-canary.2',
+513 silly addNameRange     '4.0.0-canary.1',
+513 silly addNameRange     '3.5.0',
+513 silly addNameRange     '3.4.1',
+513 silly addNameRange     '3.4.0',
+513 silly addNameRange     '3.3.0',
+513 silly addNameRange     '3.2.0',
+513 silly addNameRange     '3.1.0',
+513 silly addNameRange     '3.0.0',
+513 silly addNameRange     '2.3.0',
+513 silly addNameRange     '2.2.0',
+513 silly addNameRange     '2.1.2',
+513 silly addNameRange     '2.1.1',
+513 silly addNameRange     '2.1.0',
+513 silly addNameRange     '2.0.0',
+513 silly addNameRange     '1.10.0',
+513 silly addNameRange     '1.9.2',
+513 silly addNameRange     '1.9.1',
+513 silly addNameRange     '1.9.0',
+513 silly addNameRange     '1.8.1',
+513 silly addNameRange     '1.8.0',
+513 silly addNameRange     '1.7.2',
+513 silly addNameRange     '1.7.1',
+513 silly addNameRange     '1.7.0',
+513 silly addNameRange     '1.6.1',
+513 silly addNameRange     '1.6.0',
+513 silly addNameRange     '1.5.0',
+513 silly addNameRange     '1.4.2',
+513 silly addNameRange     '1.4.1',
+513 silly addNameRange     '1.4.0',
+513 silly addNameRange     '1.3.0',
+513 silly addNameRange     '1.2.0',
+513 silly addNameRange     '1.1.1',
+513 silly addNameRange     '1.1.0',
+513 silly addNameRange     '1.0.4',
+513 silly addNameRange     '1.0.3',
+513 silly addNameRange     '1.0.2',
+513 silly addNameRange     '1.0.1',
+513 silly addNameRange     '1.0.0',
+513 silly addNameRange     '0.5.3',
+513 silly addNameRange     '0.5.2',
+513 silly addNameRange     '0.5.1',
+513 silly addNameRange     '0.5.0',
+513 silly addNameRange     '0.4.2',
+513 silly addNameRange     '0.4.1',
+513 silly addNameRange     '0.4.0',
+513 silly addNameRange     '0.3.4',
+513 silly addNameRange     '0.3.3',
+513 silly addNameRange     '0.3.2',
+513 silly addNameRange     '0.3.1',
+513 silly addNameRange     '0.3.0',
+513 silly addNameRange     '0.2.4',
+513 silly addNameRange     '0.2.3',
+513 silly addNameRange     '0.2.2',
+513 silly addNameRange     '0.2.1',
+513 silly addNameRange     '0.2.0',
+513 silly addNameRange     '0.1.7',
+513 silly addNameRange     '0.1.6',
+513 silly addNameRange     '0.1.5',
+513 silly addNameRange     '0.1.4',
+513 silly addNameRange     '0.1.3',
+513 silly addNameRange     '0.1.2',
+513 silly addNameRange     '0.1.1',
+513 silly addNameRange     '0.1.0',
+513 silly addNameRange     '0.0.2',
+513 silly addNameRange     '0.0.1' ] ]
+514 silly addNamed chai@4.2.0
+515 verbose addNamed "4.2.0" is a plain semver version for chai
+516 silly mapToRegistry name @vue/test-utils
+517 silly mapToRegistry scope (from package name) @vue
+518 verbose mapToRegistry no registry URL found in name for scope @vue
+519 silly mapToRegistry using default registry
+520 silly mapToRegistry registry http://r.cnpmjs.org/
+521 silly mapToRegistry data Result {
+521 silly mapToRegistry   raw: '@vue/test-utils',
+521 silly mapToRegistry   scope: '@vue',
+521 silly mapToRegistry   escapedName: '@vue%2ftest-utils',
+521 silly mapToRegistry   name: '@vue/test-utils',
+521 silly mapToRegistry   rawSpec: '',
+521 silly mapToRegistry   spec: 'latest',
+521 silly mapToRegistry   type: 'tag' }
+522 silly mapToRegistry uri http://r.cnpmjs.org/@vue%2ftest-utils
+523 verbose addRemoteTarball http://r.cnpmjs.org/@vue/test-utils/download/@vue/test-utils-1.0.0-beta.29.tgz not in flight; adding
+524 verbose addRemoteTarball [ 'http://r.cnpmjs.org/@vue/test-utils/download/@vue/test-utils-1.0.0-beta.29.tgz',
+524 verbose addRemoteTarball   'c942cf25e891cf081b6a03332b4ae1ef430726f0' ]
+525 silly mapToRegistry name chai
+526 silly mapToRegistry using default registry
+527 silly mapToRegistry registry http://r.cnpmjs.org/
+528 silly mapToRegistry data Result {
+528 silly mapToRegistry   raw: 'chai',
+528 silly mapToRegistry   scope: null,
+528 silly mapToRegistry   escapedName: 'chai',
+528 silly mapToRegistry   name: 'chai',
+528 silly mapToRegistry   rawSpec: '',
+528 silly mapToRegistry   spec: 'latest',
+528 silly mapToRegistry   type: 'tag' }
+529 silly mapToRegistry uri http://r.cnpmjs.org/chai
+530 verbose addRemoteTarball http://r.cnpmjs.org/chai/download/chai-4.2.0.tgz not in flight; adding
+531 verbose addRemoteTarball [ 'http://r.cnpmjs.org/chai/download/chai-4.2.0.tgz',
+531 verbose addRemoteTarball   '760aa72cf20e3795e84b12877ce0e83737aa29e5' ]
+532 info retry fetch attempt 1 at 15:23:01
+533 info attempt registry request try #1 at 15:23:01
+534 http fetch GET http://r.cnpmjs.org/chai/download/chai-4.2.0.tgz
+535 info retry fetch attempt 1 at 15:23:01
+536 info attempt registry request try #1 at 15:23:01
+537 http fetch GET http://r.cnpmjs.org/@vue/test-utils/download/@vue/test-utils-1.0.0-beta.29.tgz
+538 http 200 http://r.cnpmjs.org/@types%2fmocha
+539 verbose headers { server: 'nginx/1.15.6',
+539 verbose headers   date: 'Fri, 05 Jul 2019 07:23:01 GMT',
+539 verbose headers   'content-type': 'application/json; charset=utf-8',
+539 verbose headers   'transfer-encoding': 'chunked',
+539 verbose headers   connection: 'keep-alive',
+539 verbose headers   'x-current-requests': '1',
+539 verbose headers   vary: 'Origin',
+539 verbose headers   etag: 'W/"3755f1322e23ba2b47809f1880477bb3"',
+539 verbose headers   'x-readtime': '482',
+539 verbose headers   'content-encoding': 'gzip' }
+540 silly get cb [ 200,
+540 silly get   { server: 'nginx/1.15.6',
+540 silly get     date: 'Fri, 05 Jul 2019 07:23:01 GMT',
+540 silly get     'content-type': 'application/json; charset=utf-8',
+540 silly get     'transfer-encoding': 'chunked',
+540 silly get     connection: 'keep-alive',
+540 silly get     'x-current-requests': '1',
+540 silly get     vary: 'Origin',
+540 silly get     etag: 'W/"3755f1322e23ba2b47809f1880477bb3"',
+540 silly get     'x-readtime': '482',
+540 silly get     'content-encoding': 'gzip' } ]
+541 verbose get saving @types/mocha to /Users/liuxiang/.npm/r.cnpmjs.org/_40types_252fmocha/.cache.json
+542 verbose correctMkdir /Users/liuxiang/.npm correctMkdir not in flight; initializing
+543 silly resolveWithNewModule @types/mocha@5.2.7 checking installable status
+544 silly cache add args [ '@types/mocha@^5.2.4', null ]
+545 verbose cache add spec @types/mocha@^5.2.4
+546 silly cache add parsed spec Result {
+546 silly cache add   raw: '@types/mocha@^5.2.4',
+546 silly cache add   scope: '@types',
+546 silly cache add   escapedName: '@types%2fmocha',
+546 silly cache add   name: '@types/mocha',
+546 silly cache add   rawSpec: '^5.2.4',
+546 silly cache add   spec: '>=5.2.4 <6.0.0',
+546 silly cache add   type: 'range' }
+547 silly addNamed @types/mocha@>=5.2.4 <6.0.0
+548 verbose addNamed ">=5.2.4 <6.0.0" is a valid semver range for @types/mocha
+549 silly addNameRange { name: '@types/mocha', range: '>=5.2.4 <6.0.0', hasData: false }
+550 silly mapToRegistry name @types/mocha
+551 silly mapToRegistry scope (from package name) @types
+552 verbose mapToRegistry no registry URL found in name for scope @types
+553 silly mapToRegistry using default registry
+554 silly mapToRegistry registry http://r.cnpmjs.org/
+555 silly mapToRegistry data Result {
+555 silly mapToRegistry   raw: '@types/mocha',
+555 silly mapToRegistry   scope: '@types',
+555 silly mapToRegistry   escapedName: '@types%2fmocha',
+555 silly mapToRegistry   name: '@types/mocha',
+555 silly mapToRegistry   rawSpec: '',
+555 silly mapToRegistry   spec: 'latest',
+555 silly mapToRegistry   type: 'tag' }
+556 silly mapToRegistry uri http://r.cnpmjs.org/@types%2fmocha
+557 verbose addNameRange registry:http://r.cnpmjs.org/@types%2fmocha not in flight; fetching
+558 verbose get http://r.cnpmjs.org/@types%2fmocha not expired, no request
+559 silly addNameRange number 2 { name: '@types/mocha', range: '>=5.2.4 <6.0.0', hasData: true }
+560 silly addNameRange versions [ '@types/mocha',
+560 silly addNameRange   [ '5.2.7',
+560 silly addNameRange     '5.2.6',
+560 silly addNameRange     '5.2.5',
+560 silly addNameRange     '5.2.4',
+560 silly addNameRange     '5.2.3',
+560 silly addNameRange     '5.2.2',
+560 silly addNameRange     '5.2.1',
+560 silly addNameRange     '5.2.0',
+560 silly addNameRange     '5.1.0',
+560 silly addNameRange     '5.0.0',
+560 silly addNameRange     '2.2.48',
+560 silly addNameRange     '2.2.47',
+560 silly addNameRange     '2.2.46',
+560 silly addNameRange     '2.2.45',
+560 silly addNameRange     '2.2.44',
+560 silly addNameRange     '2.2.43',
+560 silly addNameRange     '2.2.42',
+560 silly addNameRange     '2.2.41',
+560 silly addNameRange     '2.2.40',
+560 silly addNameRange     '2.2.39',
+560 silly addNameRange     '2.2.38',
+560 silly addNameRange     '2.2.37',
+560 silly addNameRange     '2.2.36',
+560 silly addNameRange     '2.2.35',
+560 silly addNameRange     '2.2.34',
+560 silly addNameRange     '2.2.33',
+560 silly addNameRange     '2.2.32',
+560 silly addNameRange     '2.2.31',
+560 silly addNameRange     '2.2.30',
+560 silly addNameRange     '2.2.29',
+560 silly addNameRange     '2.2.28',
+560 silly addNameRange     '2.2.27',
+560 silly addNameRange     '2.2.26-alpha',
+560 silly addNameRange     '2.2.25-alpha',
+560 silly addNameRange     '2.2.24-alpha',
+560 silly addNameRange     '2.2.23-alpha',
+560 silly addNameRange     '2.2.22-alpha',
+560 silly addNameRange     '2.2.21-alpha',
+560 silly addNameRange     '2.2.20-alpha',
+560 silly addNameRange     '2.2.15-alpha',
+560 silly addNameRange     '2.2.14-alpha' ] ]
+561 silly addNamed @types/mocha@5.2.7
+562 verbose addNamed "5.2.7" is a plain semver version for @types/mocha
+563 silly mapToRegistry name @types/mocha
+564 silly mapToRegistry scope (from package name) @types
+565 verbose mapToRegistry no registry URL found in name for scope @types
+566 silly mapToRegistry using default registry
+567 silly mapToRegistry registry http://r.cnpmjs.org/
+568 silly mapToRegistry data Result {
+568 silly mapToRegistry   raw: '@types/mocha',
+568 silly mapToRegistry   scope: '@types',
+568 silly mapToRegistry   escapedName: '@types%2fmocha',
+568 silly mapToRegistry   name: '@types/mocha',
+568 silly mapToRegistry   rawSpec: '',
+568 silly mapToRegistry   spec: 'latest',
+568 silly mapToRegistry   type: 'tag' }
+569 silly mapToRegistry uri http://r.cnpmjs.org/@types%2fmocha
+570 verbose addRemoteTarball http://r.cnpmjs.org/@types/mocha/download/@types/mocha-5.2.7.tgz not in flight; adding
+571 verbose addRemoteTarball [ 'http://r.cnpmjs.org/@types/mocha/download/@types/mocha-5.2.7.tgz',
+571 verbose addRemoteTarball   '315d570ccb56c53452ff8638738df60726d5b6ea' ]
+572 info retry fetch attempt 1 at 15:23:02
+573 info attempt registry request try #1 at 15:23:02
+574 http fetch GET http://r.cnpmjs.org/@types/mocha/download/@types/mocha-5.2.7.tgz
+575 http fetch 200 http://r.cnpmjs.org/@types/chai/download/@types/chai-4.1.7.tgz
+576 silly fetchAndShaCheck shasum 1b8e33b61a8c09cbe1f85133071baa0dbf9fa71a
+577 verbose addTmpTarball /var/folders/k7/64lm_p812r3gzwb5pbl_gvvr0000gn/T/npm-97122-4299c2c5/r.cnpmjs.org/_40types/chai/download/_40types/chai-4.1.7.tgz not in flight; adding
+578 verbose addTmpTarball already have metadata; skipping unpack for @types/chai@4.1.7
+579 verbose correctMkdir /Users/liuxiang/.npm correctMkdir not in flight; initializing
+580 silly cache afterAdd @types/chai@4.1.7
+581 verbose afterAdd /Users/liuxiang/.npm/@types/chai/4.1.7/package/package.json not in flight; writing
+582 verbose correctMkdir /Users/liuxiang/.npm correctMkdir not in flight; initializing
+583 verbose afterAdd /Users/liuxiang/.npm/@types/chai/4.1.7/package/package.json written
+584 http fetch 200 http://r.cnpmjs.org/@vue/test-utils/download/@vue/test-utils-1.0.0-beta.29.tgz
+585 http fetch 200 http://r.cnpmjs.org/@types/mocha/download/@types/mocha-5.2.7.tgz
+586 silly fetchAndShaCheck shasum 315d570ccb56c53452ff8638738df60726d5b6ea
+587 verbose addTmpTarball /var/folders/k7/64lm_p812r3gzwb5pbl_gvvr0000gn/T/npm-97122-4299c2c5/r.cnpmjs.org/_40types/mocha/download/_40types/mocha-5.2.7.tgz not in flight; adding
+588 verbose addTmpTarball already have metadata; skipping unpack for @types/mocha@5.2.7
+589 verbose correctMkdir /Users/liuxiang/.npm correctMkdir not in flight; initializing
+590 silly cache afterAdd @types/mocha@5.2.7
+591 verbose afterAdd /Users/liuxiang/.npm/@types/mocha/5.2.7/package/package.json not in flight; writing
+592 verbose correctMkdir /Users/liuxiang/.npm correctMkdir not in flight; initializing
+593 verbose afterAdd /Users/liuxiang/.npm/@types/mocha/5.2.7/package/package.json written
+594 http fetch 200 http://r.cnpmjs.org/chai/download/chai-4.2.0.tgz
+595 silly fetchAndShaCheck shasum c942cf25e891cf081b6a03332b4ae1ef430726f0
+596 verbose addTmpTarball /var/folders/k7/64lm_p812r3gzwb5pbl_gvvr0000gn/T/npm-97122-4299c2c5/r.cnpmjs.org/_40vue/test-utils/download/_40vue/test-utils-1.0.0-beta.29.tgz not in flight; adding
+597 verbose addTmpTarball already have metadata; skipping unpack for @vue/test-utils@1.0.0-beta.29
+598 verbose correctMkdir /Users/liuxiang/.npm correctMkdir not in flight; initializing
+599 silly cache afterAdd @vue/test-utils@1.0.0-beta.29
+600 verbose afterAdd /Users/liuxiang/.npm/@vue/test-utils/1.0.0-beta.29/package/package.json not in flight; writing
+601 verbose correctMkdir /Users/liuxiang/.npm correctMkdir not in flight; initializing
+602 verbose afterAdd /Users/liuxiang/.npm/@vue/test-utils/1.0.0-beta.29/package/package.json written
+603 http 200 http://r.cnpmjs.org/typescript
+604 verbose headers { server: 'nginx/1.15.6',
+604 verbose headers   date: 'Fri, 05 Jul 2019 07:23:02 GMT',
+604 verbose headers   'content-type': 'application/json; charset=utf-8',
+604 verbose headers   'transfer-encoding': 'chunked',
+604 verbose headers   connection: 'keep-alive',
+604 verbose headers   'x-current-requests': '1',
+604 verbose headers   vary: 'Origin',
+604 verbose headers   etag: 'W/"80571dd9e47a48e6866b407e85a83d4b"',
+604 verbose headers   'x-readtime': '638',
+604 verbose headers   'content-encoding': 'gzip' }
+605 silly get cb [ 200,
+605 silly get   { server: 'nginx/1.15.6',
+605 silly get     date: 'Fri, 05 Jul 2019 07:23:02 GMT',
+605 silly get     'content-type': 'application/json; charset=utf-8',
+605 silly get     'transfer-encoding': 'chunked',
+605 silly get     connection: 'keep-alive',
+605 silly get     'x-current-requests': '1',
+605 silly get     vary: 'Origin',
+605 silly get     etag: 'W/"80571dd9e47a48e6866b407e85a83d4b"',
+605 silly get     'x-readtime': '638',
+605 silly get     'content-encoding': 'gzip' } ]
+606 verbose get saving typescript to /Users/liuxiang/.npm/r.cnpmjs.org/typescript/.cache.json
+607 verbose correctMkdir /Users/liuxiang/.npm correctMkdir not in flight; initializing
+608 silly resolveWithNewModule typescript@3.5.2 checking installable status
+609 silly cache add args [ 'typescript@^3.4.3', null ]
+610 verbose cache add spec typescript@^3.4.3
+611 silly cache add parsed spec Result {
+611 silly cache add   raw: 'typescript@^3.4.3',
+611 silly cache add   scope: null,
+611 silly cache add   escapedName: 'typescript',
+611 silly cache add   name: 'typescript',
+611 silly cache add   rawSpec: '^3.4.3',
+611 silly cache add   spec: '>=3.4.3 <4.0.0',
+611 silly cache add   type: 'range' }
+612 silly addNamed typescript@>=3.4.3 <4.0.0
+613 verbose addNamed ">=3.4.3 <4.0.0" is a valid semver range for typescript
+614 silly addNameRange { name: 'typescript', range: '>=3.4.3 <4.0.0', hasData: false }
+615 silly mapToRegistry name typescript
+616 silly mapToRegistry using default registry
+617 silly mapToRegistry registry http://r.cnpmjs.org/
+618 silly mapToRegistry data Result {
+618 silly mapToRegistry   raw: 'typescript',
+618 silly mapToRegistry   scope: null,
+618 silly mapToRegistry   escapedName: 'typescript',
+618 silly mapToRegistry   name: 'typescript',
+618 silly mapToRegistry   rawSpec: '',
+618 silly mapToRegistry   spec: 'latest',
+618 silly mapToRegistry   type: 'tag' }
+619 silly mapToRegistry uri http://r.cnpmjs.org/typescript
+620 verbose addNameRange registry:http://r.cnpmjs.org/typescript not in flight; fetching
+621 verbose get http://r.cnpmjs.org/typescript not expired, no request
+622 silly addNameRange number 2 { name: 'typescript', range: '>=3.4.3 <4.0.0', hasData: true }
+623 silly addNameRange versions [ 'typescript',
+623 silly addNameRange   [ '3.6.0-dev.20190704',
+623 silly addNameRange     '3.6.0-dev.20190703',
+623 silly addNameRange     '3.6.0-dev.20190702',
+623 silly addNameRange     '3.6.0-dev.20190701',
+623 silly addNameRange     '3.6.0-dev.20190629',
+623 silly addNameRange     '3.6.0-dev.20190628',
+623 silly addNameRange     '3.6.0-dev.20190627',
+623 silly addNameRange     '3.6.0-dev.20190626',
+623 silly addNameRange     '3.6.0-dev.20190625',
+623 silly addNameRange     '3.6.0-dev.20190623',
+623 silly addNameRange     '3.6.0-dev.20190622',
+623 silly addNameRange     '3.6.0-dev.20190621',
+623 silly addNameRange     '3.6.0-dev.20190620',
+623 silly addNameRange     '3.6.0-dev.20190619',
+623 silly addNameRange     '3.6.0-dev.20190618',
+623 silly addNameRange     '3.6.0-dev.20190615',
+623 silly addNameRange     '3.6.0-dev.20190614',
+623 silly addNameRange     '3.5.2',
+623 silly addNameRange     '3.6.0-dev.20190613',
+623 silly addNameRange     '3.6.0-dev.20190612',
+623 silly addNameRange     '3.6.0-dev.20190611',
+623 silly addNameRange     '3.6.0-dev.20190608',
+623 silly addNameRange     '3.6.0-dev.20190607',
+623 silly addNameRange     '3.6.0-dev.20190606',
+623 silly addNameRange     '3.6.0-dev.20190604',
+623 silly addNameRange     '3.6.0-dev.20190603',
+623 silly addNameRange     '3.6.0-dev.20190602',
+623 silly addNameRange     '3.6.0-dev.20190601',
+623 silly addNameRange     '3.6.0-dev.20190531',
+623 silly addNameRange     '3.6.0-dev.20190530',
+623 silly addNameRange     '3.5.1',
+623 silly addNameRange     '3.5.0-dev.20190529',
+623 silly addNameRange     '3.5.0-dev.20190525',
+623 silly addNameRange     '3.5.0-dev.20190524',
+623 silly addNameRange     '3.5.0-dev.20190523',
+623 silly addNameRange     '3.5.0-dev.20190522',
+623 silly addNameRange     '3.5.0-dev.20190521',
+623 silly addNameRange     '3.5.0-dev.20190518',
+623 silly addNameRange     '3.5.0-dev.20190517',
+623 silly addNameRange     '3.5.0-rc',
+623 silly addNameRange     '3.5.0-dev.20190516',
+623 silly addNameRange     '3.5.0-dev.20190515',
+623 silly addNameRange     '3.5.0-dev.20190514',
+623 silly addNameRange     '3.5.0-dev.20190512',
+623 silly addNameRange     '3.5.0-dev.20190511',
+623 silly addNameRange     '3.5.0-dev.20190509',
+623 silly addNameRange     '3.5.0-dev.20190508',
+623 silly addNameRange     '3.5.0-dev.20190507',
+623 silly addNameRange     '3.5.0-dev.20190504',
+623 silly addNameRange     '3.5.0-dev.20190503',
+623 silly addNameRange     '3.5.0-dev.20190502',
+623 silly addNameRange     '3.5.0-dev.20190501',
+623 silly addNameRange     '3.5.0-dev.20190430',
+623 silly addNameRange     '3.5.0-dev.20190427',
+623 silly addNameRange     '3.5.0-dev.20190426',
+623 silly addNameRange     '3.5.0-dev.20190425',
+623 silly addNameRange     '3.5.0-dev.20190424',
+623 silly addNameRange     '3.4.5',
+623 silly addNameRange     '3.5.0-dev.20190423',
+623 silly addNameRange     '3.5.0-dev.20190420',
+623 silly addNameRange     '3.5.0-dev.20190419',
+623 silly addNameRange     '3.4.4',
+623 silly addNameRange     '3.5.0-dev.20190418',
+623 silly addNameRange     '3.5.0-dev.20190417',
+623 silly addNameRange     '3.5.0-dev.20190416',
+623 silly addNameRange     '3.5.0-dev.20190413',
+623 silly addNameRange     '3.5.0-dev.20190412',
+623 silly addNameRange     '3.5.0-dev.20190411',
+623 silly addNameRange     '3.5.0-dev.20190410',
+623 silly addNameRange     '3.4.3',
+623 silly addNameRange     '3.5.0-dev.20190409',
+623 silly addNameRange     '3.4.3-insiders.20190408',
+623 silly addNameRange     '3.5.0-dev.20190407',
+623 silly addNameRange     '3.5.0-dev.20190406',
+623 silly addNameRange     '3.4.2',
+623 silly addNameRange     '3.5.0-dev.20190405',
+623 silly addNameRange     '3.5.0-dev.20190404',
+623 silly addNameRange     '3.4.0-dev.20190403',
+623 silly addNameRange     '3.4.0-dev.20190330',
+623 silly addNameRange     '3.4.1',
+623 silly addNameRange     '3.4.0-dev.20190329',
+623 silly addNameRange     '3.4.0-dev.20190328',
+623 silly addNameRange     '3.4.0-dev.20190327',
+623 silly addNameRange     '3.4.0-dev.20190326',
+623 silly addNameRange     '3.4.0-dev.20190323',
+623 silly addNameRange     '3.4.0-dev.20190322',
+623 silly addNameRange     '3.4.0-dev.20190321',
+623 silly addNameRange     '3.4.0-dev.20190320',
+623 silly addNameRange     '3.3.4000',
+623 silly addNameRange     '3.4.0-dev.20190319',
+623 silly addNameRange     '3.4.0-dev.20190316',
+623 silly addNameRange     '3.4.0-rc',
+623 silly addNameRange     '3.4.0-dev.20190315',
+623 silly addNameRange     '3.4.0-dev.20190314',
+623 silly addNameRange     '3.4.0-dev.20190313',
+623 silly addNameRange     '3.4.0-dev.20190312',
+623 silly addNameRange     '3.4.0-dev.20190311',
+623 silly addNameRange     '3.4.0-dev.20190310',
+623 silly addNameRange     '3.4.0-dev.20190309',
+623 silly addNameRange     '3.4.0-dev.20190308',
+623 silly addNameRange     ... 1221 more items ] ]
+624 silly addNamed typescript@3.5.2
+625 verbose addNamed "3.5.2" is a plain semver version for typescript
+626 silly mapToRegistry name typescript
+627 silly mapToRegistry using default registry
+628 silly mapToRegistry registry http://r.cnpmjs.org/
+629 silly mapToRegistry data Result {
+629 silly mapToRegistry   raw: 'typescript',
+629 silly mapToRegistry   scope: null,
+629 silly mapToRegistry   escapedName: 'typescript',
+629 silly mapToRegistry   name: 'typescript',
+629 silly mapToRegistry   rawSpec: '',
+629 silly mapToRegistry   spec: 'latest',
+629 silly mapToRegistry   type: 'tag' }
+630 silly mapToRegistry uri http://r.cnpmjs.org/typescript
+631 verbose addRemoteTarball http://r.cnpmjs.org/typescript/download/typescript-3.5.2.tgz not in flight; adding
+632 verbose addRemoteTarball [ 'http://r.cnpmjs.org/typescript/download/typescript-3.5.2.tgz',
+632 verbose addRemoteTarball   'a09e1dc69bc9551cadf17dba10ee42cf55e5d56c' ]
+633 info retry fetch attempt 1 at 15:23:04
+634 info attempt registry request try #1 at 15:23:04
+635 http fetch GET http://r.cnpmjs.org/typescript/download/typescript-3.5.2.tgz
+636 http fetch 200 http://r.cnpmjs.org/typescript/download/typescript-3.5.2.tgz
+637 silly fetchAndShaCheck shasum 760aa72cf20e3795e84b12877ce0e83737aa29e5
+638 verbose addTmpTarball /var/folders/k7/64lm_p812r3gzwb5pbl_gvvr0000gn/T/npm-97122-4299c2c5/r.cnpmjs.org/chai/download/chai-4.2.0.tgz not in flight; adding
+639 verbose addTmpTarball already have metadata; skipping unpack for chai@4.2.0
+640 verbose correctMkdir /Users/liuxiang/.npm correctMkdir not in flight; initializing
+641 silly cache afterAdd chai@4.2.0
+642 verbose afterAdd /Users/liuxiang/.npm/chai/4.2.0/package/package.json not in flight; writing
+643 verbose correctMkdir /Users/liuxiang/.npm correctMkdir not in flight; initializing
+644 verbose afterAdd /Users/liuxiang/.npm/chai/4.2.0/package/package.json written
+645 silly fetchAndShaCheck shasum a09e1dc69bc9551cadf17dba10ee42cf55e5d56c
+646 silly rollbackFailedOptional Starting
+647 silly rollbackFailedOptional Finishing
+648 silly runTopLevelLifecycles Finishing
+649 silly install printInstalled
+650 verbose stack Error: shasum check failed for /var/folders/k7/64lm_p812r3gzwb5pbl_gvvr0000gn/T/npm-97122-4299c2c5/r.cnpmjs.org/typescript/download/typescript-3.5.2.tgz
+650 verbose stack Expected: a09e1dc69bc9551cadf17dba10ee42cf55e5d56c
+650 verbose stack Actual:   4a9283e87d5f6c14bb5cba4dafa77c432ef5f4f9
+650 verbose stack From:     http://r.cnpmjs.org/typescript/download/typescript-3.5.2.tgz
+650 verbose stack     at /Users/liuxiang/node_modules/npm/node_modules/sha/index.js:25:8
+650 verbose stack     at ReadStream.<anonymous> (/Users/liuxiang/node_modules/npm/node_modules/sha/index.js:72:7)
+650 verbose stack     at emitNone (events.js:111:20)
+650 verbose stack     at ReadStream.emit (events.js:208:7)
+650 verbose stack     at endReadableNT (_stream_readable.js:1056:12)
+650 verbose stack     at _combinedTickCallback (internal/process/next_tick.js:138:11)
+650 verbose stack     at process._tickCallback (internal/process/next_tick.js:180:9)
+651 verbose cwd /Users/liuxiang/typescript-vue-demo
+652 error Darwin 18.5.0
+653 error argv "/Users/liuxiang/.nvm/versions/node/v8.9.2/bin/node" "/Users/liuxiang/node_modules/.bin/npm" "install" "--loglevel" "error"
+654 error node v8.9.2
+655 error npm  v3.10.10
+656 error shasum check failed for /var/folders/k7/64lm_p812r3gzwb5pbl_gvvr0000gn/T/npm-97122-4299c2c5/r.cnpmjs.org/typescript/download/typescript-3.5.2.tgz
+656 error Expected: a09e1dc69bc9551cadf17dba10ee42cf55e5d56c
+656 error Actual:   4a9283e87d5f6c14bb5cba4dafa77c432ef5f4f9
+656 error From:     http://r.cnpmjs.org/typescript/download/typescript-3.5.2.tgz
+657 error If you need help, you may report this error at:
+657 error     <https://github.com/npm/npm/issues>
+658 verbose exit [ 1, true ]
