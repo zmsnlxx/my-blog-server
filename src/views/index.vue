@@ -1,18 +1,59 @@
 <template>
-    <div class="home">
+    <div class="entrance">
         <canvas id="sakura"></canvas>
+        <div class="content">
+            <div class="home-header">
+                <img class="home-logo"
+                     src="../assets/userLogo.jpeg"
+                     alt="biaochenxuying logo"/>
+            </div>
+            <div class="home-body">
+                <div class="list">
+                    <router-link v-for="(item,index) in data" :key="index" class="link" :to="item.jump">
+                        {{ item.label }}
+                    </router-link>
+                </div>
+                <div class="introduce"> 时光正好，未来可期，加油 ！</div>
+            </div>
+        </div>
     </div>
 </template>
 
 <script lang="ts">
     // 满屏落花效果
     import {Component, Vue} from "vue-property-decorator";
+    import {Action,Getter} from "vuex-class";
+    import jsCookie from "js-cookie";
 
     declare var document: any;
 
     @Component({})
     export default class Home extends Vue {
-        mounted() {
+        @Action setUserInfo: any;
+        @Getter user:any;
+        data: Array<Types.HeaderName> = [
+            {label: "首页", jump: "/home"},
+            {label: "编辑", jump: "/edit"},
+            {label: "查找", jump: "/home"},
+            {label: "待定", jump: "/home"},
+            {label: "待定", jump: "/home"},
+            {label: "待定", jump: "/home"},
+            {label: "待定", jump: "/home"},
+            {label: "待定", jump: "/home"},
+        ];
+        private $api: any;
+
+
+        async mounted() {
+
+            if (jsCookie.get("email")) {
+                const oldCookie: string = jsCookie.get("email") || "";
+                const cookie: string = this.$util.DecodeCookie(oldCookie);
+                const {code, data} = (await this.$api.getUserInfo({cookie})).data;
+                if (code === 0) {
+                    this.setUserInfo(data);
+                }
+            }
             let sakura_point_vsh: string = `
     uniform mat4 uProjection;
     uniform mat4 uModelview;
@@ -934,6 +975,7 @@
 
                 return ret;
             }
+
             function useEffect(fxobj: any, srctex: any) {
                 var prog: any = fxobj.program;
                 useShader(prog);
@@ -1266,7 +1308,7 @@
     }
 </script>
 <style lang="less" scoped>
-    .home {
+    .entrance {
         position: fixed;
         left: 0;
         top: 0;
@@ -1281,10 +1323,100 @@
             text-align: center;
             padding-top: 12%;
 
-            .content-body {
-                width: 40%;
-                margin: 0 auto;
+            .home-logo {
+                width: 220px;
+                border-radius: 50%;
+                animation: mylogo 3s;
+                -moz-animation: mylogo 3s; /* Firefox */
+                -webkit-animation: mylogo 3s; /* Safari and Chrome */
+                -o-animation: mylogo 3s; /* Opera */
+                animation-iteration-count: infinite;
             }
+
+            .home-header {
+                .link {
+                    display: block;
+                }
+            }
+
+            .home-body {
+                padding-top: 20px;
+
+                .list {
+                    .link {
+                        display: inline-block;
+                        padding: 20px;
+                        color: #409eff;
+                        min-width: 80px;
+                        text-decoration: none;
+                    }
+                }
+            }
+
+            .introduce {
+                padding-top: 20px;
+                color: #fff;
+            }
+        }
+    }
+
+    @keyframes mylogo {
+        0% {
+            transform: rotate(0deg) scale(0.8, 0.8);
+            opacity: 1;
+        }
+        25% {
+            transform: rotate(0deg) scale(1, 1);
+            opacity: 0.8;
+        }
+        100% {
+            transform: rotate(0deg) scale(0.8, 0.8);
+            opacity: 1;
+        }
+    }
+
+    @-moz-keyframes mylogo {
+        0% {
+            transform: rotate(0deg) scale(0.8, 0.8);
+            opacity: 1;
+        }
+        25% {
+            transform: rotate(0deg) scale(1, 1);
+            opacity: 0.8;
+        }
+        100% {
+            transform: rotate(0deg) scale(0.8, 0.8);
+            opacity: 1;
+        }
+    }
+
+    @-webkit-keyframes mylogo {
+        0% {
+            transform: rotate(0deg) scale(0.8, 0.8);
+            opacity: 1;
+        }
+        25% {
+            transform: rotate(0deg) scale(1, 1);
+            opacity: 0.8;
+        }
+        100% {
+            transform: rotate(0deg) scale(0.8, 0.8);
+            opacity: 1;
+        }
+    }
+
+    @-o-keyframes mylogo {
+        0% {
+            transform: rotate(0deg) scale(0.8, 0.8);
+            opacity: 1;
+        }
+        25% {
+            transform: rotate(0deg) scale(1, 1);
+            opacity: 0.8;
+        }
+        100% {
+            transform: rotate(0deg) scale(0.8, 0.8);
+            opacity: 1;
         }
     }
 </style>

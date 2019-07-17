@@ -23,7 +23,7 @@
                                           autocomplete="new-password"></el-input>
                             </el-form-item>
                             <el-form-item>
-                                <el-button type="primary" @click="login">登录</el-button>
+                                <el-button type="primary" @click="goLogin">登录</el-button>
                             </el-form-item>
                         </el-form>
                     </div>
@@ -43,6 +43,20 @@
             password: "",
         };
         protected loginShow: boolean = false;
+        protected $api: any;
+
+        protected goLogin():void  {
+            this.$api.login(this.userForm).then((req: Types.InterfaceData) => {
+                const {code, data} = req.data;
+                if (code === 0) {
+                    this.$router.push({path: "/"});
+                } else {
+                    this.$message.error(data.message);
+                }
+            }).catch((err: any) => {
+                console.log(err);
+            });
+        }
 
         mounted() {
             let sakura_point_vsh: string = `
@@ -1298,22 +1312,6 @@
             setTimeout(() => {
                 this.loginShow = true;
             }, 500);
-        }
-
-        /**
-         *
-         */
-        login() {
-            // this.$api.login(this.userForm).then((req: any) => {
-            //     const {code, data} = req.data;
-            //     if (code === 0) {
-            //         this.$router.push({path: "/"});
-            //     } else {
-            //         this.$message.error(data.message);
-            //     }
-            // }).catch((err: any) => {
-            //     console.log(err);
-            // });
         }
 
     }

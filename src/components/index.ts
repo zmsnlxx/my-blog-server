@@ -3,7 +3,7 @@ import LabelNav from './label.vue';
 import ListNav from './list.vue';
 import SmallLabel from './Small-label.vue';
 import CommentNav from './comment.vue';
-
+import MarkDown from './MarkDown/index.vue';
 
 export default {
     install(Vue: any) {
@@ -12,6 +12,7 @@ export default {
         Vue.component('ListNav', ListNav);
         Vue.component('SmallLabel', SmallLabel);
         Vue.component('CommentNav', CommentNav);
+        Vue.component('MarkDown', MarkDown);
     },
 };
 
