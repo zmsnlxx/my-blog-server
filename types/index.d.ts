@@ -14,6 +14,15 @@ export interface HeaderName {
     jump: string;
 }
 
+export interface ArticleClass {
+    label: string;
+    icon: string;
+}
+
+export interface ArticleTitle {
+    title: string;
+}
+
 
 declare module 'vue/types/vue' {
     export interface Vue {

@@ -17,7 +17,7 @@
 <style>
     @import 'assets/css/common.less';
 
-    html, body {
+    html,body,#app{
         margin: 0;
         height: 100%;
     }

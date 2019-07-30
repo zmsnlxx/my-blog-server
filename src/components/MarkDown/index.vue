@@ -3,30 +3,37 @@
         <div class="md-title">
             <ul class="cf">
                 <li>
-                    <span>插入图片</span>
+                    <el-tooltip class="item" effect="dark" content="插入图片" placement="top">
+                        <i style="font-size: 30px;line-height:60px" class="el-icon-picture"></i>
+                    </el-tooltip>
                     <input type="file" class="uploadFile" @change="insertImg">
                 </li>
                 <li @click="maskBol=true">
-                    <span>插入链接</span>
+                    <el-tooltip class="item" effect="dark" content="插入链接" placement="top">
+                        <i style="font-size: 30px;line-height:60px" class="el-icon-link"></i>
+                    </el-tooltip>
                 </li>
                 <li @click="insertCode">
-                    <span>代码块</span>
+                    <el-tooltip class="item" effect="dark" content="插入代码" placement="top">
+                        <i style="font-size: 30px;line-height:60px" class="el-icon-tickets"></i>
+                    </el-tooltip>
                 </li>
-                <li @click="setCursorPosition($refs.text, '***')">
-                    <span>分割线</span>
+                <li>
+                    <el-dropdown>
+                        <span class="el-dropdown-link" style="color: black;font-size: 30px">B</span>
+                        <el-dropdown-menu slot="dropdown">
+                            <el-dropdown-item @click.native="setCursorPosition($refs.text, '**', 1)">斜体</el-dropdown-item>
+                            <el-dropdown-item @click.native="setCursorPosition($refs.text, '> ', 2)">引用</el-dropdown-item>
+                            <el-dropdown-item @click.native="setCursorPosition($refs.text, '****', 2)">粗体</el-dropdown-item>
+                        </el-dropdown-menu>
+                    </el-dropdown>
                 </li>
-                <li @click="setCursorPosition($refs.text, '****', 2)">
-                    <span>粗体</span>
-                </li>
-                <li @click="setCursorPosition($refs.text, '**', 1)">
-                    <span>斜体</span>
-                </li>
-                <li @click="setCursorPosition($refs.text, '> ', 2)">
-                    <span>引用</span>
-                </li>
+                <li style="float: right" @click="insertLink">发表</li>
             </ul>
         </div>
-        <textarea v-model="val" @input="handleModelInput" ref="text" @keydown.tab="tabMarkdown"></textarea>
+        <label>
+            <textarea v-model="val" @input="handleModelInput" ref="text" @keydown.tab="tabMarkdown"></textarea>
+        </label>
         <div class="render fmt" v-html="renderHtml"></div>
 
         <div class="mask" v-show="maskBol">
@@ -171,37 +178,35 @@
         .md-title {
             width: 100%;
             height: 60px;
+            line-height: 40px;
             background: @md-title-color;
             position: absolute;
             left:0;top:0;
-            li {
-                width: 100px;
+            ul{
+                margin: 0;
+                padding-left: 10px;
                 height: 100%;
-                line-height: 60px;
-                text-align: center;
-                position: relative;
-                float: left;
-                cursor: pointer;
-                &:hover {
-                    color: @btn-hover;
-                }
-                &:after {
-                    content: '';
-                    position: absolute;
-                    left: 100%;top:50%;
-                    transform: translateY(-50%);
-                    width: 1px;
-                    height: 20px;
-                    background: #ccc;
-                }
-                .uploadFile {
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    width: 100%;
+                li {
+                    width: 60px;
                     height: 100%;
-                    opacity: 0;
+                    line-height: 60px;
+                    text-align: center;
+                    position: relative;
+                    list-style: none;
+                    float: left;
                     cursor: pointer;
+                    &:hover {
+                        color: @btn-hover;
+                    }
+                    .uploadFile {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        opacity: 0;
+                        cursor: pointer;
+                    }
                 }
             }
         }

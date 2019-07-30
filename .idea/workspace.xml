@@ -2,24 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="54958ff1-a64c-4a45-8ac4-ddc9dc43910a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/liuxiang.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/MarkDown/aa.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/MarkDown/index.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/MarkDown/markdown.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/views/edit/MarkDown/index.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/axios/api/user.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/axios/api/user.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/router.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/router.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/MarkDown/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MarkDown/index.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/edit/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/edit/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/home/content.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/home/content.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/home/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/home/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/other/TopNav.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/other/TopNav.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/other/login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/other/login.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/types/index.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/types/index.d.ts" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/dist/" />
@@ -34,34 +21,77 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/views/home/index.vue">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/components/MarkDown/index.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="567">
-              <caret line="23" column="20" selection-start-line="23" selection-start-column="20" selection-end-line="23" selection-end-column="20" />
+            <state relative-caret-position="220">
+              <caret line="98" column="34" lean-forward="true" selection-start-line="98" selection-start-column="34" selection-end-line="98" selection-end-column="34" />
               <folding>
-                <element signature="n#style#0;n#top-nav#0;n#section#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#i#0;n#el-tooltip#0;n#li#0;n#ul#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#i#0;n#el-tooltip#0;n#li#1;n#ul#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#i#0;n#el-tooltip#0;n#li#2;n#ul#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#el-dropdown#0;n#li#3;n#ul#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#li#4;n#ul#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/views/other/TopNav.vue">
+        <entry file="file://$PROJECT_DIR$/src/main.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
-              <caret line="7" column="70" selection-start-line="7" selection-start-column="29" selection-end-line="7" selection-end-column="70" />
+            <state>
+              <folding>
+                <element signature="e#0#22#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/router.ts">
+        <entry file="file://$PROJECT_DIR$/src/components/MarkDown/aa.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="12" column="43" lean-forward="true" selection-start-line="12" selection-start-column="43" selection-end-line="12" selection-end-column="43" />
+            <state relative-caret-position="2565">
+              <caret line="97" column="17" selection-start-line="97" selection-start-column="17" selection-end-line="97" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/views/edit/index.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1117">
+              <caret line="62" column="32" selection-start-line="62" selection-start-column="32" selection-end-line="62" selection-end-column="32" />
               <folding>
-                <element signature="e#0#22#0" expanded="true" />
+                <element signature="n#style#0;n#el-container#0;n#section#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#el-aside#0;n#el-container#0;n#section#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#li#0;n#ul#0;n#el-aside#0;n#el-container#0;n#section#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#li#1;n#ul#0;n#el-aside#0;n#el-container#0;n#section#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#i#0;n#span#0;n#el-dropdown#0;n#li#1;n#ul#0;n#el-aside#0;n#el-container#0;n#section#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#el-container#0;n#el-container#0;n#section#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#el-main#0;n#el-container#0;n#el-container#0;n#section#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#mark-down#0;n#el-main#0;n#el-container#0;n#el-container#0;n#section#0;n#template#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/types/index.d.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="621">
+              <caret line="23" column="1" selection-start-line="23" selection-start-column="1" selection-end-line="23" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/views/home/index.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="513">
+              <caret line="21" column="19" selection-start-line="21" selection-start-column="19" selection-end-line="21" selection-end-column="19" />
+              <folding>
+                <element signature="n#style#0;n#top-nav#0;n#section#0;n#template#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -79,47 +109,19 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/App.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="81">
-              <caret line="3" column="10" lean-forward="true" selection-start-line="3" selection-start-column="10" selection-end-line="3" selection-end-column="10" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/views/index.vue">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="587">
-              <caret line="57" column="35" selection-start-line="57" selection-start-column="35" selection-end-line="57" selection-end-column="35" />
-              <folding>
-                <element signature="e#733#787#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="486">
+              <caret line="18" selection-start-line="18" selection-end-line="18" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/util/index.ts">
+        <entry file="file://$PROJECT_DIR$/src/views/edit/MarkDown/index.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="203">
-              <caret line="9" column="3" lean-forward="true" selection-start-line="9" selection-start-column="3" selection-end-line="9" selection-end-column="3" />
+            <state relative-caret-position="108">
+              <caret line="4" selection-start-line="4" selection-end-line="4" />
             </state>
           </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/store/index.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <folding>
-                <element signature="e#0#22#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/store/mutations.ts">
-          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -137,6 +139,7 @@
       <find>model</find>
       <find>tabMarkdown</find>
       <find>getSelection</find>
+      <find>ArticleTitle</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -145,28 +148,30 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/App.vue" />
         <option value="$PROJECT_DIR$/src/axios/api/user.ts" />
         <option value="$PROJECT_DIR$/src/views/home/content.vue" />
         <option value="$PROJECT_DIR$/src/views/home/index.vue" />
         <option value="$PROJECT_DIR$/src/views/other/TopNav.vue" />
         <option value="$PROJECT_DIR$/src/components/MarkDown/markdown.css" />
-        <option value="$PROJECT_DIR$/src/components/MarkDown/index.vue" />
         <option value="$PROJECT_DIR$/src/components/index.ts" />
         <option value="$PROJECT_DIR$/package.json" />
-        <option value="$PROJECT_DIR$/types/index.d.ts" />
-        <option value="$PROJECT_DIR$/src/views/edit/index.vue" />
         <option value="$PROJECT_DIR$/src/components/MarkDown/aa.vue" />
         <option value="$PROJECT_DIR$/src/views/other/login.vue" />
         <option value="$PROJECT_DIR$/src/router.ts" />
         <option value="$PROJECT_DIR$/src/util/index.ts" />
         <option value="$PROJECT_DIR$/src/views/index.vue" />
+        <option value="$PROJECT_DIR$/src/views/edit/MarkDown/index.vue" />
+        <option value="$PROJECT_DIR$/src/App.vue" />
+        <option value="$PROJECT_DIR$/src/views/edit/index.vue" />
+        <option value="$PROJECT_DIR$/types/index.d.ts" />
+        <option value="$PROJECT_DIR$/src/components/MarkDown/index.vue" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" fullScreen="true">
+  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
+    <option name="y" value="23" />
     <option name="width" value="1440" />
-    <option name="height" value="900" />
+    <option name="height" value="823" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -295,12 +300,25 @@
       <workItem from="1562854120680" duration="632000" />
       <workItem from="1562927344168" duration="2704000" />
       <workItem from="1563183140045" duration="5193000" />
-      <workItem from="1563355231516" duration="2244000" />
+      <workItem from="1563355231516" duration="2438000" />
+      <workItem from="1563761078094" duration="741000" />
+      <workItem from="1563853231046" duration="695000" />
+      <workItem from="1563865152495" duration="906000" />
+      <workItem from="1564107661733" duration="10416000" />
+      <workItem from="1564470914971" duration="1163000" />
     </task>
+    <task id="LOCAL-00001" summary="完成个人博客后台项目入口页面">
+      <created>1563357936440</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1563357936440</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10773000" />
+    <option name="totallyTimeSpent" value="24888000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -329,6 +347,10 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="完成个人博客后台项目入口页面" />
+    <option name="LAST_COMMIT_MESSAGE" value="完成个人博客后台项目入口页面" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/views/other/header.vue">
@@ -365,72 +387,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/views/edit/index.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="17" column="38" selection-start-line="17" selection-start-column="38" selection-end-line="17" selection-end-column="38" />
-          <folding>
-            <element signature="n#style#0;n#h1#0;n#section#0;n#template#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/index.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="5" column="44" selection-start-line="5" selection-start-column="44" selection-end-line="5" selection-end-column="44" />
-          <folding>
-            <element signature="e#0#33#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/MarkDown/index.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="701">
-          <caret line="151" column="39" lean-forward="true" selection-start-line="151" selection-start-column="39" selection-end-line="151" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/MarkDown/aa.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="683">
-          <caret line="97" column="17" lean-forward="true" selection-start-line="97" selection-start-column="17" selection-end-line="97" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="608">
           <caret line="34" column="27" selection-start-line="34" selection-start-column="27" selection-end-line="34" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/MarkDown/markdown.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="701">
-          <caret line="249" selection-start-line="249" selection-end-line="249" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/types/index.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="15" selection-start-line="15" selection-end-line="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/App.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="81">
-          <caret line="3" column="10" lean-forward="true" selection-start-line="3" selection-start-column="10" selection-end-line="3" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/views/home/content.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="9" column="45" lean-forward="true" selection-start-line="8" selection-start-column="11" selection-end-line="10" />
         </state>
       </provider>
     </entry>
@@ -444,15 +404,49 @@
     <entry file="file://$PROJECT_DIR$/src/router.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="324">
-          <caret line="12" column="43" lean-forward="true" selection-start-line="12" selection-start-column="43" selection-end-line="12" selection-end-column="43" />
+          <caret line="12" column="43" selection-start-line="12" selection-start-column="43" selection-end-line="12" selection-end-column="43" />
           <folding>
             <element signature="e#0#22#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/store/mutations.ts">
-      <provider selected="true" editor-type-id="text-editor" />
+    <entry file="file://$PROJECT_DIR$/src/components/MarkDown/blueprint.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/MarkDown/markdown.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6723">
+          <caret line="249" selection-start-line="249" selection-end-line="249" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/index.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="5" column="44" selection-start-line="5" selection-start-column="44" selection-end-line="5" selection-end-column="44" />
+          <folding>
+            <element signature="e#0#33#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/index.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1512">
+          <caret line="56" column="12" selection-start-line="56" selection-start-column="12" selection-end-line="56" selection-end-column="12" />
+          <folding>
+            <element signature="e#733#787#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/util/index.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="9" column="3" lean-forward="true" selection-start-line="9" selection-start-column="3" selection-end-line="9" selection-end-column="3" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/store/index.ts">
       <provider selected="true" editor-type-id="text-editor">
@@ -463,29 +457,90 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/store/mutations.ts">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#22#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/MarkDown/aa.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2565">
+          <caret line="97" column="17" selection-start-line="97" selection-start-column="17" selection-end-line="97" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/views/home/index.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="567">
-          <caret line="23" column="20" selection-start-line="23" selection-start-column="20" selection-end-line="23" selection-end-column="20" />
+        <state relative-caret-position="513">
+          <caret line="21" column="19" selection-start-line="21" selection-start-column="19" selection-end-line="21" selection-end-column="19" />
           <folding>
             <element signature="n#style#0;n#top-nav#0;n#section#0;n#template#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/util/index.ts">
+    <entry file="file://$PROJECT_DIR$/src/views/home/content.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="9" column="3" lean-forward="true" selection-start-line="9" selection-start-column="3" selection-end-line="9" selection-end-column="3" />
+        <state relative-caret-position="216">
+          <caret line="9" column="45" lean-forward="true" selection-start-line="8" selection-start-column="11" selection-end-line="10" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/views/index.vue">
+    <entry file="file://$PROJECT_DIR$/src/App.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="587">
-          <caret line="57" column="35" selection-start-line="57" selection-start-column="35" selection-end-line="57" selection-end-column="35" />
+        <state relative-caret-position="486">
+          <caret line="18" selection-start-line="18" selection-end-line="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/edit/MarkDown/index.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/types/index.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="621">
+          <caret line="23" column="1" selection-start-line="23" selection-start-column="1" selection-end-line="23" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/edit/index.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1117">
+          <caret line="62" column="32" selection-start-line="62" selection-start-column="32" selection-end-line="62" selection-end-column="32" />
           <folding>
-            <element signature="e#733#787#0" expanded="true" />
+            <element signature="n#style#0;n#el-container#0;n#section#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#el-aside#0;n#el-container#0;n#section#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#li#0;n#ul#0;n#el-aside#0;n#el-container#0;n#section#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#li#1;n#ul#0;n#el-aside#0;n#el-container#0;n#section#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#span#0;n#el-dropdown#0;n#li#1;n#ul#0;n#el-aside#0;n#el-container#0;n#section#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#el-container#0;n#el-container#0;n#section#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#el-main#0;n#el-container#0;n#el-container#0;n#section#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#mark-down#0;n#el-main#0;n#el-container#0;n#el-container#0;n#section#0;n#template#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/MarkDown/index.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="98" column="34" lean-forward="true" selection-start-line="98" selection-start-column="34" selection-end-line="98" selection-end-column="34" />
+          <folding>
+            <element signature="n#style#0;n#i#0;n#el-tooltip#0;n#li#0;n#ul#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#el-tooltip#0;n#li#1;n#ul#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#el-tooltip#0;n#li#2;n#ul#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#el-dropdown#0;n#li#3;n#ul#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#li#4;n#ul#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
