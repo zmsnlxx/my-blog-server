@@ -1,3 +1,4 @@
+const db = require("../db");
 // 自定义函数方法:
 // cookie编码程序
 function CodeCookie (str) {
@@ -13,7 +14,12 @@ function setRandomId() {
     return Date.now() + "" + Math.floor(Math.random() * 10000);
 }
 
+function getArticle(){
+    return db.articleInfo.find()
+}
+
 module.exports = {
     CodeCookie,
-    setRandomId
-}
+    setRandomId,
+    getArticle
+};

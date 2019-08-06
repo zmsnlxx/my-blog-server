@@ -1,87 +1,137 @@
 <template>
     <section class="edit">
-        <el-container style="height: 100%">
+        <el-container style="height: 100%" v-loading="loading" element-loading-text="文章发布中...">
             <el-aside style="border-right:1px solid #999999;" width="200px">
-                <ul class="article_content">
-                    <li class="article_list" @click="addArticle"><i class="el-icon-circle-plus"></i><span
-                            style="display: inline-block;margin-left: 10px">新建文章</span></li>
-                    <li class="article_list" @click="changeArticle(index)" v-for="(item,index) in articleTitle"
-                        :key="index" :class="choiceIndex === index ? 'choiceList' : ''">
-                        <span style="display: inline-block;margin-right: 20px">{{ item.title }}</span>
-                        <el-dropdown trigger="click">
-                            <span class="el-dropdown-link">
-                                <i v-show="choiceIndex === index" class="el-icon-s-tools" style="padding: 25px 5px"></i>
-                            </span>
-                            <el-dropdown-menu slot="dropdown">
-                                <el-dropdown-item icon="el-icon-upload2">置顶文章</el-dropdown-item>
-                                <el-dropdown-item icon="el-icon-lock">设为私密</el-dropdown-item>
-                                <el-dropdown-item icon="el-icon-delete-solid">删除文章</el-dropdown-item>
-                                <el-dropdown-item icon="el-icon-s-fold">
-                                    <el-dropdown>
-                                        <span class="el-dropdown-link">
-                                            <span>设置文章分类</span>
-                                        </span>
-                                        <el-dropdown-menu slot="dropdown">
-                                            <el-dropdown-item v-for="(item,index) in articleClass" :key="index"
-                                                              :icon="item.icon">{{ item.label }}
-                                            </el-dropdown-item>
-                                        </el-dropdown-menu>
-                                    </el-dropdown>
-                                </el-dropdown-item>
-                            </el-dropdown-menu>
-                        </el-dropdown>
-                    </li>
-                </ul>
+                <AsideNav @changeTitle="changeTitle" :isUpdate="isUpdate"/>
             </el-aside>
             <el-container style="height: 100%">
-                <el-header>Header</el-header>
+                <el-header>
+                    <articleHeader @changeColor="changeColor" @changeCurrentTitle="changeCurrentTitle"></articleHeader>
+                </el-header>
                 <el-main style="padding: 0;height: 100%;">
-                    <mark-down v-model="markdown" style="height: 100%;"/>
+                    <mark-down
+                            :theme="theme"
+                            :uploadImage="uploadImage"
+                            width="100%"
+                            height="100%"
+                            class="markdown"
+                            @html-change="htmlChange"
+                            :defaultText="defaultText"
+                            @goPublish="goPublish"
+                    />
                 </el-main>
             </el-container>
         </el-container>
-        <!--        <h1 style="color: black">编辑页面</h1>-->
-
-        <!--        <button class="print" @click="goPrint">打印markdown</button>-->
-
     </section>
 </template>
 
 <script lang="ts">
     import {Vue, Component} from "vue-property-decorator";
-
-    @Component
-    export default class edit extends Vue {
-        markdown: string = "";
-
-        articleTitle: Array<Types.ArticleTitle> = [
-            {title: "钢铁是怎样练成的"},
-            {title: "钢铁是怎样练成的"},
-            {title: "钢铁是怎样练成的"},
-            {title: "钢铁是怎样练成的"},
-        ];
-        choiceIndex: number = 0;
-
-        articleClass: Array<Types.ArticleClass> = [
-            {label: "前端技术", icon: ""},
-            {label: "生活情感", icon: ""},
-            {label: "日常吐槽", icon: ""},
-            {label: "语言艺术", icon: ""},
-        ];
+    import {Getter, Action} from "vuex-class";
+    import "highlight.js/styles/github.css";
+    import hljs from "highlight.js";
+    import articleHeader from "./articleHeader.vue";
+    import AsideNav from "./AsideNav.vue";
+    import marked from "marked";
+    import jsCookie from "js-cookie";
+    import moment from "moment";
 
 
-        addArticle() {
-            console.log("添加文章");
+    @Component({components: {articleHeader, AsideNav}})
+    export default class EditNav extends Vue {
+        @Getter user: any;
+        @Action setUserInfo: any;
+        protected theme: string = "default";
+        protected loading: boolean = false;
+        protected defaultText: string = "";
+        protected currentArticle: any;
+        protected currentTitle: string;
+        protected currentHtml: any;
+        protected isUpdate: boolean = false;
+
+
+        protected async mounted() {
+            this.loading = true;
+            if (jsCookie.get("email")) {
+                const oldCookie: string = jsCookie.get("email") || "";
+                const cookie: string = this.$util.DecodeCookie(oldCookie);
+                const {code, data} = (await this.$api.getUserInfo({cookie})).data;
+                if (code === 0) {
+                    this.setUserInfo(data);
+                }
+            }
+            this.loading = false;
         }
 
-        changeArticle(index: number): void {
-            this.choiceIndex = index;
+        changeCurrentTitle(e: string) {
+            this.currentTitle = e
         }
 
+        protected goPublish() {
+            this.isUpdate = false;
+            this.loading = true;
+            marked.setOptions({
+                renderer: new marked.Renderer(),
+                gfm: true,
+                tables: true,
+                breaks: true,
+                pedantic: false,
+                sanitize: false,
+                smartLists: true,
+                smartypants: false
+            });
+            const params = {
+                _id: this.currentArticle._id,
+                title: this.currentTitle,
+                updateTime: moment().format("YYYY-MM-DD"),
+                content: marked(this.currentHtml),
+                contentMD: this.currentHtml,
+            };
+            console.log(params);
+            this.$api.updateArticle(params).then((req: any) => {
+                console.log(req.data.data);
+                this.$message({
+                    type: req.data.code === 0 ? "success" : "error",
+                    message: req.data.data.message
+                });
+                this.isUpdate = true;
+                this.loading = false;
+            })
+        }
 
-        // goPrint ():void {
-        //     console.log(this.markdown)
-        // }
+        protected async uploadImage(file: any) {
+            return await this.uploadRequest(file);
+        }
+
+        protected changeTitle(data: any) {
+            this.currentArticle = data;
+            this.defaultText = data.contentMD;
+        }
+
+        protected changeColor(color: string) {
+            console.log(color);
+            this.theme = color;
+        }
+
+        protected uploadRequest(file: any) {
+            const result = "https://github.com/luosijie/Front-end-Blog/blob/master/img/logo_vmmarkdown_name.png?raw=true";
+            return new Promise((resolve, reject) => {
+                window.setTimeout(() => {
+                    resolve(result);
+                }, 1000);
+            });
+        }
+
+        protected htmlChange(html: string) {
+            // console.log("html-content", html);
+            this.$nextTick(() => {
+                const codes = document.querySelectorAll(".markdown-body pre code");
+                codes.forEach(elem => {
+                    hljs.highlightBlock(elem);
+                });
+            });
+            this.currentHtml = html
+        }
 
     }
 </script>
@@ -90,26 +140,6 @@
     .edit {
         width: 100%;
         height: 100%;
-
-        .article_content {
-            padding-left: 0;
-            margin-top: 0;
-
-            .article_list {
-                padding-left: 20px;
-                box-sizing: border-box;
-                list-style: none;
-                width: 100%;
-                height: 70px;
-                line-height: 70px;
-                border-bottom: 1px solid #eeeeee;
-            }
-
-            .choiceList {
-                background-color: #999999;
-            }
-        }
-
     }
 
 </style>

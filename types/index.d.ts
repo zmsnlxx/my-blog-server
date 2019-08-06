@@ -1,4 +1,3 @@
-
 export interface UserItem {
     email: string;
     password: string;
@@ -21,12 +20,24 @@ export interface ArticleClass {
 
 export interface ArticleTitle {
     title: string;
+    _id: string;
+}
+
+export interface ArticleParams {
+    author: string;
+    title: string;
+    time: string;
+    tags: string;
+    content: string;
+    contentMD: string;
 }
 
 
 declare module 'vue/types/vue' {
     export interface Vue {
         $util: any;
+        $api: any;
+        $lo: any;
     }
 }
 

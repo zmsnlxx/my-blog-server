@@ -4,6 +4,7 @@ import ListNav from './list.vue';
 import SmallLabel from './Small-label.vue';
 import CommentNav from './comment.vue';
 import MarkDown from './MarkDown/index.vue';
+import BackGround from './BackGround.vue';
 
 export default {
     install(Vue: any) {
@@ -13,6 +14,7 @@ export default {
         Vue.component('SmallLabel', SmallLabel);
         Vue.component('CommentNav', CommentNav);
         Vue.component('MarkDown', MarkDown);
+        Vue.component('BackGround', BackGround);
     },
 };
 

@@ -1,62 +1,16 @@
 <template>
-    <section class="login">
+    <section class="BackGround">
+        <!--        满屏落花效果-->
         <canvas id="sakura"></canvas>
-        <!-- 登录 -->
-        <transition
-                mode="out-in"
-                name="custom-classes-transition"
-                enter-active-class="animated bounceInDown"
-                leave-active-class="animated flipOutY"
-        >
-            <section v-show="loginShow" class="model">
-                <el-card class="box-card" shadow="hover">
-                    <div slot="header" class="clearfix">
-                        <span>欢迎登录</span>
-                    </div>
-                    <div style="margin-top: 20px">
-                        <el-form label-width="80px" :model="userForm">
-                            <el-form-item label="邮箱">
-                                <el-input type="email" v-model="userForm.email" placeholder="请输入邮箱"></el-input>
-                            </el-form-item>
-                            <el-form-item label="密码">
-                                <el-input type="password" v-model="userForm.password" placeholder="请输入密码"
-                                          autocomplete="new-password"></el-input>
-                            </el-form-item>
-                            <el-form-item>
-                                <el-button type="primary" @click="goLogin">登录</el-button>
-                            </el-form-item>
-                        </el-form>
-                    </div>
-                </el-card>
-            </section>
-        </transition>
     </section>
 </template>
 
 <script lang="ts">
-    import {Vue, Component} from "vue-property-decorator";
+    import {Vue, Component} from 'vue-property-decorator'
 
     @Component
-    export default class LoginNav extends Vue {
-        protected userForm: Types.UserItem = {
-            email: "",
-            password: "",
-        };
-        protected loginShow: boolean = false;
 
-        protected goLogin():void  {
-            this.$api.login(this.userForm).then((req: Types.InterfaceData) => {
-                const {code, data} = req.data;
-                if (code === 0) {
-                    this.$router.push({path: "/"});
-                } else {
-                    this.$message.error(data.message);
-                }
-            }).catch((err: any) => {
-                console.log(err);
-            });
-        }
-
+    export default class BackGround extends Vue {
         mounted() {
             let sakura_point_vsh: string = `
     uniform mat4 uProjection;
@@ -1308,27 +1262,10 @@
                         w.setTimeout(c, 1000 / 60);
                     };
             })(window, "equestAnimationFrame");
-            setTimeout(() => {
-                this.loginShow = true;
-            }, 500);
         }
-
     }
 </script>
 
-<style lang="less">
-    .login {
-        width: 100%;
-        height: 850px;
-        position: relative;
+<style lang="less" scoped>
 
-        .model {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            height: 30%;
-            width: 50%;
-            margin: -15% 0 0 -25%;
-        }
-    }
 </style>

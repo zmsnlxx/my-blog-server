@@ -7,6 +7,7 @@ import edit from './views/edit/index.vue';
 Vue.use(Router);
 
 export default new Router({
+    mode: 'history',
     routes: [
         {path: '/', component: entrance},
         {path: '/home', name: 'home', component: () => import('./views/home/index.vue')},
