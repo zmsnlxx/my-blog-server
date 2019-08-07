@@ -13,26 +13,21 @@
 
 <script lang="ts">
     import {Vue, Component} from "vue-property-decorator";
-    import Bus from "./bus";
+    import {Getter} from "vuex-class";
 
     @Component
     export default class articleHeader extends Vue {
-        title: string = "文章标题";
+        @Getter articleInfo: any;           // 所有文章信息
+        @Getter articleIndex: number;       // 当前选中文章索引
 
-        // 接受从兄弟组件传过来的文章标题
-        protected created() {
-            Bus.$on("changeTitle", (data: any) => {
-                if (data.title) {
-                    this.title = data.title;
-                } else {
-                    this.title = "文章标题";
-                }
-            });
+        get title(): string {
+            if(this.articleInfo[this.articleIndex]) return this.articleInfo[this.articleIndex].title;
+            return '文章标题'
         }
 
         changeCurrentTitle(e: any) {
-            this.title = e.target.value;
-            this.$emit("changeCurrentTitle", this.title);
+            const title = e.target.value;
+            this.$emit("changeCurrentTitle", title);
         }
 
         selectTheme(evt: any) {

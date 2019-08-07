@@ -59,7 +59,6 @@
 
         @Watch("defaultText")
         changeDefaultText(val: any) {
-            console.log(val);
             this.markdString = val;
         }
 

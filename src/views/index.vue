@@ -8,22 +8,29 @@
                      alt="logo"/>
             </div>
             <div class="home-body">
-                <div class="app-enter" :class="item.id" v-for="(item,i) in EnterData" :key="i"
-                     :style="{left: item.left, bottom: item.bottom, width: item.width+'px'}" @click="">
-                    <div class="link-container"
-                         :style="{height: item.width*0.65+'px', border: `1px solid rgb(${item.rgb})`, color: item.fontColor, backgroundColor: item.bgColor, fontSize: item.width*0.17+'px', zIndex: 6}">
-                        {{ item.name }}
+                <transition-group
+                        mode="out-in"
+                        name="custom-classes-transition"
+                        enter-active-class="animated fadeInDown"
+                        leave-active-class="animated bounceOutLeft"
+                >
+                    <div v-show="show" class="app-enter" :class="item.id" v-for="(item,i) in EnterData" :key="i"
+                         :style="{left: item.left, bottom: item.bottom, width: item.width+'px'}" @click="">
+                        <div class="link-container"
+                             :style="{height: item.width*0.65+'px', border: `1px solid rgb(${item.rgb})`, color: item.fontColor, backgroundColor: item.bgColor,backgroundImage: item.backgroundImage,fontSize: item.width*0.17+'px', zIndex: 6}">
+                            {{ item.name }}
+                        </div>
+                        <div class="shadow"
+                             :style="{width: item.width+'px', height: item.width*0.65+'px', right: -item.width*0.12+'px', top: -item.width*0.12+'px', border: `2px solid rgb(${item.rgb}, 0.2)`}"></div>
+                        <div class="arrow"
+                             :style="{width: item.width*0.1+'px', height: item.width*0.1+'px', border: `1px solid rgb(${item.rgb})`, backgroundColor: item.bgColor, borderTop: 'none', borderLeft: 'none'}"></div>
+                        <div :id="item.id" class="point"
+                             :style="{top: item.width*0.78+'px', backgroundColor: `rgba(${item.rgb}, 0.25)`}">
+                            <div class="circle" :style="{border: `2px solid rgb(${item.rgb}, 0.5)`}"></div>
+                        </div>
+                        <div class="group" :style="{top: item.width*1.12+'px'}">{{ item.group }}</div>
                     </div>
-                    <div class="shadow"
-                         :style="{width: item.width+'px', height: item.width*0.65+'px', right: -item.width*0.12+'px', top: -item.width*0.12+'px', border: `2px solid rgb(${item.rgb}, 0.2)`}"></div>
-                    <div class="arrow"
-                         :style="{width: item.width*0.1+'px', height: item.width*0.1+'px', border: `1px solid rgb(${item.rgb})`, backgroundColor: item.bgColor, borderTop: 'none', borderLeft: 'none'}"></div>
-                    <div :id="item.id" class="point"
-                         :style="{top: item.width*0.78+'px', backgroundColor: `rgba(${item.rgb}, 0.25)`}">
-                        <div class="circle" :style="{border: `2px solid rgb(${item.rgb}, 0.5)`}"></div>
-                    </div>
-                    <div class="group" :style="{top: item.width*1.12+'px'}">{{ item.group }}</div>
-                </div>
+                </transition-group>
                 <div class="introduce"> 时光正好，未来可期，加油 ！</div>
             </div>
         </div>
@@ -39,6 +46,7 @@
     export default class Home extends Vue {
         @Action setUserInfo: any;
         @Getter user: any;
+        show: boolean = false;
         data: Array<Types.HeaderName> = [
             {label: "首页", jump: "/home"},
             {label: "编辑", jump: "/edit"},
@@ -58,8 +66,9 @@
                 modal: {
                     bgColor: "1, 38, 87",
                 },
-                bgColor: "#022d5d",
+                bgColor: "#FAACA8",
                 fontColor: "#6ac9fc",
+                backgroundImage: "linear-gradient(19deg,#FAACA8 0%,#DDD6F3 100%)",
                 name: "首页",
                 group: "首页",
                 id: "zhxy",
@@ -190,7 +199,7 @@
 
 
         async mounted() {
-
+            this.show = true;
             if (jsCookie.get("email")) {
                 const oldCookie: string = jsCookie.get("email") || "";
                 const cookie: string = this.$util.DecodeCookie(oldCookie);
@@ -227,6 +236,8 @@
                 -webkit-animation: mylogo 3s; /* Safari and Chrome */
                 -o-animation: mylogo 3s; /* Opera */
                 animation-iteration-count: infinite;
+
+
             }
 
             .home-header {

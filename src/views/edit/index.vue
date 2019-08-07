@@ -1,8 +1,8 @@
 <template>
     <section class="edit">
-        <el-container style="height: 100%" v-loading="loading" element-loading-text="文章发布中...">
+        <el-container style="height: 100%" v-loading="loading" :element-loading-text="loadingText">
             <el-aside style="border-right:1px solid #999999;" width="200px">
-                <AsideNav @changeTitle="changeTitle" :isUpdate="isUpdate"/>
+                <AsideNav/>
             </el-aside>
             <el-container style="height: 100%">
                 <el-header>
@@ -27,48 +27,66 @@
 
 <script lang="ts">
     import {Vue, Component} from "vue-property-decorator";
-    import {Getter, Action} from "vuex-class";
+    import {Action, Getter} from "vuex-class";
     import "highlight.js/styles/github.css";
     import hljs from "highlight.js";
     import articleHeader from "./articleHeader.vue";
     import AsideNav from "./AsideNav.vue";
     import marked from "marked";
-    import jsCookie from "js-cookie";
     import moment from "moment";
 
 
     @Component({components: {articleHeader, AsideNav}})
     export default class EditNav extends Vue {
-        @Getter user: any;
-        @Action setUserInfo: any;
+        @Action getArticleInfo: any;
+        @Getter articleInfo: any;           // 所有文章信息
+        @Getter articleIndex: number;       // 当前选中文章索引
         protected theme: string = "default";
         protected loading: boolean = false;
-        protected defaultText: string = "";
-        protected currentArticle: any;
         protected currentTitle: string;
         protected currentHtml: any;
-        protected isUpdate: boolean = false;
+        protected isPublish: boolean = false;
 
+        // 获取当前文章的内容
+        get defaultText(): string {
+            if (this.articleInfo[this.articleIndex]) {
+                return this.articleInfo[this.articleIndex].contentMD;
+            }
+            return "";
+        }
 
+        get loadingText(): string {
+            return this.isPublish ? "文章发布中..." : "文章加载中...";
+        }
+
+        // 拿到所有文章数据存到vuex
         protected async mounted() {
             this.loading = true;
-            if (jsCookie.get("email")) {
-                const oldCookie: string = jsCookie.get("email") || "";
-                const cookie: string = this.$util.DecodeCookie(oldCookie);
-                const {code, data} = (await this.$api.getUserInfo({cookie})).data;
-                if (code === 0) {
-                    this.setUserInfo(data);
-                }
+            const {code, data} = (await this.getArticle()).data;
+            if (code === 0) {
+                this.getArticleInfo(data);
             }
             this.loading = false;
         }
 
-        changeCurrentTitle(e: string) {
-            this.currentTitle = e
+        // 请求文章数据接口
+        async getArticle() {
+            return await this.$api.getArticle();
         }
 
+        get title(): string {
+            if(this.currentTitle) return this.currentTitle;
+            return this.articleInfo[this.articleIndex].title;
+        }
+
+        // 从header组件接收修改过的文章title值
+        changeCurrentTitle(e: string) {
+            this.currentTitle = e;
+        }
+
+        // 文章发布
         protected goPublish() {
-            this.isUpdate = false;
+            this.isPublish = true;
             this.loading = true;
             marked.setOptions({
                 renderer: new marked.Renderer(),
@@ -81,35 +99,31 @@
                 smartypants: false
             });
             const params = {
-                _id: this.currentArticle._id,
-                title: this.currentTitle,
+                _id: this.articleInfo[this.articleIndex]._id,
+                title: this.title,
                 updateTime: moment().format("YYYY-MM-DD"),
                 content: marked(this.currentHtml),
                 contentMD: this.currentHtml,
+
             };
-            console.log(params);
             this.$api.updateArticle(params).then((req: any) => {
-                console.log(req.data.data);
-                this.$message({
-                    type: req.data.code === 0 ? "success" : "error",
-                    message: req.data.data.message
-                });
-                this.isUpdate = true;
-                this.loading = false;
-            })
+                setTimeout(() => {
+                    this.$message({
+                        type: req.data.code === 0 ? "success" : "error",
+                        message: req.data.data.message
+                    });
+                    this.getArticleInfo(req.data.data.data);
+                    this.loading = false;
+                    this.isPublish = false;
+                }, 1000);
+            });
         }
 
         protected async uploadImage(file: any) {
             return await this.uploadRequest(file);
         }
 
-        protected changeTitle(data: any) {
-            this.currentArticle = data;
-            this.defaultText = data.contentMD;
-        }
-
         protected changeColor(color: string) {
-            console.log(color);
             this.theme = color;
         }
 
@@ -123,14 +137,13 @@
         }
 
         protected htmlChange(html: string) {
-            // console.log("html-content", html);
             this.$nextTick(() => {
                 const codes = document.querySelectorAll(".markdown-body pre code");
                 codes.forEach(elem => {
                     hljs.highlightBlock(elem);
                 });
             });
-            this.currentHtml = html
+            this.currentHtml = html;
         }
 
     }

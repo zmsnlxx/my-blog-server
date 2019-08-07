@@ -3,8 +3,8 @@
         <ul class="article_content">
             <li class="article_list" @click="addArticle"><i class="el-icon-circle-plus"></i><span
                     style="display: inline-block;margin-left: 10px">新建文章</span></li>
-            <li class="article_list" @click="changeArticle(index)" v-for="(item,index) in articleTitle"
-                :key="index" :class="choiceIndex === index ? 'choiceList' : ''">
+            <li class="article_list" @click="changeArticle(index)" v-for="(item,index) in articleInfo"
+                :key="index" :class="articleIndex === index ? 'choiceList' : ''">
                 <el-row :gutter="20">
                     <el-col :span="18" style="overflow: hidden;white-space: nowrap;text-overflow: ellipsis;">
                         <el-tooltip class="item" effect="dark" :content="item.title" placement="top">
@@ -14,7 +14,7 @@
                     <el-col :span="6">
                         <el-dropdown trigger="click">
                             <span class="el-dropdown-link">
-                                <i v-show="choiceIndex === index" class="el-icon-s-tools" style="padding: 25px 5px"></i>
+                                <i v-show="articleIndex === index" class="el-icon-s-tools" style="padding: 25px 5px"></i>
                             </span>
                             <el-dropdown-menu slot="dropdown">
                                 <el-dropdown-item icon="el-icon-upload2">置顶文章</el-dropdown-item>
@@ -27,8 +27,8 @@
                                             <span>设置文章分类</span>
                                         </span>
                                         <el-dropdown-menu slot="dropdown">
-                                            <el-dropdown-item v-for="(item,index) in articleClass" :key="index"
-                                                              :icon="item.icon">{{ item.label }}
+                                            <el-dropdown-item v-for="(i,id) in articleClass" :key="id" :icon="i.icon"
+                                                              @click.native="changeTabs(i,item)">{{ i.label }}
                                             </el-dropdown-item>
                                         </el-dropdown-menu>
                                     </el-dropdown>
@@ -43,53 +43,33 @@
 </template>
 
 <script lang="ts">
-    import {Vue, Component, Prop, Watch} from "vue-property-decorator";
+    import {Vue, Component} from "vue-property-decorator";
     import moment from "moment";
     import marked from "marked";
-    import {Getter} from "vuex-class";
-    import Bus from "./bus";
+    import {Getter,Action} from "vuex-class";
 
 
     @Component
     export default class AsideNav extends Vue {
-        @Getter user: any;
-        articleTitle: Array<Types.ArticleTitle> = [];
+        @Getter articleInfo: any;           // 所有文章信息
+        @Getter articleIndex: number;       // 当前选中文章索引
+        @Action getArticleInfo: any;        // 存储文章信息
+        @Action changeArticleIndex: any;    // 存储当前文章索引
         protected articleClass: Array<Types.ArticleClass> = [
             {label: "前端技术", icon: ""},
             {label: "生活情感", icon: ""},
             {label: "日常吐槽", icon: ""},
             {label: "语言艺术", icon: ""},
         ];
-        protected choiceIndex: number = 0;
-        @Prop() isUpdate: boolean;
 
+        // 设置文章类型
+        protected changeTabs(i: Types.ArticleClass, item: any) {
+            console.log(item);
+            console.log(i);
 
-        @Watch("isUpdate")
-        async changeIsUpdate(val:boolean) {
-            if (val) {
-                this.articleTitle = [];
-                await this.getArticle();
-            }
         }
 
-        async mounted() {
-            await this.getArticle();
-        }
-
-        // 获取所有文章数据
-        async getArticle() {
-            await this.$api.getArticle().then((req: any) => {
-                const data = req.data.data;
-                this.$lo.each(data, (item: any) => {
-                    const result = {title: item.title, _id: item._id, content: item.content, contentMD: item.contentMD};
-                    this.articleTitle.push(result);
-                });
-            });
-            console.log(this.articleTitle);
-            Bus.$emit("changeTitle", this.articleTitle[0]);
-            this.$emit("changeTitle", this.articleTitle[0]);
-        }
-
+        // 删除文章
         protected async deleteArticle(article: any) {
             const {code, data} = (await this.$api.deleteArticle({_id: article._id})).data;
             this.$message({
@@ -97,13 +77,13 @@
                 message: data.message
             });
             if (code === 0) {
-                this.articleTitle = [];
-                await this.getArticle();
-                this.choiceIndex = 0;
+                this.getArticleInfo(data.data);
+                this.changeArticleIndex(0);
             }
         }
 
-        get params() {
+        // 添加文章
+        protected addArticle(): void {
             marked.setOptions({
                 renderer: new marked.Renderer(),
                 gfm: true,
@@ -114,36 +94,28 @@
                 smartLists: true,
                 smartypants: false
             });
-            return {
-                author: this.user.name || "",
+            const params = {
                 title: moment().format("YYYY-MM-DD") || "",
                 time: moment().format("YYYY-MM-DD") || "",
                 tags: "前端技术" || "",
                 content: marked(`# ${moment().format("YYYY-MM-DD")}`) || "", // 转换过后的html
                 contentMD: `# ${moment().format("YYYY-MM-DD")}` || "" // markdown
             };
-        }
-
-        // 添加文章
-        protected addArticle(): void {
-            this.$api.addArticle(this.params).then(async (req: Types.InterfaceData) => {
-                console.log(req);
+            this.$api.addArticle(params).then(async (req: Types.InterfaceData) => {
                 this.$message({
                     type: req.data.code === 0 ? "success" : "error",
                     message: req.data.data.message
                 });
                 if (req.data.code === 0) {
-                    this.articleTitle = [];
-                    await this.getArticle();
+                    this.getArticleInfo(req.data.data.data);
                 }
             });
 
         }
 
+        // 切换当前文章
         protected changeArticle(index: number): void {
-            this.choiceIndex = index;
-            Bus.$emit("changeTitle", this.articleTitle[index]);
-            this.$emit("changeTitle", this.articleTitle[index]);
+            this.changeArticleIndex(index);
         }
     }
 </script>

@@ -10,26 +10,28 @@ const _ = require('lodash');
 router.post('/api/article/addArticle', (req, res) => {
     const newArticle = new db.articleInfo({
         id: util.setRandomId(),
-        author: req.body.author,
         title: req.body.title,
         time: req.body.time,
         tags: req.body.tags,
         content: req.body.content, // 转换过后的html
         contentMD: req.body.contentMD // markdown
     });
-    newArticle.save((err) => {
-        if (!err) {
+    newArticle.save().then(async (req) => {
+        const data = await db.articleInfo.find();
+        if (!_.isEmpty(req)) {
             res.send({
                 code: 0,
                 data: {
-                    message: "创建文章成功!"
+                    message: "创建文章成功!",
+                    data,
                 }
             })
         } else {
             res.send({
                 code: 1,
                 data: {
-                    message: "创建文章失败!"
+                    message: "创建文章失败!",
+                    data:[]
                 },
             })
         }
@@ -37,34 +39,37 @@ router.post('/api/article/addArticle', (req, res) => {
 });
 
 // 获取所有文章
-router.get('/api/article/getArticle', async (req,res) => {
+router.get('/api/article/getArticle', async (req, res) => {
     const articleArr = await util.getArticle();
-    if(_.isEmpty(articleArr)){
+    if (_.isEmpty(articleArr)) {
         res.send({
             code: 1,
             data: {
                 message: "暂无文章"
             }
         })
-    }else{
+    } else {
         res.send({
-            code: 1,
+            code: 0,
             data: articleArr
         })
     }
 });
 
 // 删除文章
-router.post('/api/article/deleteArticle',async (req, res) => {
+router.post('/api/article/deleteArticle', async (req, res) => {
     const data = await db.articleInfo.deleteOne({_id: req.body._id});
-    if(data.ok === 1){
+    if (data.ok === 1) {
+        const arr = await db.articleInfo.find();
+        console.log(arr);
         res.send({
             code: 0,
             data: {
-                message: '删除成功!'
+                message: '删除成功!',
+                data: arr
             }
         })
-    }else{
+    } else {
         res.send({
             code: 1,
             data: {
@@ -74,34 +79,29 @@ router.post('/api/article/deleteArticle',async (req, res) => {
     }
 });
 
-function updateArticle(req) {
-    return db.articleInfo.update({
-        _id: req.body._id
-    }, {
-        $set: {
-            title: req.body.title,
-            updateTime: req.body.updateTime,
-            content: req.body.content,
-            contentMD: req.body.contentMD,
-        }
-    })
-}
+const updateArticle = (req) => {
+    const {_id, title, updateTime, content, contentMD, titleImg, tags, abstract} = req.body;
+    return db.articleInfo.update({_id}, {$set: {title, updateTime, content, contentMD, titleImg, tags, abstract}})
+};
 
 // 更新文章
-router.post('/api/article/updateArticle',async (req,res) => {
-    await updateArticle(req).then(req => {
-        if(req.ok === 1){
+router.post('/api/article/updateArticle', async (req, res) => {
+    await updateArticle(req).then(async req => {
+        if (req.ok === 1) {
+            const data = await db.articleInfo.find();
             res.send({
                 code: 0,
                 data: {
-                    message: '发布成功!'
+                    message: '发布成功!',
+                    data,
                 }
             })
-        }else{
+        } else {
             res.send({
                 code: 1,
                 data: {
-                    message: '发布失败!'
+                    message: '发布失败!',
+                    data
                 }
             })
         }

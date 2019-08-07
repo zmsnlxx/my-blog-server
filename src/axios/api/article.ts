@@ -5,9 +5,9 @@ const addArticle = (params: {
     author: string;
     title: string;
     time: string;
-    tags?: string;
-    content?: string;
-    contentMD?: string;
+    tags: string;
+    content: string;
+    contentMD: string;
 }) => {
     return axios.post(`article/addArticle`, params);
 };
@@ -26,10 +26,13 @@ const getArticle = (): object => {
 // 更新文章
 const updateArticle = (params: {
     _id: string,
-    title?: string;
-    updateTime?: string;
-    content?: string;
-    contentMD?: string;
+    title: string;
+    updateTime: string;
+    content: string;
+    contentMD: string;
+    titleImg: string;
+    abstract: string;
+    tabs: string;
 }) => {
     return axios.post(`article/updateArticle`, params);
 };

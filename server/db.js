@@ -16,12 +16,11 @@ const User = new mongoose.Schema({
 });
 
 const articleSchema = new mongoose.Schema({
-    author: String,
     title: String,
     time: Date,
     updateTime: Date,
     abstract: String,
-    tags: Array,
+    tags: String,
     content: String, // 转换过后的html
     contentMD: String // markdown
 });
