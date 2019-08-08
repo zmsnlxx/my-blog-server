@@ -14,7 +14,8 @@ router.post('/api/article/addArticle', (req, res) => {
         time: req.body.time,
         tags: req.body.tags,
         content: req.body.content, // 转换过后的html
-        contentMD: req.body.contentMD // markdown
+        contentMD: req.body.contentMD, // markdown
+        abstract:util.getTrimHtml(req.body.contentMD).html // 文章摘要
     });
     newArticle.save().then(async (req) => {
         const data = await db.articleInfo.find();
@@ -80,17 +81,17 @@ router.post('/api/article/deleteArticle', async (req, res) => {
 });
 
 const updateArticle = async (req) => {
-    const {_id, title, updateTime, content, contentMD, titleImg, abstract, tags,on} = req.body;
-    if (on) return await db.articleInfo.update({_id}, {$set: {title, updateTime, content, contentMD, titleImg, abstract}});
+    const {_id, title, updateTime, content, contentMD, titleImg, tags,on} = req.body;
+    if (on) return await db.articleInfo.update({_id}, {$set: {title, updateTime, content, contentMD, titleImg, abstract:util.getTrimHtml(contentMD).html}});
     return await db.articleInfo.update({_id}, {$set: {tags}})
 };
 
 // 更新文章（更新内容包含文章标题/更新时间/更新内容/文章图片/文章摘要）
 router.post('/api/article/updateArticle', async (req, res) => {
+    console.log(util.getTrimHtml(req.body.contentMD));
     await updateArticle(req).then(async req => {
         if (req.ok === 1) {
             const data = await db.articleInfo.find();
-            console.log(data);
             res.send({
                 code: 0,
                 data,

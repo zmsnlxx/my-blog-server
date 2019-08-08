@@ -1,10 +1,10 @@
 <template>
-    <section class="edit" >
+    <section class="edit">
         <el-container style="height: 100%" v-loading="loading" :element-loading-text="loadingText">
             <el-aside style="border-right:1px solid #999999;" width="200px">
                 <section class="AsideNav">
                     <ul class="article_content">
-                       <el-collapse v-model="activeName" accordion>
+                        <el-collapse v-model="activeName" accordion>
                             <el-collapse-item :name="index" v-for="(item,index) in articleClass" :key="index">
                                 <template slot="title">
                                     <div style="margin-left: 20px;font-size: 16px">
@@ -22,7 +22,8 @@
                                     </li>
                                     <li style="padding-left:40px;box-sizing: border-box;list-style: none;width: 100%;height: 50px;line-height: 50px;border-bottom: 1px solid #eeeeee;"
                                         @click="changeArticle(i,id)" v-for="(i,id) in item.content"
-                                        :key="id" :class="articleIndex === id && activeName === checkActiveName ? 'choiceList' : ''">
+                                        :key="id"
+                                        :class="articleIndex === id && activeName === checkActiveName ? 'choiceList' : ''">
                                         <el-row style="height: 100%;">
                                             <el-col class="over-flow" :span="18" style="height: 100%;">
                                                 <el-tooltip class="item" effect="dark" :content="i.title"
@@ -125,17 +126,17 @@
         activeName: number = 0;
         articleIndex: number = 0;
         protected currentArticle: any = {};
-        protected defaultText: string = '';
-        protected title: string = '文章标题';
+        protected defaultText: string = "";
+        protected title: string = "文章标题";
         protected articleClass: any = [];
-        protected checkActiveName:number = 0;
+        protected checkActiveName: number = 0;
 
         // 监听当前文章的变化，获取当前文章的内容和标题
-        @Watch('currentArticle')
-        changeCurrentArticle(val: any){
-            if(val){
-                this.title = val.title || '文章标题';
-                this.defaultText = val.contentMD || '## 请选择或者新建文章！';
+        @Watch("currentArticle")
+        changeCurrentArticle(val: any) {
+            if (val) {
+                this.title = val.title || "文章标题";
+                this.defaultText = val.contentMD || "## 请选择或者新建文章！";
             }
         }
 
@@ -150,7 +151,7 @@
             if (code === 0) {
                 this.articleInfo = data;
                 this.getArticleClass();
-                this.currentArticle = this.$lo.find(data,(item: any) => item.tags === '前端技术') || [];
+                this.currentArticle = this.$lo.find(data, (item: any) => item.tags === "前端技术") || [];
                 this.defaultText = this.currentArticle.contentMD;
                 this.title = this.currentArticle.title;
             }
@@ -226,6 +227,7 @@
                 contentMD: this.currentHtml,
                 on: true,
             };
+            // console.log(this.Generate_Brief(this.currentHtml,100));
             this.$api.updateArticle(params).then((req: any) => {
                 // 增加请求响应时间
                 setTimeout(() => {
@@ -235,7 +237,7 @@
                     });
                     this.articleInfo = req.data.data;
                     this.getArticleClass();
-                    this.currentArticle = this.$lo.find(req.data.data,(item:any) => item._id === this.currentArticle._id);
+                    this.currentArticle = this.$lo.find(req.data.data, (item: any) => item._id === this.currentArticle._id);
                     this.isPublish = false;
                     this.loading = false;
                 }, 1000);
@@ -253,7 +255,7 @@
                 console.log(data);
                 this.articleInfo = data.data;
                 this.getArticleClass();
-                this.currentArticle = this.$lo.find(data.data,(item: any) => item.tags === '前端技术') || [];
+                this.currentArticle = this.$lo.find(data.data, (item: any) => item.tags === "前端技术") || [];
             }
         }
 
@@ -284,7 +286,7 @@
                 if (req.data.code === 0) {
                     this.articleInfo = req.data.data.data;
                     this.getArticleClass();
-                    this.currentArticle = this.$lo.find(req.data.data.data,(item: any) => item.tags === '前端技术') || [];
+                    this.currentArticle = this.$lo.find(req.data.data.data, (item: any) => item.tags === "前端技术") || [];
                 }
             });
 
@@ -316,6 +318,47 @@
             });
             this.currentHtml = html;
         }
+
+        // protected Generate_Brief(text: any, length: any) {
+        //     if (text.length < length) {
+        //         return text;
+        //     }
+        //     let Foremost = text.substr(0, length);
+        //     const re = /<(\)(BODY|SCRIPT.|P|DIV|H1|H2|H3|H4|H5|H6|ADDRESS|PRE|TABLE|TR|TD|TH|INPUT|SELECT|TEXTAREA|OBJECT|A|UL|OL|LI|BASE|META.|LINK|HR|BR|PARAM|IMG|AREA|INPUT|SPAN)[^>]*(>?)/ig;
+        //     const Singlable = /BASE|META.|LINK|HR|BR|PARAM|IMG|AREA|INPUT/i;
+        //     const Stack = [];
+        //     const posStack = [];
+        //     while (true) {
+        //         const newone = re.exec(Foremost);
+        //         if (newone == null) {
+        //             break;
+        //         }
+        //         if (newone[1] == "") {
+        //             const Elem = newone[2];
+        //             if (Elem.match(Singlable) && newone[3] != "") {
+        //                 continue;
+        //             }
+        //             Stack.push(newone[2].toUpperCase());
+        //             posStack.push(newone.index);
+        //             if (newone[3] == "") {
+        //                 break;
+        //             }
+        //         } else {
+        //             const StackTop = Stack[Stack.length - 1];
+        //             const End = newone[2].toUpperCase();
+        //             if (StackTop == End) {
+        //                 Stack.pop();
+        //                 posStack.pop();
+        //                 if (newone[3] == "") {
+        //                     Foremost = Foremost + ">";
+        //                 }
+        //             }
+        //         }
+        //     }
+        //     const cutpos = posStack.shift();
+        //     Foremost = Foremost.substring(0, cutpos);
+        //     return Foremost;
+        // }
 
     }
 </script>
