@@ -18,7 +18,7 @@ export default new vuex.Store({
         // data: state => state.data.data,
         userInfo: (state: any): any => state.user.user,
         articleInfo: (state: any): any => state.article.articleData,
-        articleIndex: (state: any): any => state.article.choiceIndex,
+        currentArticle: (state: any): any => state.article.currentArticle,
         // modular: state => state.data.data[0],
         // function:state => state.data.data[1],
         // shoppingData: state => state.data.shoppingData.data.productList,

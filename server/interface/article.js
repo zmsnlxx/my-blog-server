@@ -31,7 +31,7 @@ router.post('/api/article/addArticle', (req, res) => {
                 code: 1,
                 data: {
                     message: "创建文章失败!",
-                    data:[]
+                    data: []
                 },
             })
         }
@@ -79,30 +79,26 @@ router.post('/api/article/deleteArticle', async (req, res) => {
     }
 });
 
-const updateArticle = (req) => {
-    const {_id, title, updateTime, content, contentMD, titleImg, tags, abstract} = req.body;
-    return db.articleInfo.update({_id}, {$set: {title, updateTime, content, contentMD, titleImg, tags, abstract}})
+const updateArticle = async (req) => {
+    const {_id, title, updateTime, content, contentMD, titleImg, abstract, tags,on} = req.body;
+    if (on) return await db.articleInfo.update({_id}, {$set: {title, updateTime, content, contentMD, titleImg, abstract}});
+    return await db.articleInfo.update({_id}, {$set: {tags}})
 };
 
-// 更新文章
+// 更新文章（更新内容包含文章标题/更新时间/更新内容/文章图片/文章摘要）
 router.post('/api/article/updateArticle', async (req, res) => {
     await updateArticle(req).then(async req => {
         if (req.ok === 1) {
             const data = await db.articleInfo.find();
+            console.log(data);
             res.send({
                 code: 0,
-                data: {
-                    message: '发布成功!',
-                    data,
-                }
+                data,
             })
         } else {
             res.send({
                 code: 1,
-                data: {
-                    message: '发布失败!',
-                    data
-                }
+                data,
             })
         }
     })

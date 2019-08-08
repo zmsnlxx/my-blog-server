@@ -16,6 +16,7 @@ export interface HeaderName {
 export interface ArticleClass {
     label: string;
     icon: string;
+    content: any;
 }
 
 export interface ArticleTitle {
