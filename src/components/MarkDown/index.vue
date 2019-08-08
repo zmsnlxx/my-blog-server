@@ -63,6 +63,7 @@
         }
 
         @Watch("markdString") changeMarkdwon(value: any) {
+            console.log(value);
             this.markdwon = value;
             marked.setOptions({
                 renderer: new marked.Renderer(),
@@ -139,6 +140,9 @@
                 overflow: auto;
                 flex-grow: 1;
                 word-wrap: break-word;
+                img[src*="#width-full"] {
+                    width: 100%;
+                }
             }
         }
     }

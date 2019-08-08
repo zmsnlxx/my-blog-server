@@ -1,7 +1,7 @@
 function insertText(textDom, value) {
     textDom.focus();
-    const startPos = getSelection(textDom).start
-    const endPos = getSelection(textDom).end
+    const startPos = getSelection(textDom).start;
+    const endPos = getSelection(textDom).end;
     textDom.value = textDom.value.substring(0, startPos) + value + textDom.value.substring(endPos, textDom.value.length);
     textDom.selectionStart = startPos + value.length;
     textDom.selectionEnd = startPos + value.length;
