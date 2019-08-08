@@ -20,8 +20,20 @@ function getArticle(){
     return db.articleInfo.find()
 }
 
+// 文章摘要提取
 function getTrimHtml(html){
     return trimHtml(html);
+}
+
+
+
+// 文章图片提取
+function getArticleImage(html){
+    // 如果有图片
+    const starIndex = html.indexOf('![image]');
+    const lastIndex = html.indexOf('#width-full');
+    if(starIndex !== -1) return html.slice(starIndex + 9, lastIndex);
+    return 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTd1mkbtzu7y0iw_fm9RnuWjP3R_CccH2jr6sOS_BjyNYv0oFBU';
 }
 
 module.exports = {
@@ -29,4 +41,5 @@ module.exports = {
     setRandomId,
     getArticle,
     getTrimHtml,
+    getArticleImage
 };
