@@ -4,18 +4,20 @@ const router = express.Router();
 const db = require("../db");
 const util = require('../util');
 const _ = require('lodash');
+const moment = require('moment');
 
 
 // 文章新增
 router.post('/api/article/addArticle', (req, res) => {
+    const abstract = util.getTrimHtml(req.body.contentMD).html;
     const newArticle = new db.articleInfo({
         id: util.setRandomId(),
         title: req.body.title,
-        time: req.body.time,
+        time: moment().format("YYYY-MM-DD"),
         tags: req.body.tags,
         content: req.body.content, // 转换过后的html
         contentMD: req.body.contentMD, // markdown
-        abstract:util.getTrimHtml(req.body.contentMD).html, // 文章摘要
+        abstract: abstract.replace(/[&\|\\\*^%$#@\-]/g, ""), // 文章摘要
         titleImg: util.getArticleImage(req.body.contentMD), // 文章图片显示
     });
     newArticle.save().then(async (req) => {
@@ -80,8 +82,18 @@ router.post('/api/article/deleteArticle', async (req, res) => {
 });
 
 const updateArticle = async (req) => {
-    const {_id, title, updateTime, content, contentMD, tags,on} = req.body;
-    if (on) return await db.articleInfo.update({_id}, {$set: {title, updateTime, content, contentMD, titleImg:util.getArticleImage(contentMD), abstract:util.getTrimHtml(contentMD).html}});
+    const {_id, title, updateTime, content, contentMD, tags, on} = req.body;
+    const abstract = util.getTrimHtml(contentMD).html;
+    if (on) return await db.articleInfo.update({_id}, {
+        $set: {
+            title,
+            updateTime,
+            content,
+            contentMD,
+            titleImg: util.getArticleImage(contentMD),
+            abstract: abstract.replace(/[&\|\\\*^%$#@\-]/g, ""),
+        }
+    });
     return await db.articleInfo.update({_id}, {$set: {tags}})
 };
 

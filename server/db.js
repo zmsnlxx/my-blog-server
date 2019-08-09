@@ -17,8 +17,8 @@ const User = new mongoose.Schema({
 
 const articleSchema = new mongoose.Schema({
     title: String,
-    time: Date,
-    updateTime: Date,
+    time: String,
+    updateTime: String,
     abstract: String,
     tags: String,
     titleImg: String, // 文章图片
