@@ -46,9 +46,7 @@ router.get('/api/article/getArticle', async (req, res) => {
     if (_.isEmpty(articleArr)) {
         res.send({
             code: 1,
-            data: {
-                message: "暂无文章"
-            }
+            data: [],
         })
     } else {
         res.send({

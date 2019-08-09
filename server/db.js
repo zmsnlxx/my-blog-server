@@ -21,6 +21,7 @@ const articleSchema = new mongoose.Schema({
     updateTime: Date,
     abstract: String,
     tags: String,
+    titleImg: String, // 文章图片
     content: String, // 转换过后的html
     contentMD: String // markdown
 });

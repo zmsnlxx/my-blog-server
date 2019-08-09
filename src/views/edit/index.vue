@@ -21,7 +21,7 @@
                                         <i class="el-icon-circle-plus"></i>
                                     </li>
                                     <li style="padding-left:40px;box-sizing: border-box;list-style: none;width: 100%;height: 50px;line-height: 50px;border-bottom: 1px solid #eeeeee;"
-                                        @click="changeArticle(i,id)" v-for="(i,id) in item.content"
+                                        @click="changeArticle(i,id)" v-show="item.content && !$lo.isEmpty(item.content)" v-for="(i,id) in item.content"
                                         :key="id"
                                         :class="articleIndex === id && activeName === checkActiveName ? 'choiceList' : ''">
                                         <el-row style="height: 100%;">
@@ -147,40 +147,37 @@
 
         // 拿到所有文章数据存到vuex
         protected async mounted() {
-            const {code, data} = (await this.getArticle()).data;
-            if (code === 0) {
-                this.articleInfo = data;
-                this.getArticleClass();
-                this.currentArticle = this.$lo.find(data, (item: any) => item.tags === "前端技术") || [];
-                this.defaultText = this.currentArticle.contentMD;
-                this.title = this.currentArticle.title;
-            }
+            const {data} = (await this.getArticle()).data;
+            this.articleInfo = data;
+            this.getArticleClass();
+            this.currentArticle = this.$lo.find(data, (item: any) => item.tags === "前端技术") || [];
+            this.defaultText = this.currentArticle.contentMD || "## 请选择或者新建文章！";
+            this.title = this.currentArticle.title || "文章标题";
             this.loading = false;
         }
 
         // 切换当前文章
         protected changeArticle(item: any, id: number): void {
-            // console.log(id);
             this.checkActiveName = this.activeName;
             this.currentArticle = item;
             this.articleIndex = id;
         }
 
         getArticleClass() {
-            if (this.$lo.isEmpty(this.articleInfo)) {
-                return [];
-            }
             const classArr: Array<Types.ArticleClass> = [
                 {label: "前端技术", icon: "", content: []},
                 {label: "生活情感", icon: "", content: []},
                 {label: "日常吐槽", icon: "", content: []},
                 {label: "语言艺术", icon: "", content: []},
             ];
-            this.$lo.each(this.articleInfo, (item: any) => {
-                const index = this.$lo.findIndex(classArr, (i: any) => i.label === item.tags);
-                classArr[index].content.push(item);
-            });
+            if (!this.$lo.isEmpty(this.articleInfo)) {
+                this.$lo.each(this.articleInfo, (item: any) => {
+                    const index = this.$lo.findIndex(classArr, (i: any) => i.label === item.tags);
+                    classArr[index].content.push(item);
+                });
+            }
             this.articleClass = classArr;
+            console.log(this.articleClass);
         }
 
         // 请求文章数据接口
@@ -318,48 +315,6 @@
             });
             this.currentHtml = html;
         }
-
-        // protected Generate_Brief(text: any, length: any) {
-        //     if (text.length < length) {
-        //         return text;
-        //     }
-        //     let Foremost = text.substr(0, length);
-        //     const re = /<(\)(BODY|SCRIPT.|P|DIV|H1|H2|H3|H4|H5|H6|ADDRESS|PRE|TABLE|TR|TD|TH|INPUT|SELECT|TEXTAREA|OBJECT|A|UL|OL|LI|BASE|META.|LINK|HR|BR|PARAM|IMG|AREA|INPUT|SPAN)[^>]*(>?)/ig;
-        //     const Singlable = /BASE|META.|LINK|HR|BR|PARAM|IMG|AREA|INPUT/i;
-        //     const Stack = [];
-        //     const posStack = [];
-        //     while (true) {
-        //         const newone = re.exec(Foremost);
-        //         if (newone == null) {
-        //             break;
-        //         }
-        //         if (newone[1] == "") {
-        //             const Elem = newone[2];
-        //             if (Elem.match(Singlable) && newone[3] != "") {
-        //                 continue;
-        //             }
-        //             Stack.push(newone[2].toUpperCase());
-        //             posStack.push(newone.index);
-        //             if (newone[3] == "") {
-        //                 break;
-        //             }
-        //         } else {
-        //             const StackTop = Stack[Stack.length - 1];
-        //             const End = newone[2].toUpperCase();
-        //             if (StackTop == End) {
-        //                 Stack.pop();
-        //                 posStack.pop();
-        //                 if (newone[3] == "") {
-        //                     Foremost = Foremost + ">";
-        //                 }
-        //             }
-        //         }
-        //     }
-        //     const cutpos = posStack.shift();
-        //     Foremost = Foremost.substring(0, cutpos);
-        //     return Foremost;
-        // }
-
     }
 </script>
 <style lang="less">
