@@ -15,7 +15,8 @@
                         leave-active-class="animated bounceOutLeft"
                 >
                     <div v-show="show" class="app-enter" :class="item.id" v-for="(item,i) in EnterData" :key="i"
-                         :style="{left: item.left, bottom: item.bottom, width: item.width+'px'}" @click="">
+                         :style="{left: item.left, bottom: item.bottom, width: item.width+'px'}"
+                         @click="jump(item.jump)">
                         <div class="link-container"
                              :style="{height: item.width*0.65+'px', border: `1px solid rgb(${item.rgb})`, color: item.fontColor, backgroundColor: item.bgColor,backgroundImage: item.backgroundImage,fontSize: item.width*0.17+'px', zIndex: 6}">
                             {{ item.name }}
@@ -41,6 +42,7 @@
     import {Component, Vue} from "vue-property-decorator";
     import {Action, Getter} from "vuex-class";
     import jsCookie from "js-cookie";
+    import Types from '../../types/index'
 
     @Component
     export default class Home extends Vue {
@@ -72,6 +74,7 @@
                 name: "首页",
                 group: "首页",
                 id: "zhxy",
+                jump: "/home"
             },
             {
                 left: "9%",
@@ -86,6 +89,7 @@
                 name: "编辑",
                 group: "编辑",
                 id: "pkxk",
+                jump: "/edit"
             },
             {
                 left: "15%",
@@ -100,6 +104,7 @@
                 name: "快速查找",
                 group: "查找",
                 id: "qywx",
+                jump: "/home"
             },
             {
                 left: "28%",
@@ -114,6 +119,7 @@
                 name: "文章撰写",
                 group: "写作",
                 id: "bwtk",
+                jump: "/home"
             },
             {
                 left: "40%",
@@ -127,6 +133,7 @@
                 name: "个人主页",
                 group: "个人主页",
                 id: "jydsj",
+                jump: "/home"
             },
             {
                 left: "54%",
@@ -139,6 +146,7 @@
                 name: "数据汇总",
                 group: "汇总",
                 id: "ksyj",
+                jump: "/home"
             },
             {
                 left: "67%",
@@ -151,6 +159,7 @@
                 name: "待定模块",
                 group: "待定",
                 id: "cjfx",
+                jump: "/home"
             },
             {
                 left: "68%",
@@ -166,6 +175,7 @@
                 group: "待定",
                 pathname: "http://data.yunxiao.com/manage",
                 id: "zhszpj",
+                jump: "/home"
             },
             {
                 left: "80%",
@@ -180,6 +190,7 @@
                 name: "待定模块",
                 group: "待定",
                 id: "zysygh",
+                jump: "/home"
             },
             {
                 left: "85%",
@@ -194,6 +205,7 @@
                 name: "待定模块",
                 group: "待定",
                 id: "zbpkxk",
+                jump: "/home"
             }
         ];
 
@@ -204,11 +216,15 @@
                 const oldCookie: string = jsCookie.get("email") || "";
                 const cookie: string = this.$util.DecodeCookie(oldCookie);
                 const InterfaceData: Types.InterfaceData = (await this.$api.getUserInfo({cookie})).data;
-                const {code,data} = InterfaceData;
+                const {code, data} = InterfaceData;
                 if (code === 0) {
                     this.setUserInfo(data);
                 }
             }
+        };
+
+        jump(path:string){
+            this.$router.push({path})
         }
     }
 </script>

@@ -50,6 +50,7 @@
     "chai": "^4.1.2",
     "less": "^3.0.4",
     "less-loader": "^4.1.0",
+    "tslint-config-prettier": "^1.18.0",
     "typescript": "^3.4.3",
     "vue-template-compiler": "^2.6.10"
   }

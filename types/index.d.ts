@@ -1,3 +1,5 @@
+import './user.d.ts';
+
 export interface UserItem {
     email: string;
     password: string;
@@ -24,15 +26,6 @@ export interface ArticleTitle {
     _id: string;
 }
 
-export interface ArticleParams {
-    author: string;
-    title: string;
-    time: string;
-    tags: string;
-    content: string;
-    contentMD: string;
-}
-
 
 declare module 'vue/types/vue' {
     export interface Vue {
@@ -42,4 +35,12 @@ declare module 'vue/types/vue' {
     }
 }
 
-export as namespace Types
+// tslint:disable-next-line:no-namespace
+declare namespace myLib {
+    export interface ArticleTitle {
+        title: string;
+        _id: string;
+    }
+}
+
+// export declare const Types: (ArticleTitle: ArticleTitle) => void;

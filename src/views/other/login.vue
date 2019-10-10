@@ -35,6 +35,8 @@
 
 <script lang="ts">
     import {Vue, Component} from "vue-property-decorator";
+    import Types from '../../../types/index'
+
 
     @Component
     export default class LoginNav extends Vue {

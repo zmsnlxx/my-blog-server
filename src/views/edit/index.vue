@@ -21,7 +21,8 @@
                                         <i class="el-icon-circle-plus"></i>
                                     </li>
                                     <li style="padding-left:40px;box-sizing: border-box;list-style: none;width: 100%;height: 50px;line-height: 50px;border-bottom: 1px solid #eeeeee;"
-                                        @click="changeArticle(i,id)" v-show="item.content && !$lo.isEmpty(item.content)" v-for="(i,id) in item.content"
+                                        @click="changeArticle(i,id)" v-show="item.content && !$lo.isEmpty(item.content)"
+                                        v-for="(i,id) in item.content"
                                         :key="id"
                                         :class="articleIndex === id && activeName === checkActiveName ? 'choiceList' : ''">
                                         <el-row style="height: 100%;">
@@ -114,7 +115,7 @@
     import hljs from "highlight.js";
     import marked from "marked";
     import moment from "moment";
-
+    import Types from '../../../types/index';
     @Component
     export default class EditNav extends Vue {
         protected theme: string = "default";

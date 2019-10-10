@@ -15,6 +15,7 @@
 
 <script lang="ts">
     import {Vue, Component} from "vue-property-decorator";
+    import Types from '../../../types/index'
 
     let timer: any;
     @Component
