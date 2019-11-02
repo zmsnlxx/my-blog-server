@@ -1,26 +1,25 @@
 import axios from '../axios';
+import Types from '../../../types/index';
 
 // 新增文章
-const addArticle = (params: {
-    author: string;
-    title: string;
-    time: string;
-    tags: string;
-    content: string;
-    contentMD: string;
-}) => {
+const addArticle = (params: Types.ArticleData) => {
     return axios.post(`article/addArticle`, params);
 };
 
 // 删除文章
-const deleteArticle = (params: { _id: string }) => {
+const deleteArticle = (params: { articleId: string | number,classId: string | number }) => {
     return axios.post(`article/deleteArticle`, params);
 };
 
 
-// 获取文章
-const getArticle = (): object => {
-    return axios.get(`article/getArticle`);
+// 获取分类所有文章
+const getArticle = (params:{id: number}): object => {
+    return axios.post(`article/getArticle`,params);
+};
+
+// 获取指定文章详情
+const getArticleDetails = (params: {id: any}) => {
+    return axios.post(`article/details`,params);
 };
 
 // 更新文章
@@ -43,5 +42,6 @@ export default {
     getArticle,
     deleteArticle,
     updateArticle,
+    getArticleDetails,
 };
 

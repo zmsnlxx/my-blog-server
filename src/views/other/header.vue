@@ -1,101 +1,73 @@
 <template>
     <section class="header">
-        <transition
-                mode="out-in"
-                name="custom-classes-transition"
-                enter-active-class="animated fadeInDown"
-                leave-active-class="animated fadeOut"
-        >
-            <ul class="ul" v-show="headerInit">
-                <el-icon class="el-icon-close li close" @click.native="closeHeader"/>
-                <li class="li"><router-link class="routerJump" :style="{color: currentPath === '/home' ? 'bisque' : 'white'}" to="/home">首页</router-link></li>
-                <li class="li"><router-link class="routerJump" :style="{color: currentPath === '/article' ? 'bisque' : 'white'}" to="/article">文章</router-link></li>
-<!--                <li class="li"><router-link class="routerJump" :style="{color: currentPath === '/newArticle' ? 'bisque' : 'white'}" to="/newArticle">更新</router-link></li>-->
-                <li class="li"><router-link class="routerJump" :style="{color: currentPath === '/comment' ? 'bisque' : 'white'}" to="/comment">留言</router-link></li>
-                <li class="li" v-show="canIEdit"><router-link :style="{color: currentPath === '/edit' ? 'bisque' : 'white'}" class="routerJump" to="/edit">编辑</router-link></li>
-                <li class="li">
-                    <el-input class="input" type="text" placeholder="Try to search ..." @change="handlerSearch"
-                              v-model="value" suffix-icon="el-icon-search"/>
-                </li>
-                <li v-if="isLogin" class="li" style="float: right">
-                    <el-dropdown style="width: 100%;height: 100%;" placement="top-end">
-                        <el-button style="width: 100%;height: 100%;font-size: 18px;color: white" type="text">{{ user.name }}</el-button>
-                        <el-dropdown-menu slot="dropdown">
-                            <el-dropdown-item @click.native="$router.push({path:'/personal'})">个人资料</el-dropdown-item>
-                            <el-dropdown-item @click.native="clearUser">退出登录</el-dropdown-item>
-                        </el-dropdown-menu>
-                    </el-dropdown>
-                </li>
-                <li v-else class="li" style="float: right"><router-link class="routerJump" to="/login">[登录]</router-link></li>
-            </ul>
-        </transition>
+        <ul class="ul">
+            <li class="li" v-for="(item,index) in routerData" :key="index" @click="changeIndex(item)">
+                <router-link class="routerJump" :class="currentIndex === index ? 'selection' : ''" :to="item.path">{{
+                    item.name }}
+                </router-link>
+            </li>
 
-        <transition
-                mode="out-in"
-                name="custom-classes-transition"
-                enter-active-class="animated fadeInDown"
-                leave-active-class="animated fadeOut"
-        >
-            <el-icon v-if="show" class="el-icon-s-grid icon" @click.native="openHeader"/>
-        </transition>
+            <li v-if="isLogin" class="li" style="float: right">
+                <el-dropdown style="width: 100%;height: 100%;" placement="top-end">
+                    <el-button style="width: 100%;height: 100%;font-size: 18px;color: white" type="text">{{
+                        userInfo.name }}
+                    </el-button>
+                    <el-dropdown-menu slot="dropdown">
+                        <el-dropdown-item @click.native="$router.push({path:'/personal'})">个人资料</el-dropdown-item>
+                        <el-dropdown-item @click.native="clearUser">退出登录</el-dropdown-item>
+                    </el-dropdown-menu>
+                </el-dropdown>
+            </li>
+            <li v-else class="li" style="float: right">
+                <router-link class="routerJump" to="/login">[登录]</router-link>
+            </li>
+        </ul>
     </section>
 </template>
 
-<script>
-    import {Vue, Component} from 'vue-property-decorator'
-    import {Getter} from 'vuex-class'
-    import JsCookie from 'js-cookie'
+<script lang="ts">
+    import {Vue, Component} from "vue-property-decorator";
+    import {Getter, Action} from "vuex-class";
+    import JsCookie from "js-cookie";
+    import Types from "../../../types/index";
 
     @Component
     export default class HeaderNav extends Vue {
-        @Getter user
-        headerInit = false
-        show = false
-        value = null
+        @Action setUserInfo: any;
+        @Getter userInfo: any;
+        isLogin: boolean = false;
+        routerData: Array<Types.RouterData> = [
+            {name: "首页", path: "/home/index"},
+            {name: "分类管理", path: "/home/addClass"},
+            {name: "编辑记录", path: "/home/editRecord"},
+            {name: "数据汇总", path: "/home/dataSummary"},
+        ];
+        currentIndex: number = 0;
 
+        async mounted() {
+            if (JsCookie.get("email")) {
+                const oldCookie: string = JsCookie.get("email") || "";
+                const cookie: string = this.$util.DecodeCookie(oldCookie);
+                const InterfaceData: Types.InterfaceData = (await this.$api.getUserInfo({cookie})).data;
+                const {code, data} = InterfaceData;
+                if (code === 0) {
+                    await this.setUserInfo(data);
+                    this.isLogin = this.$lo.size(this.userInfo) !== 0;
+                }
+            }
+        };
 
-        mounted() {
-            setTimeout(() => {
-                this.headerInit = !this.headerInit
-            }, 500)
+        changeIndex(params: Types.RouterData): void {
+            this.currentIndex = this.$lo.findIndex(this.routerData, (item: Types.RouterData): boolean => item.path === params.path);
         }
 
-        get isLogin(){
-            return this.$lo.size(this.user) !== 0
+        clearUser() {
+            JsCookie.remove("email");
+            this.$router.push({path: "/login"});
         }
 
-        clearUser(){
-            JsCookie.remove('email')
-            this.$router.push({path:'/login'})
-        }
-
-        get currentPath(){
-            return this.$route.path
-        }
-
-        get canIEdit() {
-            return this.user.email === 'zmsnlxx@163.com'
-        }
-
-        closeHeader() {
-            this.headerInit = !this.headerInit
-            setTimeout(() => {
-                this.show = !this.show
-            }, 1000)
-        }
-
-        openHeader() {
-            this.show = !this.show
-            setTimeout(() => {
-                this.headerInit = !this.headerInit
-            }, 1000)
-        }
-
-        handlerSearch() {
-            console.log(this.value)
-            setTimeout(() => {
-                this.value = null
-            }, 50)
+        get currentPath(): string {
+            return this.$route.path;
         }
 
     }
@@ -107,6 +79,8 @@
         width: 100%;
         position: relative;
         height: 60px;
+        background-color: #475669;
+        box-shadow: 0 0 5px #999999;
 
         .icon {
             color: white;
@@ -126,30 +100,27 @@
 
             .li {
                 color: white;
-                width: 80px;
+                width: 120px;
                 font-size: 18px;
                 list-style: none;
                 float: left;
-                text-align: center;
+                text-align: left;
                 line-height: 60px;
-                .routerJump{
+
+                .routerJump {
                     text-decoration: none;
                     color: white;
                 }
-                .routerJump:hover{
+
+                .routerJump:hover {
                     color: bisque;
                 }
-                .input {
-                    margin-left: 60px;
-                    width: 200px;
-                    line-height: 60px;
+
+                .selection {
+                    color: bisque;
                 }
             }
 
-            .close {
-                text-align: left;
-                font-size: 30px;
-            }
         }
     }
 </style>

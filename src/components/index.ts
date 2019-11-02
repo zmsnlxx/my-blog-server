@@ -6,6 +6,7 @@ import CommentNav from './comment.vue';
 import MarkDown from './MarkDown/index.vue';
 import BackGround from './BackGround.vue';
 
+
 export default {
     install(Vue: any) {
         Vue.component('CardNav', CardNav);

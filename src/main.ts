@@ -37,6 +37,7 @@ Vue.use(axios);
 Vue.use(Components);
 
 Vue.prototype.$lo = _;
+Vue.prototype._ = _;
 Vue.prototype.$util = util;
 Vue.prototype.$moment = moment;
 

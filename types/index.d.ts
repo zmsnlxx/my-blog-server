@@ -10,6 +10,28 @@ export interface InterfaceData {
     data: any;
 }
 
+export interface RouterData {
+    name: string;
+    path: string;
+}
+
+export interface ArticleClassData {
+    name: string;
+    id: string | number;
+    desc: string;
+    _id?: string;
+    _v?: string
+}
+
+export interface ArticleData {
+    title: string;
+    img: string | any;
+    content: string;
+    tags: string;
+    abstract: string;
+    id?: any;
+}
+
 export interface HeaderName {
     label: string;
     jump: string;
