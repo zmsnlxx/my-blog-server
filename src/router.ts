@@ -17,10 +17,10 @@ export default new Router({
             component: () => import('./views/home/index.vue'),
             children:[
                 {path:'index',name:'index',component: () => import('./views/home/article/index.vue')},
-                {path:'addClass',name:'addClass',component: () => import('./views/home/addClass/index.vue')},
+                {path:'addClass',name:'addClass',component: () => import('./views/home/articleClass/index.vue')},
                 {path:'editRecord',name:'editRecord',component: () => import('./views/home/editRecord/index.vue')},
                 {path:'dataSummary',name:'dataSummary',component: () => import('./views/home/dataSummary/index.vue')},
-                {path:'articleDetails',name:'articleDetails',component: () => import('./views/home/articleDetails/index.vue')},
+                {path:'addArticle',name:'addArticle',component: () => import('./views/home/article/addArticle.vue')},
             ],
         },
         {path: '/login', component: login},

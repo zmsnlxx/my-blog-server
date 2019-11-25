@@ -22,7 +22,7 @@ ajax.interceptors.request.use(req => {
     });
 /*请求之后的操作*/
 ajax.interceptors.response.use(res => {
-    return res;
+    return res.data;
 }, err => {
     Message.error(err);
 });

@@ -1,4 +1,5 @@
 import _ from 'lodash';
+import {Message} from 'element-ui';
 
 
 /**
@@ -8,7 +9,7 @@ import _ from 'lodash';
  * @constructor
  */
 const DecodeCookie = (str: string) => {
-    let strArr: any = '';
+    let strArr;
     let strRtn: string = '';
     strArr = str.split('a');
     for (let i = _.size(strArr) - 1; i >= 0; i--) {
@@ -18,6 +19,18 @@ const DecodeCookie = (str: string) => {
     return strRtn;
 };
 
+const checkResp = (resp: any) => {
+    if (resp && (resp.code === 0 || resp.code === 1)) {
+        if (resp.data !== null) {
+            return resp.data;
+        }
+        return resp;
+    }
+    Message.error(resp.data);
+    return Promise.reject(resp);
+};
+
 export default {
     DecodeCookie,
+    checkResp
 };

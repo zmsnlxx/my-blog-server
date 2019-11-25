@@ -1,9 +1,9 @@
 <template>
-    <section class="addArticle">
+    <section class="addArticle" style="margin-top: 80px">
         <el-card class="card" :body-style="{padding:'15px',height:'100%',boxSizing: 'border-box'}">
             <div slot="header" class="clearfix">
                 <ul>
-                    <li>文章新增</li>
+                    <li>{{ isAdd ? '文章新增' : '文章编辑' }}</li>
                 </ul>
             </div>
             <div class="card-body">
@@ -15,7 +15,7 @@
                             <el-icon style="text-align: center;line-height: 120px;width: 100%;font-size: 30px;"
                                      class="el-icon-plus"></el-icon>
                         </div>
-                        <img v-else :src="form.img" alt="" style="width:120px;height:120px">
+                        <img v-else :src="form.img" alt="" style="width:120px;height:120px" @click="updataImg">
                         <input type="file" id="file" name="file" style="width:0;height: 0;" @change="handleFile">
                     </el-form-item>
                     <el-form-item label="文章标题" prop="title">
@@ -31,46 +31,45 @@
                         <el-input v-model="form.abstract" placeholder="请输入文章摘要"></el-input>
                     </el-form-item>
                     <el-form-item label="文章正文">
-                        <el-button @click="isShowMarkDown = true">编辑文章</el-button>
+                        <mark-down
+                                :theme="theme"
+                                :default-text="form.contentMD"
+                                :uploadImage="uploadImage"
+                                width="100%"
+                                height="100%"
+                                class="markdown"
+                                @html-change="htmlChange"
+                                style="height: 500px;"
+                        />
                     </el-form-item>
                     <el-form-item>
-                        <el-button type="primary" @click="onSubmit('ruleForm')">新建</el-button>
+                        <el-button v-if="isAdd" type="primary" @click="onSubmit('ruleForm')">新建</el-button>
+                        <el-button v-else type="primary" @click="editArticle">保存</el-button>
                         <el-button @click="cancel">取消</el-button>
                     </el-form-item>
                 </el-form>
             </div>
         </el-card>
-
-        <el-dialog
-                title="文章编辑"
-                :visible.sync="isShowMarkDown"
-                width="60%"
-                :before-close="handleClose">
-            <markDownModel @htmlValue="params => form.content = params.markedHtml"></markDownModel>
-            <span slot="footer" class="dialog-footer">
-                <el-button @click="isShowMarkDown = false">取 消</el-button>
-                <el-button type="primary" @click="isShowMarkDown = false">确 定</el-button>
-            </span>
-        </el-dialog>
     </section>
 </template>
 
 <script lang="ts">
-    import {Vue, Component, Prop} from "vue-property-decorator";
+    import {Vue, Component} from "vue-property-decorator";
     import Types from "../../../../types/index";
-    import markDownModel from "./markDownModel.vue";
+    import hljs from "highlight.js";
+    import marked from "marked";
 
-    @Component({components: {markDownModel}})
+    @Component
     export default class addArticle extends Vue {
-        @Prop(Array) classData: Array<Types.ArticleClassData>;
-        isShowMarkDown: boolean = false;
         form: Types.ArticleData = {
             img: "",
             title: "",
             tags: "",
             abstract: "",
             content: "",
+            contentMD: ''
         };
+        classData: Array<Types.ArticleClassData> = [];
         rules: any = {
             title: [
                 {required: true, message: "请填写文章标题", trigger: "change"}
@@ -82,15 +81,53 @@
                 {required: true, message: "请填写文章摘要", trigger: "change"}
             ],
         };
+        articleId: any;
+        isAdd: boolean = true;
+        theme: string = "default";
 
-        imgLoading: boolean = false;
 
-        goPublish() {
-            console.log(this.form);
+        htmlChange(html: string) {
+            this.$nextTick(() => {
+                const codes = document.querySelectorAll(".markdown-body pre code");
+                codes.forEach(elem => {
+                    hljs.highlightBlock(elem);
+                });
+            });
+            this.form.contentMD = html;
+            this.form.content = marked(html);
         }
 
-        handleClose() {
-            this.isShowMarkDown = false;
+        async mounted() {
+            const {type, id} = this.$route.query;
+            this.articleId = id;
+            this.isAdd = type === "add";
+            if (this.isAdd) {
+                this.classData = await this.getArticleClass().then((req: Types.InterfaceData) => this.$util.checkResp(req));
+            } else {
+                const [classData, articleDetails] = await Promise.all([this.getArticleClass(), this.getArticleDetails()]).then(req => {
+                    return this.$lo.map(req, (item: Types.InterfaceData) => this.$util.checkResp(item))
+                });
+                this.classData = classData;
+                this.form = articleDetails;
+                console.log(this.form);
+            }
+        }
+
+        // 编辑文章
+        async editArticle(){
+            const {code} = await this.$api.updateArticle(this.form);
+            if (code === 0) {
+                this.$router.push({name: "index"});
+            }
+        }
+
+        getArticleDetails(){
+            return this.$api.getArticleDetails({id: this.articleId})
+        }
+
+        // 获取文章分类
+        getArticleClass() {
+            return this.$api.getArticleClass();
         }
 
         handleFile(e: any) {
@@ -119,17 +156,18 @@
             input.click();
         }
 
+        // 新建文章
         async onSubmit(formName: any) {
-            if(this.$lo.size(this.form.tags) === 0){
-                this.$message.warning('请选择文章分类');
-                return
+            if (this.$lo.size(this.form.tags) === 0) {
+                this.$message.warning("请选择文章分类");
+                return;
             }
             const $refs: any = this.$refs[formName];
             $refs.validate(async (valid: any) => {
                 if (valid) {
-                    const {code} = (await this.$api.addArticle(this.form)).data;
+                    const {code} = await this.$api.addArticle(this.form);
                     if (code === 0) {
-                        this.$emit("changeShow", true);
+                        this.$router.push({name: "index"});
                     }
                 } else {
                     return false;
@@ -137,14 +175,31 @@
             });
         }
 
+        // 取消编辑或新增，返回文章列表页
         cancel() {
-            this.$emit("changeShow", true);
+            this.$router.push({name: "index"});
+        }
+
+        async uploadImage(file: any) {
+            return await this.uploadRequest(file);
+        }
+
+        uploadRequest(file: any) {
+            const result = "https://github.com/luosijie/Front-end-Blog/blob/master/img/logo_vmmarkdown_name.png?raw=true";
+            return new Promise((resolve, reject) => {
+                window.setTimeout(() => {
+                    resolve(result);
+                }, 1000);
+            });
         }
     }
 </script>
 
 <style lang="less" scoped>
     .addArticle {
+        width: 80%;
+        margin: 0 auto;
+
         .card {
             .clearfix {
                 ul {

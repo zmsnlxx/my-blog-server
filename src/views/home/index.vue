@@ -1,4 +1,5 @@
 <template>
+    <!--    首页-->
     <div class="home">
         <headerNav class="header"></headerNav>
         <router-view class="content"></router-view>

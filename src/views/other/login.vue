@@ -48,11 +48,11 @@
 
         protected goLogin():void  {
             this.$api.login(this.userForm).then((req: Types.InterfaceData) => {
-                const {code, data} = req.data;
+                const {code, data} = req;
                 if (code === 0) {
                     this.$router.push({path: "/"});
                 } else {
-                    this.$message.error(data.message);
+                    this.$message.error(data);
                 }
             }).catch((err: any) => {
                 console.log(err);

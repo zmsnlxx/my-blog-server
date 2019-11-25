@@ -48,7 +48,7 @@
             if (JsCookie.get("email")) {
                 const oldCookie: string = JsCookie.get("email") || "";
                 const cookie: string = this.$util.DecodeCookie(oldCookie);
-                const InterfaceData: Types.InterfaceData = (await this.$api.getUserInfo({cookie})).data;
+                const InterfaceData: Types.InterfaceData = await this.$api.getUserInfo({cookie});
                 const {code, data} = InterfaceData;
                 if (code === 0) {
                     await this.setUserInfo(data);
@@ -64,10 +64,6 @@
         clearUser() {
             JsCookie.remove("email");
             this.$router.push({path: "/login"});
-        }
-
-        get currentPath(): string {
-            return this.$route.path;
         }
 
     }

@@ -43,7 +43,6 @@
             <vm-markdown-button icon="iconfont icon-layout-right" layout="right" @click.native="setLayout('right')"/>
             <!-- <vm-markdown-button icon="iconfont icon-layout-left" layout="left"/> -->
             <vm-markdown-button icon="iconfont icon-layout-zoom" layout="zoom" @click.native="setLayout('zoom')"/>
-            <span style="margin-left: 20px" @click="goPublish">完成</span>
         </div>
     </div>
 </template>
@@ -131,10 +130,6 @@
         //     // this.insertText(imgUrl);
         // }
 
-
-        goPublish() {
-            this.$emit("publish", this.markdwon);
-        }
 
         insertText(string: string) {
             let content: any = document.querySelector(".vm-markdown-content");

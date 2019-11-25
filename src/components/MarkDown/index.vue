@@ -8,7 +8,6 @@
                 :uploadImage="uploadImage"
                 @textChange="updateHtmlString"
                 :markdwon="markdwon"
-                @publish="publish"
         >
         </vm-markdown-menu>
         <div class="content">
@@ -53,17 +52,12 @@
             }
         }
 
-        publish(){
-            this.$emit('goPublish')
-        }
-
         @Watch("defaultText")
         changeDefaultText(val: any) {
             this.markdString = val;
         }
 
         @Watch("markdString") changeMarkdwon(value: any) {
-            console.log(value);
             this.markdwon = value;
             marked.setOptions({
                 renderer: new marked.Renderer(),

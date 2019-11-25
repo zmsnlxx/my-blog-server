@@ -29,6 +29,7 @@ export interface ArticleData {
     content: string;
     tags: string;
     abstract: string;
+    contentMD: string;
     id?: any;
 }
 

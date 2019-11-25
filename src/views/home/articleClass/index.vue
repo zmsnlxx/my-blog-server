@@ -147,14 +147,13 @@
             }
             return this.$lo.map(this.classData, (item: Types.ArticleClassData, index: number) => {
                 const data = {id: item.id, value: ""};
-                const result = { delete: data, edit: data, num: index + 1};
+                const result = {delete: data, edit: data, num: index + 1};
                 return Object.assign(result, item);
             });
         }
 
         async mounted() {
-            const data = (await this.$api.getArticleClass()).data;
-            this.classData = data.data;
+            this.classData = await this.$api.getArticleClass().then((req: Types.InterfaceData) => this.$util.checkResp(req));
             setTimeout(() => {
                 this.loading = false;
             }, 1000);
@@ -167,8 +166,12 @@
                 this.addDialogVisible = false;
                 this.loading = true;
                 const params = {name: this.className, desc: this.desc};
-                const data = (await this.$api.addArticleClass(params)).data;
-                this.changeData(data.data.data);
+                const {code, data} = await this.$api.addArticleClass(params);
+                if (code === 1 || code === 0) {
+                    this.changeData(data);
+                } else {
+                    this.$message.error(data)
+                }
                 this.className = "";
                 this.desc = "";
             }
@@ -177,8 +180,12 @@
         async deleteClass({row}: any) {
             this.loading = true;
             const {id} = row;
-            const data = (await this.$api.deleteArticleClass({id})).data;
-            this.changeData(data.data.data);
+            const {code, data} = await this.$api.deleteArticleClass({id});
+            if (code === 1 || code === 0) {
+                this.changeData(data);
+            } else {
+                this.$message.error(data)
+            }
         }
 
         openEditClass({row}: any) {
@@ -197,11 +204,15 @@
                 name: this.editClassName,
                 desc: this.editDesc
             };
-            const data = (await this.$api.updateArticleClass(params)).data;
-            this.changeData(data.data);
+            const {code, data} = await this.$api.updateArticleClass(params);
+            if (code === 1 || code === 0) {
+                this.changeData(data);
+            } else {
+                this.$message.error(data)
+            }
         }
 
-        changeData(data:any){
+        changeData(data: any) {
             this.classData = data;
             setTimeout(() => {
                 this.loading = false;
