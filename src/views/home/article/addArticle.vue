@@ -15,7 +15,7 @@
                             <el-icon style="text-align: center;line-height: 120px;width: 100%;font-size: 30px;"
                                      class="el-icon-plus"></el-icon>
                         </div>
-                        <img v-else :src="form.img" alt="" style="width:120px;height:120px" @click="updataImg">
+                        <img v-else :src="form.img" alt="" style="height:120px" @click="updataImg">
                         <input type="file" id="file" name="file" style="width:0;height: 0;" @change="handleFile">
                     </el-form-item>
                     <el-form-item label="文章标题" prop="title">
@@ -67,7 +67,8 @@
             tags: "",
             abstract: "",
             content: "",
-            contentMD: ''
+            contentMD: '',
+            id: ''
         };
         classData: Array<Types.ArticleClassData> = [];
         rules: any = {
@@ -109,7 +110,6 @@
                 });
                 this.classData = classData;
                 this.form = articleDetails;
-                console.log(this.form);
             }
         }
 
@@ -117,7 +117,7 @@
         async editArticle(){
             const {code} = await this.$api.updateArticle(this.form);
             if (code === 0) {
-                this.$router.push({name: "index"});
+                this.$router.push({name: "article@index"});
             }
         }
 
@@ -167,7 +167,7 @@
                 if (valid) {
                     const {code} = await this.$api.addArticle(this.form);
                     if (code === 0) {
-                        this.$router.push({name: "index"});
+                        this.$router.push({name: "article@index"});
                     }
                 } else {
                     return false;
@@ -177,7 +177,7 @@
 
         // 取消编辑或新增，返回文章列表页
         cancel() {
-            this.$router.push({name: "index"});
+            this.$router.push({name: "article@index"});
         }
 
         async uploadImage(file: any) {

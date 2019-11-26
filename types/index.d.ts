@@ -30,7 +30,9 @@ export interface ArticleData {
     tags: string;
     abstract: string;
     contentMD: string;
-    id?: any;
+    updateTime?: string;
+    createdTime?: string;
+    id: any;
 }
 
 export interface HeaderName {

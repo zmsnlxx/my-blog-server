@@ -13,28 +13,39 @@
                     </ul>
                 </div>
                 <div class="card-body" v-if="_.size(articleInfo) !== 0" v-loading="loading" element-loading-text="拼命加载中">
-                    <div v-for="(item,index) in articleInfo" :key="index" class="card-item">
+                    <div v-for="(item,index) in articleInfo" :key="index" class="card-item" @click="getArticleDetails(item.id)">
                         <div class="card-content">
                             <div class="left">
                                 <img :src="item.img" alt="">
                             </div>
                             <div class="right">
-                                <h1>{{ item.title }}</h1>
+                                <h3 style="margin-top: 0;margin-bottom: 10px">{{ item.title }}</h3>
                                 <div class="top more-overflow">{{ item.abstract }}</div>
                                 <div class="bottom">
                                     <span class="class">{{ _.get(_.filter(classData,classItem => classItem.id === item.tags),'0.name')}}</span>
-                                    <span class="time" style="color: #37c6c0">{{ item.createdTime }}</span>
-                                    <span class="more" style="color: red" @click="deleteArticle(item)">删除</span>
-                                    <span class="more" style="color: #37c6c0" @click="editArticle(item.id)">编辑</span>
+                                    <span v-if="item.updateTime" class="time" style="color: #37c6c0">{{ item.updateTime }}</span>
+                                    <span v-else class="time" style="color: #37c6c0">{{ item.createdTime }}</span>
+                                    <span class="more" style="color: red" @click.stop="deleteArticle(item)">删除</span>
+                                    <span class="more" style="color: #37c6c0" @click.stop="editArticle(item.id)">编辑</span>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <el-pagination
+                            style="text-align: center;margin-top: 20px;font-size: 16px"
+                            :hide-on-single-page="_.size(allArticle) < 5"
+                            :total="_.size(allArticle)"
+                            :page-size="5"
+                            @current-change="handleCurrentChange"
+                            layout="total, prev, pager, next">
+                    </el-pagination>
                 </div>
                 <div v-else>
                     暂无数据
                 </div>
+
             </el-card>
+
         </div>
 
         <el-dialog
@@ -65,15 +76,26 @@
         currentClassId: number | string;
         currentIndex: number = 0;
         currentArticle: Types.ArticleData;
+        allArticle: Array<Types.ArticleData> = [];
 
         private async mounted() {
             // 拿到文章分类
             this.classData = await this.getArticleClass().then((req: Types.InterfaceData) => this.$util.checkResp(req));
             this.currentClassId = this.$lo.get(this.classData, `${this.currentIndex}.id`);
-            this.articleInfo = await this.getArticle().then((req: Types.InterfaceData) => this.$util.checkResp(req));
+            const allArticle = await this.getArticle().then((req: Types.InterfaceData) => this.$util.checkResp(req));
+            this.allArticle = [...allArticle].reverse();
+            this.articleInfo = this.allArticle.slice(0, 5);
             setTimeout(() => {
                 this.loading = false;
             }, 1000);
+        }
+
+        handleCurrentChange(val: number) {
+            this.articleInfo = this.allArticle.slice((val - 1) * 5, val * 5)
+        }
+
+        getArticleDetails(id: any){
+            this.$router.push({name: 'article@details', query: {id}})
         }
 
         deleteArticle(params: Types.ArticleData) {
@@ -83,7 +105,7 @@
 
         // 编辑文章
         editArticle(id: any){
-            this.$router.push({name: 'addArticle', query: {id}})
+            this.$router.push({name: 'article@add', query: {id}})
         }
 
         // 删除文章
@@ -105,7 +127,7 @@
         }
 
         goAddArticle(){
-            this.$router.push({name: 'addArticle', query: {type: 'add'}})
+            this.$router.push({name: 'article@add', query: {type: 'add'}})
         }
 
         /**

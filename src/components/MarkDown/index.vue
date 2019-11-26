@@ -70,6 +70,7 @@
                 smartypants: false
             });
             this.htmlString = marked(value);
+            console.log(this.htmlString);
             this.$emit("html-change", value);
         }
 
