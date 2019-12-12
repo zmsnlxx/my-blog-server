@@ -1,5 +1,5 @@
 <template>
-    <div class="entrance" @click="$router.push({path:'/serverHome'})">
+    <div class="entrance" @click="$router.push({path:'/home'})">
         <back-ground/>
         <div class="content">
             <div class="home-header">

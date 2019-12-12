@@ -7,11 +7,11 @@ import edit from './views/edit/index.vue';
 Vue.use(Router);
 export default new Router({
     mode: 'history',
-    base: process.env.NODE_ENV === 'production' ? '/' : '/server/',
+    base: process.env.NODE_ENV === 'production' ? '/server' : '/',
     routes: [
         {path: '/', component: entrance},
         {
-            path: '/serverHome',
+            path: '/home',
             name: 'home',
             redirect: {name: 'article@index'},
             component: () => import('./views/home/index.vue'),
