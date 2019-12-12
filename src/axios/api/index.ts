@@ -1,6 +1,7 @@
 import user from './user';
 import article from './article';
 import articleClass from './articleClass'
+import articleTags from './articleTags'
 
 
 const apiList = {
@@ -8,5 +9,6 @@ const apiList = {
     ...user,
     ...article,
     ...articleClass,
+    ...articleTags
 };
 export default apiList;

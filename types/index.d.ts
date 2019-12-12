@@ -5,6 +5,14 @@ export interface UserItem {
     password: string;
 }
 
+export interface TagsData {
+    id: string;
+    name: string;
+    type: string;
+    __v?: any;
+    _id?: string;
+}
+
 export interface InterfaceData {
     code: number;
     data: any;

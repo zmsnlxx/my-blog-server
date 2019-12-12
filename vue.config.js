@@ -1,6 +1,6 @@
 module.exports = {
   lintOnSave: false,
-  baseUrl:'/server/',  //根据www.xxx.com/后面的路径写入（比如www.xxx.com/tool）
+  publicPath:'/server/',  //根据www.xxx.com/后面的路径写入（比如www.xxx.com/tool）
   devServer: {
     proxy: {
       "/api": {
