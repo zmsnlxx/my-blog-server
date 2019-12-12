@@ -39,6 +39,7 @@
         routerData: Array<Types.RouterData> = [
             {name: "首页", path: "/home/index"},
             {name: "分类管理", path: "/home/addClass"},
+            {name: "标签管理", path: "/home/tags"},
             {name: "编辑记录", path: "/home/editRecord"},
             {name: "数据汇总", path: "/home/dataSummary"},
         ];

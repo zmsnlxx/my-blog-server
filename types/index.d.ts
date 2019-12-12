@@ -27,7 +27,10 @@ export interface ArticleData {
     title: string;
     img: string | any;
     content: string;
-    tags: string;
+    tag: string;
+    tagId: string;
+    category: string;
+    categoryId: string;
     abstract: string;
     contentMD: string;
     updateTime?: string;

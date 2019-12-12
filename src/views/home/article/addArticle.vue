@@ -22,7 +22,7 @@
                         <el-input v-model="form.title" placeholder="请输入文章标题"></el-input>
                     </el-form-item>
                     <el-form-item label="文章分类">
-                        <el-select v-model="form.tags" placeholder="请选择文章分类" prop="tags">
+                        <el-select v-model="form.categoryId" placeholder="请选择文章分类" @change="changeCategory" prop="category">
                             <el-option v-for="item in classData" :key="item.id" :label="item.name"
                                        :value="item.id"></el-option>
                         </el-select>
@@ -64,7 +64,10 @@
         form: Types.ArticleData = {
             img: "",
             title: "",
-            tags: "",
+            category: '',
+            categoryId: '',
+            tag: "",
+            tagId: '',
             abstract: "",
             content: "",
             contentMD: '',
@@ -75,7 +78,7 @@
             title: [
                 {required: true, message: "请填写文章标题", trigger: "change"}
             ],
-            tags: [
+            category: [
                 {required: true, message: "请选择文章分类", trigger: "change"}
             ],
             abstract: [
@@ -121,6 +124,11 @@
             }
         }
 
+        changeCategory(val: any):void {
+            console.log(val);
+            this.form.category = this.$lo.get(this.$lo.find(this.classData, (item: any) => item.categoryId === val), 'name')
+        }
+
         getArticleDetails(){
             return this.$api.getArticleDetails({id: this.articleId})
         }
@@ -158,7 +166,7 @@
 
         // 新建文章
         async onSubmit(formName: any) {
-            if (this.$lo.size(this.form.tags) === 0) {
+            if (this.$lo.size(this.form.categoryId) === 0) {
                 this.$message.warning("请选择文章分类");
                 return;
             }

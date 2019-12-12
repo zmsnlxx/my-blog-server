@@ -21,6 +21,7 @@ export default new Router({
                 {path:'editRecord',name:'editRecord',component: () => import('./views/home/editRecord/index.vue')},
                 {path:'dataSummary',name:'dataSummary',component: () => import('./views/home/dataSummary/index.vue')},
                 {path:'addArticle',name:'article@add',component: () => import('./views/home/article/addArticle.vue')},
+                {path:'tags',name:'article@tags',component: () => import('./views/home/tags/index.vue')},
                 {path:'articleDetails',name:'article@details',component: () => import('./views/home/article/articleDetails.vue')},
             ],
         },

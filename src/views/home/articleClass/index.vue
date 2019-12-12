@@ -4,7 +4,7 @@
             <el-card :body-style="{padding:'15px',height:'100%',boxSizing: 'border-box'}">
                 <div class="card-header">
                     <ul class="ul">
-                        <li class="li border">分类管理</li>
+                        <li class="li">分类管理</li>
                     </ul>
                 </div>
                 <div class="card-body">
@@ -253,10 +253,6 @@
                         text-align: center;
                         line-height: 40px;
                         margin-right: 20px;
-                    }
-
-                    .border {
-                        border-bottom: 2px solid black;
                     }
                 }
             }

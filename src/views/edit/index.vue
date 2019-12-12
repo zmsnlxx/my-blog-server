@@ -53,8 +53,7 @@
                                                                                       :key="id"
                                                                                       :icon="i.icon"
                                                                                       @click.native="changeTabs(i,item)">
-                                                                        {{ i.label
-                                                                        }}
+                                                                        {{ i.label }}
                                                                     </el-dropdown-item>
                                                                 </el-dropdown-menu>
                                                             </el-dropdown>
