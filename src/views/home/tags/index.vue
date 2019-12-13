@@ -38,19 +38,20 @@
 
 <script lang="ts">
     import {Vue, Component} from "vue-property-decorator";
-    import Types from "../../../../types/index";
+    import Types from "../../../../types";
 
     @Component
 
     export default class tags extends Vue {
         inputVisible: boolean = false;
-        loading: boolean = false;
+        loading: boolean = true;
         inputValue: string = "";
         types: Array<string> = ["", "success", "info", "warning", "danger"];
         tags: Array<Types.TagsData> = [];
 
 
         async handleClose(tag: Types.TagsData) {
+            this.loading = true;
             const {id} = tag;
             const {code, data} = await this.$api.deleteArticleTags({id});
             if (code === 1 || code === 0) {
@@ -58,10 +59,16 @@
             } else {
                 this.$message.error(data);
             }
+            setTimeout(() => {
+                this.loading = false;
+            },1000)
         }
 
         async mounted(){
             this.tags = await this.getArticleTags().then((req: Types.InterfaceData) => this.$util.checkResp(req));
+            setTimeout(() => {
+                this.loading = false;
+            },1000)
         }
 
         getArticleTags() {
@@ -79,6 +86,7 @@
         async handleInputConfirm() {
             let inputValue = this.inputValue;
             if (inputValue) {
+                this.loading = true;
                 const params = {name: inputValue, type: this.types[Math.floor(Math.random() * 5)]};
                 const {code, data} = await this.$api.addArticleTags(params)
                 if (code === 1 || code === 0) {
@@ -86,6 +94,9 @@
                 } else {
                     this.$message.error(data);
                 }
+                setTimeout(() => {
+                    this.loading = false;
+                },1000)
             }
             this.inputVisible = false;
             this.inputValue = "";

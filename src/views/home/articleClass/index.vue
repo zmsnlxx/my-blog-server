@@ -107,7 +107,7 @@
 
 <script lang="ts">
     import {Vue, Component} from "vue-property-decorator";
-    import Types from "../../../../types/index";
+    import Types from "../../../../types";
 
 
     @Component({})

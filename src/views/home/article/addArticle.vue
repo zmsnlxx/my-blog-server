@@ -27,6 +27,16 @@
                                        :value="item.id"></el-option>
                         </el-select>
                     </el-form-item>
+                    <el-form-item label="文章标签">
+                        <el-select v-model="form.tagId" multiple filterable @change="changeTags" placeholder="请选择标签" prop="tags">
+                            <el-option
+                                    v-for="item in articleTags"
+                                    :key="item.id"
+                                    :label="item.name"
+                                    :value="item.id">
+                            </el-option>
+                        </el-select>
+                    </el-form-item>
                     <el-form-item label="文章摘要" prop="abstract">
                         <el-input v-model="form.abstract" placeholder="请输入文章摘要"></el-input>
                     </el-form-item>
@@ -55,7 +65,7 @@
 
 <script lang="ts">
     import {Vue, Component} from "vue-property-decorator";
-    import Types from "../../../../types/index";
+    import Types from "../../../../types";
     import hljs from "highlight.js";
     import marked from "marked";
 
@@ -64,16 +74,17 @@
         form: Types.ArticleData = {
             img: "",
             title: "",
-            category: '',
+            categoryName: '',
             categoryId: '',
-            tag: "",
-            tagId: '',
+            tagName: [],
+            tagId: [],
             abstract: "",
             content: "",
             contentMD: '',
             id: ''
         };
         classData: Array<Types.ArticleClassData> = [];
+        articleTags: Array<Types.TagsData> = [];
         rules: any = {
             title: [
                 {required: true, message: "请填写文章标题", trigger: "change"}
@@ -84,6 +95,9 @@
             abstract: [
                 {required: true, message: "请填写文章摘要", trigger: "change"}
             ],
+            tags: [
+                {required: true, message: "请选择文章标签", trigger: "change"}
+            ]
         };
         articleId: any;
         isAdd: boolean = true;
@@ -105,28 +119,46 @@
             const {type, id} = this.$route.query;
             this.articleId = id;
             this.isAdd = type === "add";
+            // 如果是新增
             if (this.isAdd) {
-                this.classData = await this.getArticleClass().then((req: Types.InterfaceData) => this.$util.checkResp(req));
-            } else {
-                const [classData, articleDetails] = await Promise.all([this.getArticleClass(), this.getArticleDetails()]).then(req => {
+                const [classData, articleTags] = await Promise.all([this.getArticleClass(), this.getArticleTags()]).then(req => {
                     return this.$lo.map(req, (item: Types.InterfaceData) => this.$util.checkResp(item))
                 });
                 this.classData = classData;
+                this.articleTags = articleTags;
+            } else {
+                const [classData, articleDetails, articleTags] = await Promise.all([this.getArticleClass(), this.getArticleDetails(), this.getArticleTags()]).then(req => {
+                    return this.$lo.map(req, (item: Types.InterfaceData) => this.$util.checkResp(item))
+                });
+                this.classData = classData;
+                this.articleTags = articleTags;
                 this.form = articleDetails;
             }
         }
 
         // 编辑文章
         async editArticle(){
+            console.log(this.form);
             const {code} = await this.$api.updateArticle(this.form);
             if (code === 0) {
                 this.$router.push({name: "article@index"});
             }
         }
+        // 获取文章标签
+        getArticleTags() {
+            return this.$api.getArticleTags();
+        }
 
         changeCategory(val: any):void {
             console.log(val);
-            this.form.category = this.$lo.get(this.$lo.find(this.classData, (item: any) => item.categoryId === val), 'name')
+            const {name, id} = this.$lo.find(this.classData, (item: any) => item.id === val);
+            this.form.categoryName = name;
+            this.form.categoryId = id;
+        }
+
+        changeTags(val: Array<string>):void {
+            console.log(val);
+            this.form.tagId = val;
         }
 
         getArticleDetails(){
@@ -170,6 +202,7 @@
                 this.$message.warning("请选择文章分类");
                 return;
             }
+            console.table(this.form);
             const $refs: any = this.$refs[formName];
             $refs.validate(async (valid: any) => {
                 if (valid) {

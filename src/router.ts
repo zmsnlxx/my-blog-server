@@ -1,15 +1,11 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import entrance from './views/index.vue';
-import login from './views/other/login.vue';
-import edit from './views/edit/index.vue';
 
 Vue.use(Router);
 export default new Router({
     mode: 'history',
-    base: process.env.NODE_ENV === 'production' ? '/server' : '/',
     routes: [
-        {path: '/', component: entrance},
+        {path: '/', component: () => import('./views/index.vue')},
         {
             path: '/home',
             name: 'home',
@@ -37,7 +33,6 @@ export default new Router({
                 },
             ],
         },
-        {path: '/login', component: login},
-        {path: '/edit', component: edit},
+        {path: '/login', component: () => import('./views/other/login.vue')},
     ],
 });

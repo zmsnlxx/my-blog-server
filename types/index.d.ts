@@ -35,9 +35,9 @@ export interface ArticleData {
     title: string;
     img: string | any;
     content: string;
-    tag: string;
-    tagId: string;
-    category: string;
+    tagName: any;
+    tagId: any;
+    categoryName: string;
     categoryId: string;
     abstract: string;
     contentMD: string;
