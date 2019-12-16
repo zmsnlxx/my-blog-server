@@ -10,8 +10,13 @@ const getUserInfo = (params: any): object => {
     return axios.get('user/info', {params});
 };
 
+const register = (params: any):object => {
+    return axios.post(`user/register`, params)
+};
+
 const user = {
     login,
     getUserInfo,
+    register
 };
 export default user;

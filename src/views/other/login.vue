@@ -24,6 +24,7 @@
                             </el-form-item>
                             <el-form-item>
                                 <el-button type="primary" @click="goLogin">登录</el-button>
+                                <el-button type="primary" @click="register">注册</el-button>
                             </el-form-item>
                         </el-form>
                     </div>
@@ -54,6 +55,14 @@
                 } else {
                     this.$message.error(data);
                 }
+            }).catch((err: any) => {
+                console.log(err);
+            });
+        }
+        register() {
+            this.$api.register(this.userForm).then((req: Types.InterfaceData) => {
+                const {code, data} = req;
+                console.log(data);
             }).catch((err: any) => {
                 console.log(err);
             });
