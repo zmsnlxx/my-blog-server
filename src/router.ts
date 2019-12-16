@@ -3,7 +3,7 @@ import Router from 'vue-router';
 
 Vue.use(Router);
 export default new Router({
-    base: '/server',
+    mode: 'history',
     routes: [
         {path: '/', component: () => import('./views/index.vue')},
         {
