@@ -11,7 +11,7 @@ import * as jsCookie from 'js-cookie';
 import moment from 'moment';
 
 
-const whiteList: string[] = ['/login'];
+const whiteList: string[] = ['/login','/register'];
 router.beforeEach((to: any, from: any, next: any) => {
     const userInfo = jsCookie.get('email');
     if (whiteList.indexOf(to.path) < 0) {

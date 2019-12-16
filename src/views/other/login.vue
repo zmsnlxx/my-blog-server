@@ -15,8 +15,8 @@
                     </div>
                     <div style="margin-top: 20px">
                         <el-form label-width="80px" :model="userForm">
-                            <el-form-item label="邮箱">
-                                <el-input type="email" v-model="userForm.email" placeholder="请输入邮箱"></el-input>
+                            <el-form-item label="账号">
+                                <el-input type="text" v-model="userForm.email" placeholder="请输入账号"></el-input>
                             </el-form-item>
                             <el-form-item label="密码">
                                 <el-input type="password" v-model="userForm.password" placeholder="请输入密码"
@@ -24,7 +24,6 @@
                             </el-form-item>
                             <el-form-item>
                                 <el-button type="primary" @click="goLogin">登录</el-button>
-                                <el-button type="primary" @click="register">注册</el-button>
                             </el-form-item>
                         </el-form>
                     </div>
@@ -45,6 +44,11 @@
             email: "",
             password: "",
         };
+        protected form: any = {
+            email: "",
+            name: '',
+            password: "",
+        };
         protected loginShow: boolean = false;
 
         protected goLogin():void  {
@@ -60,7 +64,7 @@
             });
         }
         register() {
-            this.$api.register(this.userForm).then((req: Types.InterfaceData) => {
+            this.$api.register(this.form).then((req: Types.InterfaceData) => {
                 const {code, data} = req;
                 console.log(data);
             }).catch((err: any) => {
