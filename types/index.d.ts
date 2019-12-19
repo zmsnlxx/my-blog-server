@@ -37,6 +37,7 @@ export interface ArticleData {
     content: string;
     tagName: any;
     tagId: any;
+    author: string;
     categoryName: string;
     categoryId: string;
     abstract: string;

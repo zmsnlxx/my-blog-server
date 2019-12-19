@@ -68,12 +68,15 @@
     import Types from "../../../../types";
     import hljs from "highlight.js";
     import marked from "marked";
+    import {Getter} from "vuex-class";
 
     @Component
     export default class addArticle extends Vue {
+        @Getter userInfo: any;
         form: Types.ArticleData = {
             img: "",
             title: "",
+            author: '',
             categoryName: '',
             categoryId: '',
             tagName: [],
@@ -150,14 +153,12 @@
         }
 
         changeCategory(val: any):void {
-            console.log(val);
             const {name, id} = this.$lo.find(this.classData, (item: any) => item.id === val);
             this.form.categoryName = name;
             this.form.categoryId = id;
         }
 
         changeTags(val: Array<string>):void {
-            console.log(val);
             this.form.tagId = val;
         }
 
@@ -202,7 +203,7 @@
                 this.$message.warning("请选择文章分类");
                 return;
             }
-            console.table(this.form);
+            this.form.author = this.userInfo.name;
             const $refs: any = this.$refs[formName];
             $refs.validate(async (valid: any) => {
                 if (valid) {
