@@ -76,7 +76,6 @@
         form: Types.ArticleData = {
             img: "",
             title: "",
-            author: '',
             categoryName: '',
             categoryId: '',
             tagName: [],
@@ -203,7 +202,7 @@
                 this.$message.warning("请选择文章分类");
                 return;
             }
-            this.form.author = this.userInfo.name;
+            this.form.author = this.userInfo.name || 'lxx';
             const $refs: any = this.$refs[formName];
             $refs.validate(async (valid: any) => {
                 if (valid) {
