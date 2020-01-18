@@ -83,7 +83,7 @@
             abstract: "",
             content: "",
             contentMD: '',
-            id: ''
+            id: '',
         };
         classData: Array<Types.ArticleClassData> = [];
         articleTags: Array<Types.TagsData> = [];
@@ -141,6 +141,7 @@
         // 编辑文章
         async editArticle(){
             console.log(this.form);
+            this.form.isUpdate = true;
             const {code} = await this.$api.updateArticle(this.form);
             if (code === 0) {
                 this.$router.push({name: "article@index"});

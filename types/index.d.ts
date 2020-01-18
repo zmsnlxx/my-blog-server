@@ -45,6 +45,7 @@ export interface ArticleData {
     updateTime?: string;
     createdTime?: string;
     id: any;
+    isUpdate?: boolean
 }
 
 export interface HeaderName {
